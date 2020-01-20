@@ -1,0 +1,339 @@
+
+/* highliting is orange rather than black */
+
+::-moz-selection { /* Code for Firefox */
+  color: white;
+  background: #FF6433;
+}
+
+::selection {
+  color: white;
+  background: #FF6433;
+}
+
+
+/* Navbar and navigation */
+
+
+.navbar-brand {
+	
+	color: #3190c8 !important;
+	font-weight: 400!important;
+	font-family: 'Crimson Text', serif!important;
+	font-size: 1.3em!important;
+}
+
+.navbar {
+   	-webkit-box-shadow: 0 8px 6px -6px rgba(0,0,0,0.41);
+	   -moz-box-shadow: 0 8px 6px -6px rgba(0,0,0,0.41);
+	        box-shadow: 0 8px 6px -6px rgba(0,0,0,0.41);
+
+    /* the rest of your styling */
+}
+
+.navbar {
+   background:rgba(0,0,0,0.0);   /* for latest browsers */
+  color: rgba(0,0,0,.5)!important; 
+}
+
+
+
+/* Body */
+
+
+
+img {
+
+max-width: 100%;
+
+}
+
+
+html {
+  font-size: 100%;
+  color: #333333 !important;
+}
+
+
+.container {
+  margin: 0 auto;
+padding: 1em;
+
+  width: 100% !important;
+	max-width: 45em !important;
+	
+	background-color: white; 
+	
+}
+
+body {
+	
+	font-size: 20px !important;
+	height: 100%;
+	
+	color: #333333 !important;
+	padding-top: 3.5em!important;
+	
+}
+
+p {
+
+font-size: 20px !important;
+	
+  line-height: 1.75em !important;
+color: #333333 !important;
+font-family: 'Cabin', Helvetica, Arial, sans-serif !important;
+}
+
+
+
+
+/* main headline, container and H1 */
+
+.topHalf {
+
+max-width: 45em!important;
+
+min-height: 20vh !important;
+}
+
+.headlinecontainer {
+  margin: 0 auto;
+  width: 100% !important;
+	
+}
+
+h1{
+
+ 
+  word-break: normal;
+
+   hyphens: auto;
+
+
+}
+
+.box {
+
+	padding: 0.25em;
+text-align: left;
+
+
+}
+
+
+/* Bolding is orange */
+
+strong {
+	
+	color: white!important;
+	background-color: #FF6433!important; 
+	padding: 0.2em;
+	font-weight:  bold!important;
+}
+
+
+
+
+/* Needed for Ghost Features */
+
+.kg-width-wide {
+  position: relative;
+  width: 85vw;
+  min-width: 100%;
+  margin: auto calc(50% - 50vw);
+  transform: translateX(calc(50vw - 50%));
+}
+
+.kg-width-full {
+  position: relative;
+  width: 100vw;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+
+
+
+
+/* Back to top button */
+
+#myBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: #FF6433; /* Set a background color */
+    color: white; /* Text color */
+    padding: 10px; /* Some padding */
+    border-radius: 10px; /* Rounded corners */
+    font-size: 21px; /* Increase font size */
+}
+
+#myBtn:hover {
+    background-color: #555; /* Add a dark-grey background on hover */
+}
+
+
+
+
+
+
+
+
+/* Footer */
+
+.wrapper-footer {
+ 
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  background-color: #333333;
+}
+
+footer {
+  padding: 20px 0;
+  text-align: center;
+}
+
+#bottomcontainer
+
+{
+	
+background-color: #333333 !important;	
+color: white!important;	
+	
+}
+
+
+p .footer {
+	
+	
+	color: white !important;
+	
+}
+
+
+
+/* When posts are listed, such as a tag page */
+
+ .postList ul{margin: 0!important; -webkit-margin-before: 0em !important;
+    -webkit-margin-after: 0em !important;
+    -webkit-margin-start: 0px !important;
+    -webkit-margin-end: 0px !important;
+    -webkit-padding-start: 0px !important;} blockquote {margin-left: 3em !important; padding-left: 1em !important; border-left: 5px solid #3190c8;}
+
+
+
+
+.postTitle{
+
+color: #333333 !important;
+
+}
+
+
+
+.postImage {
+
+padding-top: 1em;
+max-width: 100%;
+
+}
+
+.postList {
+
+list-style-type: none;
+
+}
+
+
+
+
+.list-group-item-action.active {
+
+background-color: #3190c8!important;
+}
+
+
+
+
+
+
+/* Headlines */
+
+h1 {
+font-weight: 700!important;
+	 font-family: 'Crimson Text', serif!important;
+	 padding-top: 1em !important;
+	
+color: #333333 !important;
+}
+
+h2 {
+font-weight: 700!important;
+padding-top: 1.5em;
+
+font-family: 'Crimson Text', serif!important;
+color: #444444 !important;
+
+}
+
+h3 {
+font-weight: 400!important;
+padding-top: 1em;
+font-family: 'Crimson Text', serif!important;
+
+color: #444444 !important;
+}
+
+h4 {
+font-weight: 400!important;
+padding-top: 1em;
+
+font-family: 'Crimson Text', serif!important;
+color: #444444 !important;
+}
+
+
+
+
+
+
+/* Phone display only */
+
+
+@media (max-width: 768px) {
+//Manage Display Headers for Mobile Devices
+.display-1 {
+	font-family: 'Crimson Text', serif!important;
+font-size: 2.5em !important;
+font-weight: 700 !important;
+line-height: 1.0;
+}
+
+    .display-2 {
+		font-family: 'Crimson Text', serif!important;
+        font-size: 2.5em !important;
+        font-weight: 700 !important;
+        line-height: 1.0;
+    }
+
+    .display-3 {
+		font-family: 'Crimson Text', serif!important;
+        font-size: 1.5em !important;
+        font-weight: 700 !important;
+        line-height: 1.0;
+    }
+
+    .display-4 {
+		font-family: 'Crimson Text', serif!important;
+        font-size: 1.5em !important;
+        font-weight: 700 !important;
+        line-height: 1.0;
+    }
+}
