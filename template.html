@@ -26,29 +26,23 @@
 
 	<!-- Remember to update the Schema! Use a schema generator! -->
 	  
-    <script type="application/ld+json">
+<script type="application/ld+json">
 {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "publisher": {
-        "@type": "Organization",
-        "name": "Kole McRae | My Official Website",
-        "logo": "https://kolemcrae.com/favicon.png"
-    },
-    "url": "https://kolemcrae.com/",
-    "image": {
-        "@type": "ImageObject",
-        "url": "https://kolemcrae.com/content/images/2019/11/website-cover.png",
-        "width": 1024,
-        "height": 512
-    },
-    "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https://kolemcrae.com/"
-    },
-    "description": "The Official Website of Kole McRae."
-}
-    </script>
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://kolemcrae.com/notebook/article.html"
+  },
+  "headline": "Name of Article",
+    "author": {
+    "@type": "Person",
+    "name": "Kole McRae"
+  },  
+  
+  },
+ 
+</script>
 
 	  
     
@@ -135,10 +129,10 @@ function topFunction() {
     <ul class="nav navbar-nav">
         
 	    
-	    <--! Set the correct nav to active! -->
+	    <!-- Set the correct nav to active! -->
 	    
-        <li class="navgray nav-item nav-current-projects active"><a href="/current-projects/" class="nav-link">Current Projects</a></li>
-         <li class="navgray nav-item nav-notebook"><a href="/notebook/" class="nav-link">Notebook</a></li>
+        <li class="navgray nav-item nav-current-projects"><a href="/current-projects/" class="nav-link">Current Projects</a></li>
+         <li class="navgray nav-item nav-notebook active"><a href="/notebook/" class="nav-link">Notebook</a></li>
         <li class="navgray nav-item nav-podcast"><a href="/podcast/" class="nav-link">Podcast</a></li>
         <li class="navgray nav-item nav-contact-me"><a href="/about/" class="nav-link">Contact Me</a></li>
      
