@@ -127,6 +127,7 @@ text-align: left;
 mark { 
 color: white!important;
 background-color: #FF6433!important; 
+	padding-top: 0.3em!important;
 }
 
 
