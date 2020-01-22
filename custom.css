@@ -128,32 +128,8 @@ strong {
 	
 	color: white!important;
 	background-color: #FF6433!important; 
-	padding: 0.2em;
 	font-weight:  bold!important;
 }
-
-
-
-
-/* Needed for Ghost Features */
-
-.kg-width-wide {
-  position: relative;
-  width: 85vw;
-  min-width: 100%;
-  margin: auto calc(50% - 50vw);
-  transform: translateX(calc(50vw - 50%));
-}
-
-.kg-width-full {
-  position: relative;
-  width: 100vw;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-}
-
 
 
 
@@ -216,51 +192,6 @@ p .footer {
 	color: white !important;
 	
 }
-
-
-
-/* When posts are listed, such as a tag page */
-
- .postList ul{margin: 0!important; -webkit-margin-before: 0em !important;
-    -webkit-margin-after: 0em !important;
-    -webkit-margin-start: 0px !important;
-    -webkit-margin-end: 0px !important;
-    -webkit-padding-start: 0px !important;} blockquote {margin-left: 3em !important; padding-left: 1em !important; border-left: 5px solid #3190c8;}
-
-
-
-
-.postTitle{
-
-color: #333333 !important;
-
-}
-
-
-
-.postImage {
-
-padding-top: 1em;
-max-width: 100%;
-
-}
-
-.postList {
-
-list-style-type: none;
-
-}
-
-
-
-
-.list-group-item-action.active {
-
-background-color: #3190c8!important;
-}
-
-
-
 
 
 
