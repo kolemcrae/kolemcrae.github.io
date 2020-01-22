@@ -124,6 +124,12 @@ text-align: left;
 
 /* Bolding is orange */
 
+mark { 
+color: white!important;
+background-color: #FF6433!important; 
+}
+
+
 strong {
 	
 	color: white!important;
