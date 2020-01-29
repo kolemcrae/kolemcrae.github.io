@@ -95,6 +95,8 @@ font-family: 'Cabin', Helvetica, Arial, sans-serif !important;
 max-width: 45em!important;
 
 min-height: 20vh !important;
+	background-color: #333333;
+	color: white!important;
 }
 
 .headlinecontainer {
