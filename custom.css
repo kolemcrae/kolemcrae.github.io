@@ -96,7 +96,14 @@ max-width: 45em!important;
 
 min-height: 20vh !important;
 	background-color: #333333;
-	color: white!important;
+	
+}
+
+.topHalf h1 {
+	
+color: white!important;	
+	
+	
 }
 
 .headlinecontainer {
