@@ -18,9 +18,10 @@
 .navbar-brand {
 	
 	
-	font-weight: 400!important;
+	font-weight: 800!important;
 	font-family: 'Crimson Text', serif!important;
 	font-size: 1.3em!important;
+	padding-top: 12px!important;
 }
 
 .navbar {
