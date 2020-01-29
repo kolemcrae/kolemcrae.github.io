@@ -126,18 +126,14 @@ h1{
 
 	padding: 0.25em;
 text-align: left;
-
+margin-bottom: 2me;
 
 }
 
 
 /* Bolding is orange */
 
-mark { 
-color: white!important;
-background-color: #FF6433!important; 
-	padding-top: 0.3em!important;
-}
+
 
 
 strong {
