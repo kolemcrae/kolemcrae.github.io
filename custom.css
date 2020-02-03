@@ -43,6 +43,15 @@
 color: rgba(0,0,0,.5)!important;	
 	
 }
+
+.active {
+
+color: rgba(0,0,0,.9)!important;	
+	
+}
+
+
+
 /* Body */
 
 a {
