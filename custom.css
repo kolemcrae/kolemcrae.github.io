@@ -3,12 +3,12 @@
 
 ::-moz-selection { /* Code for Firefox */
   color: white;
-  background: #FF6433;
+  background: #2176FF;
 }
 
 ::selection {
   color: white;
-  background: #FF6433;
+  background: #2176FF;
 }
 
 
