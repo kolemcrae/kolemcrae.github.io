@@ -11,6 +11,14 @@
   background: #2176FF;
 }
 
+/* Put at top due to cascading issues */
+a {
+	
+	
+color: #2176FF!important;	
+	
+	
+}
 
 /* Navbar and navigation */
 
@@ -54,13 +62,7 @@ color: rgba(0,0,0,.9)!important;
 
 /* Body */
 
-a {
-	
-	
-color: #2176FF!important;	
-	
-	
-}
+
 
 img {
 
