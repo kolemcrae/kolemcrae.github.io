@@ -34,11 +34,9 @@ color: #2176FF!important;
 }
 
 .navbar {
-   	-webkit-box-shadow: 0 8px 6px -6px rgba(0,0,0,0.41);
-	   -moz-box-shadow: 0 8px 6px -6px rgba(0,0,0,0.41);
-	        box-shadow: 0 8px 6px -6px rgba(0,0,0,0.41);
+   border-bottom:5px solid #00184C;
 
-    /* the rest of your styling */
+  
 }
 
 .navbar {
@@ -52,7 +50,7 @@ color: rgba(0,0,0,.5)!important;
 	
 }
 
-.active {
+.nav-link .active{
 
 color: rgba(0,0,0,.9)!important;	
 	
