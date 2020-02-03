@@ -38,8 +38,11 @@
   color: rgba(0,0,0,.5)!important; 
 }
 
+.nav-link {
 
-
+color: rgba(0,0,0,.5)!important;	
+	
+}
 /* Body */
 
 a {
