@@ -45,9 +45,10 @@ color: white!important;
 	
 }
 
-.active li a  {
-
-color: blue !important;	
+.nav-link .active {
+	
+	
+color: green!important;	
 	
 }
 
