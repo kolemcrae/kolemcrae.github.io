@@ -11,14 +11,7 @@
   background: #2176FF;
 }
 
-/* Put at top due to cascading issues */
-a {
-	
-	
-color: #2176FF!important;	
-	
-	
-}
+
 
 /* Navbar and navigation */
 
@@ -49,6 +42,22 @@ color: white!important;
 	
 	
 color: green!important;	
+	
+}
+
+.nav-link .active a {
+	
+	
+color: green!important;	
+	
+}
+
+/* Put at top due to cascading issues */
+a {
+	
+	
+color: #2176FF!important;	
+	
 	
 }
 
