@@ -45,9 +45,9 @@ color: white!important;
 	
 }
 
-.nav-link .active{
+li .active{
 
-color: rgba(0,0,0,.9)!important;	
+color: blue !important;	
 	
 }
 
