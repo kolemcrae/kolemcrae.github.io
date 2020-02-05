@@ -266,9 +266,9 @@ color: #444444 !important;
 
 
 @media (max-width: 768px) {
-//Manage Display Headers for Mobile Devices
+// Manage Display Headers for Mobile Devices
 
-	.display-1 {
+.display-1 {
 	font-family: 'Crimson Text', serif!important;
 font-size: 2.5em !important;
 font-weight: 700 !important;
