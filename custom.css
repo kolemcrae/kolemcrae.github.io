@@ -45,7 +45,12 @@ border: 1px solid white;
 	
 }
 
-
+.navbar-nav li:hover {
+	
+	
+border: 1px solid white;
+	
+}
 
 /* Body */
 
