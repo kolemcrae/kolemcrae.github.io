@@ -168,6 +168,7 @@ strong {
 #myBtn:hover {
     background-color: #ffffff; /* Add a dark-grey background on hover */
 	border: 1px solid #333333;
+	color: #333333;
 }
 
 
