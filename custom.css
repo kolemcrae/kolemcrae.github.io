@@ -41,7 +41,7 @@ color: white!important;
 .navbar-nav li.active > a {
 	
 	
-color: green!important;	
+border: 1px solid white;
 	
 }
 
