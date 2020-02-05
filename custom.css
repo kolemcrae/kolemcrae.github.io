@@ -38,7 +38,7 @@ color: white!important;
 	
 }
 
-.nav-link .active {
+.navbar-nav li.active > a {
 	
 	
 color: green!important;	
