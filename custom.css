@@ -109,8 +109,14 @@ font-family: 'Cabin', Helvetica, Arial, sans-serif !important;
 
 max-width: 45em!important;
 
-min-height: 20vh !important;
+	
+}
 
+.display-1 {
+	
+	
+font-size: 8em!important;	
+	
 	
 }
 
