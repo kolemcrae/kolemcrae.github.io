@@ -76,7 +76,7 @@ padding: 1em;
   width: 100% !important;
 	max-width: 45em !important;
 	
-	background-color: white; 
+	background-color: #f5f5f5; 
 	
 }
 
@@ -84,7 +84,7 @@ body {
 	
 	font-size: 20px !important;
 	height: 100%;
-	
+	background-color: #f5f5f5;
 	color: #333333 !important;
 	padding-top: 3.5em!important;
 	
@@ -195,6 +195,7 @@ strong {
 footer {
   padding: 20px 0;
   text-align: center;
+	background-color: #f5f5f5;
 }
 
 #bottomcontainer
