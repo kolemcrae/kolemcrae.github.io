@@ -41,21 +41,21 @@ color: white!important;
 .navbar-nav li> a {
 	
 	
-border: 1px solid #00184C;
+
 	
 }
 
 .navbar-nav li.active > a {
 	
-	
-border: solid white;
+text-decoration: underline;	
+
 	
 }
 
 .navbar-nav li:hover {
 	
-	
-border: solid white;
+text-decoration: underline;	
+
 	
 }
 
