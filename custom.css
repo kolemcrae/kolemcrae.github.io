@@ -106,12 +106,19 @@ font-family: 'Cabin', Helvetica, Arial, sans-serif !important;
 
 .topHalf {
 
-max-width: 45em!important;
+
 background-color: #f5f5f5!important;
 	
 }
 
-
+.textBackground {
+	
+max-width: 45em!important;
+background-color: #f5f5f5!important;	
+	
+	
+	
+}
 
 .headlinecontainer {
   margin: 0 auto;
