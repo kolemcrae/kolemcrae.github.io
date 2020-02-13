@@ -34,7 +34,7 @@
 
 .nav-link {
 
-color: white!important;	
+color: #333333!important;	
 	
 }
 
@@ -131,7 +131,7 @@ h1{
   word-break: normal;
 
    hyphens: auto;
-
+color: white!important;	
 
 }
 
