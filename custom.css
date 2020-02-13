@@ -23,7 +23,7 @@
 	font-family: 'Crimson Text', serif!important;
 	font-size: 1.3em!important;
 	padding-top: 12px!important;
-	color: #ffffff!important;
+	color: #333333!important;
 }
 
 
@@ -133,6 +133,13 @@ h1{
    hyphens: auto;
 color: white!important;	
 
+}
+
+.display-1 {
+	
+	
+color: white!important;		
+	
 }
 
 .box {
