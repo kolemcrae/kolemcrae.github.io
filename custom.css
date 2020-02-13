@@ -48,14 +48,14 @@ color: white!important;
 .navbar-nav li.active > a {
 	
 text-decoration: underline;	
-
+color: white!important;
 	
 }
 
 .navbar-nav li:hover {
 	
 text-decoration: underline;	
-
+color: white!important;
 	
 }
 
