@@ -2,12 +2,12 @@
 /* highliting is orange rather than black */
 
 ::-moz-selection { /* Code for Firefox */
-  color: white;
+  color: black;
   background: #9BF2FA;
 }
 
 ::selection {
-  color: white;
+  color: black;
   background: #9BF2FA;
 }
 
