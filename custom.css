@@ -132,15 +132,12 @@ h1{
 
    hyphens: auto;
 color: white!important;	
+background-image: linear-gradient(-100deg, rgba(255, 255, 255, 0), #2176FF 85%, rgba(255, 255, 255, 0));	
+	
 
 }
 
-.display-1 {
-	
-	
-color: white!important;		
-	
-}
+
 
 .box {
 
