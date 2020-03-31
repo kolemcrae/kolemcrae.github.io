@@ -241,7 +241,7 @@ color: #333333 !important;
 
 h2 {
 font-weight: 700!important;
-padding-top: 1.5em;
+padding-top: 1.8em;
 
 font-family: 'Crimson Text', serif!important;
 color: #333333 !important;
@@ -250,9 +250,9 @@ color: #333333 !important;
 
 h3 {
 font-weight: 400!important;
-padding-top: 1em;
-font-family: 'Crimson Text', serif!important;
-text-decoration: underline;
+padding-top: 1.4em;
+font-family: 'Cabin', Helvetica, Arial, sans-serif !important;
+
 color: #333333 !important;
 }
 
