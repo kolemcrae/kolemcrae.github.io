@@ -106,7 +106,16 @@ color: #333333 !important;
 font-family: 'Cabin', Helvetica, Arial, sans-serif !important;
 }
 
-
+p:first-child:first-letter {
+	
+float: left;	
+	
+  padding-top: 4px;
+  padding-right: 8px;
+  padding-left: 3px;	
+  font-size: 40px !important;;	
+	
+}
 
 
 /* main headline, container and H1 */
