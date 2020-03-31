@@ -1,5 +1,5 @@
 
-/* highliting is orange rather than black */
+/* highliting is blue rather than black */
 
 ::-moz-selection { /* Code for Firefox */
   
@@ -11,7 +11,16 @@
   background: #9BF2FA;
 }
 
+/* highliting my name */
 
+.highliterAffect2  {
+
+
+	background: linear-gradient(to top, #9BF2FA 50%, transparent 50%);
+
+
+
+}
 
 /* Navbar and navigation */
 
