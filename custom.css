@@ -32,18 +32,6 @@
  box-shadow: 0 2px 6px 0 rgba(0,0,0,.12),inset 0 -1px 0 0 #dadce0;
 }
 
-.nav-link {
-
-
-	
-}
-
-.navbar-nav li> a {
-	
-	
-
-	
-}
 
 .navbar-nav li.active > a {
 	
@@ -131,7 +119,7 @@ line-height: 2em;
 .topHalf {
 
 
-background-color: white!important;
+background-color: #F8F8F8!important;
 
 }
 
@@ -139,7 +127,7 @@ background-color: white!important;
 .headlinecontainer {
   margin: 0 auto;
   width: 100% !important;
-max-width: 45em!important;	
+max-width: 50em!important;	
 }
 
 h1{
@@ -151,15 +139,6 @@ h1{
 
 
 
-}
-
-.highliterAffect  {
-	
-	
-	background: linear-gradient(to top, #9BF2FA 50%, transparent 50%);
-	
-	
-	
 }
 
 .box {
