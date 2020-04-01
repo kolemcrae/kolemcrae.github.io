@@ -116,11 +116,10 @@ font-family: 'Crimson Text', serif!important;
 	
 }
 
-ul {
-	
-line-height: 2em;	
-	
-	
+li {
+
+	padding-bottom: 2em;
+
 }
 
 /* main headline, container and H1 */
