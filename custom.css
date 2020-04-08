@@ -207,13 +207,14 @@ footer {
   padding: 20px 0;
   text-align: center;
 	background-color: #f7f7f7!important;
+	font-family: 'Crimson Text', serif!important;
 }
 
 #bottomcontainer
 
 {
 background-color: #f7f7f7!important;	
-	
+	font-family: 'Crimson Text', serif!important;
 color: #333333!important;	
 	
 }
@@ -222,7 +223,7 @@ color: #333333!important;
 
 p .footer {
 	
-	
+	font-family: 'Crimson Text', serif!important;
 	color: wh ite !important;
 	
 }
