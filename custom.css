@@ -198,35 +198,28 @@ strong {
 
 .wrapper-footer {
  
-  border-top: 1px solid #ddd;
   background-color: #f7f7f7!important;	
   margin-top: 3em;
+font-family: 'Crimson Text', serif!important;	
 }
 
 footer {
   padding: 20px 0;
   text-align: center;
 	background-color: #f7f7f7!important;
-	font-family: 'Crimson Text', serif!important;
+	
 }
 
 #bottomcontainer
 
 {
 background-color: #f7f7f7!important;	
-	font-family: 'Crimson Text', serif!important;
+	
 color: #333333!important;	
 	
 }
 
 
-
-p .footer {
-	
-	font-family: 'Crimson Text', serif!important;
-	color: white !important;
-	
-}
 
 
 
