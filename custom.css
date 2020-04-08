@@ -289,7 +289,7 @@ line-height: 1.0;
     }
 
     .display-3 {
-		font-family: 'Crimson Text', serif!important;
+		font-family: 'Cabin', Helvetica, Arial, sans-serif !important;
         font-size: 1.5em !important;
         font-weight: 700 !important;
         line-height: 1.0;
