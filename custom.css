@@ -158,6 +158,8 @@ strong {
 	
 	
 	background: linear-gradient(to top, #9BF2FA 50%, transparent 50%);
+	display: inline-block;
+height: 1em;
 }
 
 
