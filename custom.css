@@ -62,6 +62,13 @@ text-decoration: underline;
 	
 }
 
+.nav ul {
+	
+padding-top: 0em!important;	
+	
+	
+}
+
 /* Body */
 
 
@@ -115,7 +122,7 @@ ul {
 	
 
 	line-height: 1.5em;
-	
+	padding-top: 1.2em;
 	
 }
 
