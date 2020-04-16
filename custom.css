@@ -24,6 +24,12 @@
 
 /* Navbar and navigation */
 
+.navbar-nav {
+	
+	
+padding-top: 0em!important;	
+	
+}
 
 .navbar-brand {
 	
@@ -62,12 +68,7 @@ text-decoration: underline;
 	
 }
 
-.nav ul {
-	
-padding-top: 0em!important;	
-	
-	
-}
+
 
 /* Body */
 
