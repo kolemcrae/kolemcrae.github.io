@@ -227,9 +227,23 @@ height: 1em;
  
 	
   margin-top: 3em;
-border-top: 0.5px solid #333333;	
+	
 }
 
+
+.wrapper-footer:after {
+	
+	
+	  content: ""; /* This is necessary for the pseudo element to work. */ 
+    display: block; /* This will put the pseudo element on its own line. */
+    margin: 0 auto; /* This will center the border. */
+    width: 50%; /* Change this to whatever width you want. */
+    padding-bottom: 20px; /* This creates some space between the element and the border. */
+	
+	
+border-top: 0.5px solid #333333;	
+	
+}
 
 
 .wrapper-footer p {
