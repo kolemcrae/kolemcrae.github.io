@@ -231,7 +231,7 @@ height: 1em;
 }
 
 
-.wrapper-footer:after {
+.wrapper-footer:before {
 	
 	
 	  content: ""; /* This is necessary for the pseudo element to work. */ 
