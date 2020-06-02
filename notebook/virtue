@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+<!--This is the template for all pages! -->
+  
+    <meta name="viewport" content="initial-scale=1">
+	  
+		  
+	  
+    <link rel="shortcut icon" href="/favicon.png" type="image/png" />
+	  
+	<!-- Add slug here! -->
+    <link rel="canonical" href="https://kolemcrae.com/notebook/virtue.html" />
+	  
+   
+
+    
+    <meta property="og:site_name" content="Kole McRae | My Official Website" />
+    <meta property="og:type" content="website" />
+	  
+	<!-- Add name of article to here  -->
+    <meta property="og:title" content="Why virtue signalling is a good thing | Kole McRae" />
+
+	
+	  
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-35855016-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-35855016-1');
+</script>
+
+	  <!-- Important fonts! -->
+	  
+<link href="https://fonts.googleapis.com/css?family=Crimson+Text:400,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Cabin:400,700&display=swap" rel="stylesheet">
+
+
+
+
+
+<!-- Update the article title -->
+
+<title>Why virtue signalling is a good thing | Kole McRae</title>
+
+<meta name="theme-color" content="#9BF2FA">
+
+
+
+    <link rel="stylesheet" type="text/css" href="/custom.css" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  </head>
+
+  <body>
+  <script>
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("myBtn").style.display = "block";
+    } else {
+        document.getElementById("myBtn").style.display = "none";
+    }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
+</script>
+
+
+
+
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #ffffff;">
+ 
+
+
+
+        <a class="navbar-brand" href="https://kolemcrae.com">Kole McRae</a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+     <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+<div class="my-fancy-nav-wrapper">
+    <ul class="nav navbar-nav">
+        
+	    
+	    <!-- Set the correct nav to active! -->
+	    
+        <li class="nav-item nav-current-projects"><a href="/current-projects/" class="nav-link">Current Projects</a></li>
+         <li class="nav-item nav-notebook active"><a href="/notebook/" class="nav-link">Notebook</a></li>
+ 
+        <li class="nav-item nav-contact-me"><a href="/about/" class="nav-link">Contact Me</a></li>
+     
+    </ul>
+</div>
+
+         
+
+     </div>
+    </nav>
+
+
+
+   <div class="container-fluid topHalf">
+	
+
+
+<div class="headlinecontainer">
+<div class="box">
+	
+	<!-- Article title goes here in the h1 -->
+      <h1 class="display-1 theTop p-name"><div class="textBackground">Why virtue signalling is a good thing.</div></h1>
+	</div>
+	</div>
+
+   
+</div>
+	 <div id="main textStuff" role="main" class="container-fluid bigOne">
+	 
+	 
+<main role="main" class="container">
+ 
+	<!-- All the STUFF goes here -->
+       		
+<p>Another major cause has brought up an old tried and true &quot;I&#39;m better than you&quot; falacy: </p>
+<blockquote>
+<p>black out Tuesday is just virtue signalling</p>
+</blockquote>
+<p>That&#39;s not a real quote, but let&#39;s see what a quick twitter search gets us:</p>
+<p><img src="https://kolemcrae.com/Firefox_Screenshot_2020-06-02T14-46-20.259Z.png" alt="enraged tweets"></p>
+<p>That was quick and easy to get. Notice the time stamps in the screenshot, people are talking about virtue signalling every couple of <strong>seconds</strong>. </p>
+<p>What is virtue signalling?</p>
+<blockquote>
+<p>Virtue signalling is a pejorative neologism for the conspicuous expression of moral values.</p>
+</blockquote>
+<p>Or in plain english: spreading awareness about an issue and patting yourself on the back for being good instead of putting the work into actually doing anything about the issue. </p>
+<p>Back to the tweets, first some context: all those comments are about Black Out Tuesday, a movement started by record labels during the riots surrounding the killing of George Floyd and other acts of violence by police towards Black people. </p>
+<p>It quickly spread as a way to show solidarity with the protestors and the Black community as a whole. People generally started posting black squares on social media or changing their profile pictures. </p>
+<p>Within minutes posts about virtue signalling started to spread. As is tradition. </p>
+<p>Which is why I have to write this (again!) and let people know that virtue signalling is... well... a good thing. </p>
+<p>You see, it actually accomplishes things. A lot more than people realize. </p>
+<h2 id="i-m-a-marketer-get-the-boing-out-now">I&#39;m a marketer, get the boing out now</h2>
+<p>Which means a lot of what I do and think about is how to make a business more successful. Usually this means helping the company make more money. </p>
+<p>Many may not realize this, but charities are run like a business. They need money too. Once they have the money it (should) go to the cause they are supporting. The issue is that people get a bit mad if they spend that money trying to get more donations (marketing). Which puts them in a bit of a cunundrum: </p>
+<p>How do we get more donaters without spending money? </p>
+<p>While you can say &quot;if we build it they will come&quot; or something along the lines of &quot;if you are an amazing charity people will donate&quot; it simply does not work in practice. The reality is that they need marketing, which generally costs money. </p>
+<p>One way to look at it: private business HATES spending money and prefer to get as much of it as possible in the most efficient way possible so they can line the pockets of their investors. </p>
+<p>So why do they spend MILLIONS on marketing? </p>
+<p>Because it works. </p>
+<h2 id="basically-charities-and-causes-need-marketing-but-people-don-t-want-them-to-spend-any-money">Basically, charities and causes need marketing but people don&#39;t want them to spend any money</h2>
+<p>While they can work on trying to get press and all the word of mouth ideass they possibly can, in the end they still need to spend money on getting new doners. It&#39;s simply the best way to do it. </p>
+<p>I can go into all the different ways to get the most out of every dollar they spend but you can read the rest of my site for that, instead I want to focus on the main topic of this article: free marketing. </p>
+<p><strong>Virtue signalling is free marketing.</strong> </p>
+<p>This doesn&#39;t really change the overall argument against it:</p>
+<ul>
+<li>People post the black box and then do nothing else, this doesn&#39;t help anyone</li>
+</ul>
+<p>Except that some people do. </p>
+<p>This becomes a problem of scale. Even if <strong>most</strong> people do nothing other than post the black box, <strong>some</strong> people, a tiny fraction, will help. That fraction can make a massive difference. </p>
+<p>Let&#39;s talk about the original virtue signalling: </p>
+<h2 id="the-icebox-challenge">The Icebox Challenge</h2>
+<p>You may remember when several years back people would post videos of them having ice water dumped on their head. This was done in support of ALS research. It was one of the first times people started calling out the issue of virtue signalling. </p>
+<p>Here are some quotes:</p>
+<blockquote>
+<p>Slate said: “for most of the people posting ice bucket videos of themselves on Facebook, Vine, and Instagram, the charity part remains a postscript”</p>
+<p> Time said: “problematic in almost every way... most of its participants ... didn’t mention the disease at all. The chance to jump on the latest trend was an end in itself. In fact, the challenge’s structure seems almost inherently offensive to those touched by ALS.”</p>
+</blockquote>
+<p>The issue is that it worked. </p>
+<p>While many, maybe even most, people that made the videos didn&#39;t donate anything, their awareness caused some people to. </p>
+<p>People like Bill Gates. </p>
+<p>Here&#39;s a quote directly from the association it helped:</p>
+<blockquote>
+<p>The ALS Ice Bucket Challenge was a tremendous event in our Association’s history, raising $115 million in the summer of 2014. Not only did it bring awareness to this devastating disease, it importantly spurred a huge increase in our research budget. Since the IBC, we have committed over $96.4 million toward our mission, including over $84 million in research projects.</p>
+</blockquote>
+<p>That tiny percentage who DID donate, gave them millions upon millions of dollars to actually help with research. </p>
+<p>To put it in perspective, the year before the challenge, the association got $19.4 million in donations in 2013, after the challenge it got $115 million. Let those numbers sink for a bit. </p>
+<h2 id="it-also-makes-it-easier-to-get-donations-later">It also makes it easier to get donations later</h2>
+<p>The next step that always happens: a new news cycle. You probably haven&#39;t thought of the ice bucket challenge in ages, but once I brought it up you had ideas and thoughts around it. Maybe you even thought of it as virtue signalling. </p>
+<p>That&#39;s a brand. </p>
+<p>You might have your own ideas of what a brand is (some people like to call it a series of promises) but I have a simple idea: the stuff your brain does when a company or movement is brought up. </p>
+<p>It doesn&#39;t really matter WHY those things come up, just that they do. </p>
+<p>The ice bucket challenge (and all other forms of virtue signalling, such as pink ribbons and the like) builds a brand for the cause. This brand is lasting. It doesn&#39;t go away. </p>
+<p>Which means two years after it&#39;s out of the news cycle, that brand affects people when they see an ad. </p>
+<p>If people have a positive association with the brand, or even have heard of it at all, they have a higher lilklihood of clicking the ad and making a donation. </p>
+<p>Higher liklihood = cheaper to get more donations = happy charity and good time feels. </p>
+<p>Basically, because people built the brand for the charity, their future marketing efforts are easier for them and more of that money can be spent on the cause rather than trying to convince people. </p>
+<p>You don&#39;t have to trust me on this one, here&#39;s an article with [a bunch of data] (<a href="https://www.shoutmeloud.com/branding-effect-sales-conversions.html">https://www.shoutmeloud.com/branding-effect-sales-conversions.html</a>)</p>
+<p>Not only does it make that cheaper, it also makes the charities retention easier. People will donate for longer periods of time. Instead of having to beg people to keep their monthly donations for as long as possible (via marketing) people will simply stay longer because of the brand, which was partly built via virtue signalling. </p>
+<h2 id="in-short-stop-shaming-people-for-literally-helping-charities">In short: stop shaming people for literally helping charities</h2>
+<p>If you can do something more such as donating or volunteering that is obviously better. In reality the perfect situation for a charity is that everyone virtue signals how good they are by donating to the charity AND sharing that they did so to every single one of their friends. </p>
+
+
+<!-- The end of stuff, leave the rest -->
+	
+	<h2>Check out my <a href="/notebook/">other articles.</a></h2>
+
+	 </main> 
+		 </div>
+	
+	
+    
+
+    <div class="wrapper-footer">
+      <div class="container" id="bottomcontainer">
+        
+
+          
+               
+                 <footer class="footer">
+                  <p>&copy; 1987<script>new Date().getFullYear()>1987&&document.write("-"+new Date().getFullYear());</script>, Kole McRae.</p>
+                 </footer>
+               
+            
+
+
+        
+
+      </div>
+    </div>
+<a class="h-card" rel="me" href="https://kolemcrae.com/" style="display: none;">Kole McRae</a>
+
+  </body>
+</html>
