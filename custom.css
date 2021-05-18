@@ -59,7 +59,7 @@ padding-top: 0em!important;
 	
 	
 	font-weight: 800!important;
-	   font-family: 'Crimson Pro', serif!important;
+	   font-family: 'Crimson Pro';
   	font-size: 1.3em!important;
 	padding-top: 12px!important;
 	
@@ -151,7 +151,7 @@ font-size: 20px !important;
 	
   line-height: 1.75em !important;
 color: #333333 !important;
-font-family: 'Cabin', Helvetica, Arial, sans-serif !important;
+font-family: 'Cabin';
 }
 
 
@@ -272,7 +272,7 @@ height: 1em;
 
 .wrapper-footer p {
 	
-font-family: 'Crimson Pro', serif!important;	
+font-family: 'Crimson Pro';
 font-weight: 700;	
 font-size: 1em!important;	
 	
@@ -303,7 +303,7 @@ color: #333333!important;
 
 h1 {
 font-weight: 700!important;
-	font-family: 'Crimson Pro', serif!important;
+	font-family: 'Crimson Pro';
 	 padding-top: 1em !important;
 	padding-bottom: 1em !important;
 color: #333333 !important;
@@ -311,7 +311,7 @@ color: #333333 !important;
 
 h2 {
 font-weight: 700!important;
-font-family: 'Crimson Pro', serif!important;
+font-family: 'Crimson Pro';
 color: #333333 !important;
 font-size: 2.1em!important;
 	padding-top: 50px;
@@ -320,7 +320,7 @@ font-size: 2.1em!important;
 h3 {
 font-weight: 700!important;
 padding-top: 1.4em;
-font-family: 'Cabin', Helvetica, Arial, sans-serif !important;
+font-family: 'Cabin';
 font-size: 1.2em!important;
 color: #333333 !important;
 }
@@ -328,8 +328,7 @@ color: #333333 !important;
 h4 {
 font-weight: 400!important;
 padding-top: 1em;
-
-font-family: 'Crimson Pro', serif!important;
+font-family: 'Crimson Pro';
 color: #333333 !important;
 }
 
@@ -361,21 +360,21 @@ h2 {
 	
 
     .display-2 {
-		font-family: 'Crimson Pro', serif!important;
+		font-family: 'Crimson Pro';
         font-size: 2.5em !important;
         font-weight: 700 !important;
        
     }
 
     .display-3 {
-		font-family: 'Cabin', Helvetica, Arial, sans-serif !important;
+		font-family: 'Cabin';
         font-size: 1.5em !important;
         font-weight: 700 !important;
         
     }
 
     .display-4 {
-		font-family: 'Crimson Pro', serif!important;
+	font-family: 'Crimson Pro';
         font-size: 1.5em !important;
         font-weight: 700 !important;
         ;
