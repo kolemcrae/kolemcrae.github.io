@@ -15,12 +15,14 @@ font-size: 6rem!important;
     font-family: 'Crimson Pro';
     src: url("https://kolemcrae.com/crimsonpro.ttf") format('truetype');
    font-style: normal;
+	font-display: swap;
 }
 
 @font-face {
     font-family: 'Cabin';
     src: url("https://kolemcrae.com/cabin.ttf") format('truetype');
    font-style: normal;
+	font-display: swap;
 }
 
 /* highliting is blue rather than black */
