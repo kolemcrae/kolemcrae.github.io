@@ -31,6 +31,7 @@ a:hover{
 	
 	text-decoration: none !important;
 	background: linear-gradient(to top, #9BF2FA 50%, transparent 50%);
+	color: #333333 !important;
 }
 
 /* highliting is blue rather than black */
