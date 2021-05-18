@@ -25,6 +25,14 @@ font-size: 6rem!important;
 	font-display: swap;
 }
 
+/* Links! */
+
+a:hover{
+	
+	text-decoration: none !important;
+	background: linear-gradient(to top, #9BF2FA 50%, transparent 50%);
+}
+
 /* highliting is blue rather than black */
 
 ::-moz-selection { /* Code for Firefox */
