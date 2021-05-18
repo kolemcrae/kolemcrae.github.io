@@ -9,6 +9,19 @@ font-size: 6rem!important;
 	
 }
 
+/* fonts! */
+
+@font-face {
+    font-family: 'Crimson Pro', serif;
+    src: url("/crimsonpro.ttf") format('truetype');
+   font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cabin', serif;
+    src: url("/cabin.ttf") format('truetype');
+   font-style: normal;
+}
 
 /* highliting is blue rather than black */
 
@@ -46,8 +59,8 @@ padding-top: 0em!important;
 	
 	
 	font-weight: 800!important;
-	font-family: 'Crimson Text', serif!important;
-	font-size: 1.3em!important;
+	   font-family: 'Crimson Pro', serif!important;
+  	font-size: 1.3em!important;
 	padding-top: 12px!important;
 	
 }
@@ -259,7 +272,7 @@ height: 1em;
 
 .wrapper-footer p {
 	
-font-family: 'Crimson Text', serif!important;	
+font-family: 'Crimson Pro', serif!important;	
 font-weight: 700;	
 font-size: 1em!important;	
 	
@@ -290,7 +303,7 @@ color: #333333!important;
 
 h1 {
 font-weight: 700!important;
-	 font-family: 'Crimson Text', serif!important;
+	font-family: 'Crimson Pro', serif!important;
 	 padding-top: 1em !important;
 	padding-bottom: 1em !important;
 color: #333333 !important;
@@ -298,7 +311,7 @@ color: #333333 !important;
 
 h2 {
 font-weight: 700!important;
-font-family: 'Crimson Text', serif!important;
+font-family: 'Crimson Pro', serif!important;
 color: #333333 !important;
 font-size: 2.1em!important;
 	padding-top: 50px;
@@ -316,7 +329,7 @@ h4 {
 font-weight: 400!important;
 padding-top: 1em;
 
-font-family: 'Crimson Text', serif!important;
+font-family: 'Crimson Pro', serif!important;
 color: #333333 !important;
 }
 
@@ -332,7 +345,7 @@ color: #333333 !important;
 /* for mobile devices */
 
 .display-1 {
-	font-family: 'Crimson Text', serif!important;
+	font-family: 'Crimson Pro', serif!important;
 font-size: 2.5em !important;
 font-weight: 700 !important;
 
@@ -348,7 +361,7 @@ h2 {
 	
 
     .display-2 {
-		font-family: 'Crimson Text', serif!important;
+		font-family: 'Crimson Pro', serif!important;
         font-size: 2.5em !important;
         font-weight: 700 !important;
        
@@ -362,7 +375,7 @@ h2 {
     }
 
     .display-4 {
-		font-family: 'Crimson Text', serif!important;
+		font-family: 'Crimson Pro', serif!important;
         font-size: 1.5em !important;
         font-weight: 700 !important;
         ;
