@@ -13,13 +13,13 @@ font-size: 6rem!important;
 
 @font-face {
     font-family: 'Crimson Pro';
-    src: url("/crimsonpro.ttf") format('truetype');
+    src: url("https://kolemcrae.com/crimsonpro.ttf") format('truetype');
    font-style: normal;
 }
 
 @font-face {
     font-family: 'Cabin';
-    src: url("/cabin.ttf") format('truetype');
+    src: url("https://kolemcrae.com//cabin.ttf") format('truetype');
    font-style: normal;
 }
 
