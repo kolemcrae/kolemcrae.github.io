@@ -12,13 +12,13 @@ font-size: 6rem!important;
 /* fonts! */
 
 @font-face {
-    font-family: 'Crimson Pro', serif;
+    font-family: 'Crimson Pro';
     src: url("/crimsonpro.ttf") format('truetype');
    font-style: normal;
 }
 
 @font-face {
-    font-family: 'Cabin', serif;
+    font-family: 'Cabin';
     src: url("/cabin.ttf") format('truetype');
    font-style: normal;
 }
