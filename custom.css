@@ -87,7 +87,7 @@ padding-top: 0em!important;
 .navbar-nav li.active > a {
 	
 text-decoration: underline;	
-
+background: none!important;
 	
 }
 
