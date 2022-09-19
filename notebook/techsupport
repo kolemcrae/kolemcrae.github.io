@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+<!--This is the template for all pages! -->
+  
+    <meta name="viewport" content="initial-scale=1">
+	  
+		  
+	  
+    <link rel="shortcut icon" href="/favicon.png" type="image/png" />
+	  
+	<!-- Add slug here! -->
+    <link rel="canonical" href="https://kolemcrae.com/notebook/digitalclutter.html" />
+	  
+   
+
+    
+    <meta property="og:site_name" content="Kole McRae | My Official Website" />
+    <meta property="og:type" content="website" />
+	  
+	<!-- Add name of article to here  -->
+    <meta property="og:title" content="I am no longer good at tech support and it's interesting to think about. | Kole McRae" />
+
+	
+	  
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-35855016-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-35855016-1');
+</script>
+
+	
+
+
+
+
+
+
+<!-- Update the article title -->
+
+<title>The Case for reducing your digital clutter. | Kole McRae</title>
+
+<meta name="theme-color" content="#9BF2FA">
+
+
+
+    <link rel="stylesheet" type="text/css" href="/custom.css" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous"> </head>
+
+  <body>
+  <script>
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("myBtn").style.display = "block";
+    } else {
+        document.getElementById("myBtn").style.display = "none";
+    }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
+</script>
+
+
+
+
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #ffffff;">
+ 
+
+
+
+        <a class="navbar-brand" href="https://kolemcrae.com">Kole McRae</a>
+
+ <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar">
+	 <span class="navbar-toggler-icon"></span>
+  </button>
+
+      <div class="navbar-collapse collapse" id="navbar" navbar>
+    <div class="my-fancy-nav-wrapper">
+    <ul class="nav navbar-nav me-auto mb-2 mb-lg-0">
+        
+	    
+	    <!-- Set the correct nav to active! -->
+	    
+        <li class="nav-item nav-current-projects"><a href="/current-projects/" class="nav-link">Current Projects</a></li>
+         <li class="nav-item nav-notebook active"><a href="/notebook/" class="nav-link">Notebook</a></li>
+   
+        <li class="nav-item nav-contact-me"><a href="/about/" class="nav-link">Contact Me</a></li>
+     
+    </ul>
+</div>
+
+         
+
+     </div>
+    </nav>
+
+
+
+   <div class="container-fluid topHalf">
+	
+
+
+<div class="headlinecontainer">
+<div class="box">
+	
+	<!-- Article title goes here in the h1 -->
+      <h1 class="display-1 theTop p-name"><div class="textBackground"><span class="highliterAffect">I am no longer good at tech support and it's interesting to think about.</div></h1>
+	</span></div>
+	</div>
+
+   
+</div>
+	 <div id="main textStuff" role="main" class="container-fluid bigOne">
+	 
+	 
+<main role="main" class="container">
+ 
+	<!-- All the STUFF goes here -->
+       		
+<p>I used to be good at tech support. Like many out there, having a somewhat technical career and an interest in technology has pigeon holed me into this position. Not going to complain too much about that - I understand the desire to get help from a trusted family member or friend over some stranger. </p>
+
+<p>The issue is these days I kind of suck at it. </p>
+
+<p>People still come to me all the time with things they need help with and I often answer with "I don't know." </p>
+
+<p>There are a few reasons for this, and they aren't just "I don't feel like helping anymore."</p>
+
+<h2>Let's start with the obvious</h2>
+
+<p>I use linux as a daily driver. I distrohop so there's no specific distro I want to call out as mine, but I think the point itself is obvious: When I spend the majority of my day on an open source operating system with it's own quirks, one can forgive that I just don't understand the quirks of Windows or Mac any more. </p>
+
+<p>This means no, I have no idea if you can or should install Windows 11. I have no idea what benefits it might bring or if it will work with your computer. No, I have no idea if you can keep your files while upgrading because the word "upgrade" can mean so many things. This also means I don't know if whatever app is important to you will continue to work. I think Apple did something recently that helps new apps go super fast but old apps won't get that bonus? Or maybe those apps completely stop working? I know a bunch of my old audio software would no longer work on Mac cause they got rid of 32bit support.</p> 
+
+<p>This is also why I have no idea why a certain game doesn't work. Maybe drivers? That used to be something I dealt with pre-linux. I haven't worried about that in a while. Same with things like getting a printer or other piece of hardware to work. </p>
+
+<h2>Now that's out of the way, let's chat about cloud apps</h2>
+
+<p>I don't get them. </p>
+
+<p>I am not sure who did it first. Maybe Adobe, maybe Microsoft but there are a tons of apps where they appear to be "cloud" apps. </p>
+
+<p>To explain: I am used to apps that you download and they create and edit files. I use GIMP to edit photos for example. Meaning I double click a photo to open it and then can edit it and click save. This is all on my SSD (I almost typed out harddrive which would have aged me more.) Now it seems it's assumed you are saving to the cloud? I have no idea. Microsoft Office tools also seem to assume this. You are supposed to have them pointing to an instance of Sharepoint or OneDrive or something which brings me to my next confusion: </p>
+
+<p>OneDrive, Dropbox, Google Drive: are you supposed to have a DUPLICATE of a folder on your computer, or are they supposed to be just cloud? </p>
+
+<p>I remember Dropbox was one of the first and it was a simple folder on my computer that I could save stuff too and it would be backed up on the cloud somewhere. It seems this might not be true for all these services. I could probably figure this out by going to each one but the way they describe this stuff is hard for me to parse. I don't think it's because I am not smart, but rather because I just haven't evolved with others to use the same language about technology. </p>
+
+<p>Seriously "Access all your OneDrive files in Windows 11 without taking up space on your PC." it says on the website right now. Is that the default? Is it optional? How is the average user using it?  That means if the service goes offline the files are all gone right? </p>
+
+<p>I think I might be stuck in an "in-between" type of thinking. I have a bunch of apps that are online only such as Spotify, but also have things like GIMP that are offline first. We are moving toward everything being online only or focused, but open source stuff, which I use because I'm on Linux amongst many other good reasons, are usually offline first - mostly due to the high cost of hosting everything for everyone.</p>
+
+<p>Don't get me started on "desktop apps" that are actually just the equivelant of an iFrame to their website. </p>
+
+<p>In the end I just thought I would share some introspection on technology. </p>
+
+
+
+<!-- The end of stuff, leave the rest -->
+	
+	<h2>Check out my <a href="/notebook/">other articles.</a></h2>
+
+	 </main> 
+		 </div>
+	
+	
+    
+
+    <div class="wrapper-footer">
+      <div class="container" id="bottomcontainer">
+        
+
+          
+               
+                 <footer class="footer">
+                  <p>&copy; 1987<script>new Date().getFullYear()>1987&&document.write("-"+new Date().getFullYear());</script>, Kole McRae.</p>
+                 </footer>
+               
+            
+
+
+        
+
+      </div>
+    </div>
+<a class="h-card" rel="me" href="https://kolemcrae.com/" style="display: none;">Kole McRae</a>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+  </body>
+</html>
