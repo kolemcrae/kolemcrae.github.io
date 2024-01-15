@@ -222,21 +222,6 @@ margin-bottom: 2em;
 
 
 
-strong {
-	
-	
-	background: linear-gradient(to top, #7596B7 25%, transparent 75%);
-	
-}
-
-.display-1 strong{
-	
-	
-	background: linear-gradient(to top, #7596B7 25%, transparent 75%);
-	display: inline-block;
-height: 1em;
-}
-
 
 /* Back to top button */
 
