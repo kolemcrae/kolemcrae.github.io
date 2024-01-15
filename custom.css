@@ -33,29 +33,6 @@ a:hover{
 		color: #333333 !important;
 }
 
-/* highliting is blue rather than black */
-
-::-moz-selection { /* Code for Firefox */
-  
-  background: #7596B7;
-}
-
-::selection {
-  
-  background: #7596B7;
-}
-
-/* highliting my name */
-
-.highliterAffect2  {
-
-
-	background: linear-gradient(to top, #7596B7 50%, transparent 50%);
-
-
-
-}
-
 /* Navbar and navigation */
 
 .navbar-nav {
