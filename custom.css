@@ -30,7 +30,7 @@ font-size: 6rem!important;
 a:hover{
 	
 	text-decoration: none !important;
-		color: #7596B7 !important;
+		color: #333333 !important;
 }
 
 /* highliting is blue rather than black */
@@ -71,7 +71,7 @@ padding-top: 0em!important;
 	font-weight: 800!important;
 	   font-family: 'Crimson Pro';
   	font-size: 1.3em!important;
-	color: #7596B7 !important;
+	color: #146BC5 !important;
 	
 }
 
@@ -225,14 +225,14 @@ margin-bottom: 2em;
 strong {
 	
 	
-	background: linear-gradient(to top, #7596B7 50%, transparent 50%);
+	background: linear-gradient(to top, #7596B7 25%, transparent 75%);
 	
 }
 
 .display-1 strong{
 	
 	
-	background: linear-gradient(to top, #7596B7 50%, transparent 50%);
+	background: linear-gradient(to top, #7596B7 25%, transparent 75%);
 	display: inline-block;
 height: 1em;
 }
