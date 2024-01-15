@@ -163,7 +163,7 @@ margin-bottom: 1.5em;
 .topHalf {
 
 
-background-color: #146BC5!important;
+	background-image: linear-gradient(to bottom right, #146BC5, #76B3E0) !important;
 
 }
 
