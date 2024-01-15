@@ -30,19 +30,19 @@ font-size: 6rem!important;
 a:hover{
 	
 	text-decoration: none !important;
-		color: #333333 !important;
+		color: #7596B7 !important;
 }
 
 /* highliting is blue rather than black */
 
 ::-moz-selection { /* Code for Firefox */
   
-  background: #9BF2FA;
+  background: #7596B7;
 }
 
 ::selection {
   
-  background: #9BF2FA;
+  background: #7596B7;
 }
 
 /* highliting my name */
@@ -50,7 +50,7 @@ a:hover{
 .highliterAffect2  {
 
 
-	background: linear-gradient(to top, #9BF2FA 50%, transparent 50%);
+	background: linear-gradient(to top, #7596B7 50%, transparent 50%);
 
 
 
@@ -115,7 +115,7 @@ margin-right: 1rem!important;
 
 blockquote {
   
-  border-left: 10px solid #9BF2FA;
+  border-left: 10px solid #7596B7;
   margin: 1.5em 10px;
   padding: 0.5em 10px;
   quotes: "\201C""\201D""\2018""\2019";
@@ -225,14 +225,14 @@ margin-bottom: 2em;
 strong {
 	
 	
-	background: linear-gradient(to top, #9BF2FA 50%, transparent 50%);
+	background: linear-gradient(to top, #7596B7 50%, transparent 50%);
 	
 }
 
 .display-1 strong{
 	
 	
-	background: linear-gradient(to top, #9BF2FA 50%, transparent 50%);
+	background: linear-gradient(to top, #7596B7 50%, transparent 50%);
 	display: inline-block;
 height: 1em;
 }
