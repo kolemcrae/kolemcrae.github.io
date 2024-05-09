@@ -43,21 +43,13 @@ content: '> '!important;
 }
 
 
-.nav a:hover {
-
-
-font-weight: bold!important;
-
-}
-
-
 
 
 .nav-link {
 
 	text-decoration: none !important;
 		color: #ffffff !important;
-font-size: 1.25em!important;
+font-size: 1em!important;
 
 
 }
