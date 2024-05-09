@@ -243,16 +243,12 @@ strong {
 	
 	  background: #76B3E0;
     color: #ffffff;
+	padding-left:0.5em ;
+		padding-right:0.5em ;
 	
 }
 
-.display-1 strong{
-	
-	  background: #76B3E0;
-    color: #ffffff;
 
-
-}
 
 
 /* Back to top button */
