@@ -9,6 +9,14 @@ font-size: 6rem!important;
 	
 }
 
+.container {
+
+max-width: 1000px!important;
+
+
+
+}
+
 /* fonts! */
 
 @font-face {
