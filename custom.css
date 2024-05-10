@@ -370,7 +370,7 @@ color: #333333 !important;
 font-weight: 700!important;
 font-family: 'Crimson Pro';
 color: #ffffff !important;
-font-size: 0.5em!important;
+
 	padding-top: 0px!important;
 	
 }
@@ -379,7 +379,7 @@ font-size: 0.5em!important;
 font-weight: 700!important;
 font-family: 'Crimson Pro';
 
-font-size: 0.5em!important;
+
 	padding-top: 0px!important;
 	
 }
@@ -388,7 +388,26 @@ font-size: 0.5em!important;
 font-weight: 700!important;
 font-family: 'Crimson Pro';
 
-font-size: 0.5em!important;
+
+	padding-top: 0px!important;
+	
+}
+
+#headingFour {
+font-weight: 700!important;
+font-family: 'Crimson Pro';
+
+
+	padding-top: 0px!important;
+	
+}
+
+
+#headingFive {
+font-weight: 700!important;
+font-family: 'Crimson Pro';
+
+
 	padding-top: 0px!important;
 	
 }
@@ -403,7 +422,7 @@ font-size: 0.5em!important;
 .accordion-button  {
 
 
-font-size: 0.5em!important;
+font-size: 1em!important;
 
 
 
