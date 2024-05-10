@@ -9,14 +9,6 @@ font-size: 6rem!important;
 	
 }
 
-.container {
-
-max-width: 1000px!important;
-
-
-
-}
-
 /* fonts! */
 
 @font-face {
@@ -49,6 +41,8 @@ content: '> '!important;
 
 
 }
+
+
 
 
 
@@ -196,6 +190,16 @@ margin-bottom: 1.5em;
 
 
 
+h1{
+
+ 
+  word-break: normal;
+
+   hyphens: auto;
+
+
+
+}
 
 .box {
 
@@ -239,13 +243,17 @@ padding-bottom: 1em ;
 strong {
 	
 	
-	  background: #146BC5;
-    color: #ffffff;
-	padding: 0.1em;
+	background: linear-gradient(to top, #76B3E0 50%, transparent 50%);
 	
 }
 
+.display-1 strong{
+	
+	
+	background: linear-gradient(to top, #76B3E0 50%, transparent 50%);
 
+
+}
 
 
 /* Back to top button */
@@ -354,8 +362,21 @@ color: #333333 !important;
 }
 
 
+/*  Accordians */
 
+.accordion-header h2 {
+font-weight: 700!important;
+font-family: 'Crimson Pro';
+color: #333333 !important;
+font-size: 2.1em!important;
+	padding-top: 0px;
+	
+}
 
+#accordionExample
+{
+--bs-accordion-active-bg:green!important ;
+}
 
 
 /* Phone display only */
