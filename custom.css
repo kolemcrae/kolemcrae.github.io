@@ -243,15 +243,16 @@ padding-bottom: 1em ;
 strong {
 	
 	
-	background: linear-gradient(to top, #76B3E0 50%, transparent 50%);
+	background: #146BC5;
+	padding: 0.25em;
 	
 }
 
 .display-1 strong{
 	
 	
-	background: linear-gradient(to top, #76B3E0 50%, transparent 50%);
-
+	background: #146BC5;
+padding: 0.25em;
 
 }
 
