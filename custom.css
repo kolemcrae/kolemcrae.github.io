@@ -364,7 +364,7 @@ color: #333333 !important;
 
 /*  Accordians */
 
-.accordion-header {
+#headingOne {
 font-weight: 700!important;
 font-family: 'Crimson Pro';
 color: #ffffff !important;
