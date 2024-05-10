@@ -394,6 +394,7 @@ font-size: 2.1em!important;
 #accordionExample
 {
 --bs-accordion-active-bg:#146BC5!important ;
+--bs-accordion-active-color:#ffffff!important;
 }
 
 
@@ -401,7 +402,7 @@ font-size: 2.1em!important;
 
 
 font-size: 1.5em!important;
-color: #ffffff!important;
+
 
 
 
