@@ -195,7 +195,7 @@ h1{
  
   word-break: normal;
 
-   hyphens: auto;
+   hyphens: none;
 
 
 
@@ -368,6 +368,24 @@ color: #333333 !important;
 font-weight: 700!important;
 font-family: 'Crimson Pro';
 color: #ffffff !important;
+font-size: 2.1em!important;
+	padding-top: 0px!important;
+	
+}
+
+#headingTwo {
+font-weight: 700!important;
+font-family: 'Crimson Pro';
+
+font-size: 2.1em!important;
+	padding-top: 0px!important;
+	
+}
+
+#headingThree {
+font-weight: 700!important;
+font-family: 'Crimson Pro';
+
 font-size: 2.1em!important;
 	padding-top: 0px!important;
 	
