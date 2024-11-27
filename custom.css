@@ -409,14 +409,14 @@ font-family: 'Crimson Pro';
 
 #accordionExample
 {
---bs-accordion-active-bg:#146BC5!important ;
+--bs-accordion-active-bg:#333333!important ;
 --bs-accordion-active-color:#ffffff!important;
 }
 
 
 #accordionExample2
 {
---bs-accordion-active-bg:#146BC5!important ;
+--bs-accordion-active-bg:#333333!important ;
 --bs-accordion-active-color:#ffffff!important;
 }
 
