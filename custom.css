@@ -31,6 +31,7 @@ a:hover{
 	
 	text-decoration: none !important;
 		color: #333333 !important;
+	font-weight: bold!important;	 
 }
 
 
@@ -185,6 +186,7 @@ margin-bottom: 1.5em;
 
 
 	background-color: #e5e5e5;
+	height: 100% !important;
 
 }
 
