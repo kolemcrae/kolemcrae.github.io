@@ -216,8 +216,8 @@ h1{
 
 max-width: 50em!important;
 border: 3px;	
-border-color: #76B3E0;
-border-style: solid none solid none;
+border-color: #333333;
+border-style: none none solid none;
 
 }
 
@@ -226,7 +226,7 @@ border-style: solid none solid none;
 
 margin-top: 2em;
 border: 3px;	
-border-color: #ffffff;
+border-color: #333333;
 border-style: solid none solid none;
 margin-bottom: 2em;
 padding-top: 1em;
