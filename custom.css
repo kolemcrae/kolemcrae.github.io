@@ -281,21 +281,6 @@ color: #ffffff;
 	color: #333333;
 }
 
-.container {
-
-
-margin-left: 3em !important;
-
-margin-right: 3em !important;
-
-
-
-
-}
-
-
-
-
 
 
 /* Footer */
@@ -497,16 +482,6 @@ h2 {
 width: 100% !important;
 
 }
-.headlinecontainer {
 
-  margin: 2em auto;
-  padding: 0em;
-  width: 100% !important;
-max-width: 50em!important;
-border: 3px;	
-border-color: #76B3E0;
-border-style: solid none solid none;
-
-}
 
 }
