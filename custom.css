@@ -50,7 +50,7 @@ content: '> '!important;
 .nav-link {
 
 	text-decoration: none !important;
-		color: #ffffff !important;
+		color: #333333 !important;
 font-size: 1em!important;
 
 
@@ -58,7 +58,7 @@ font-size: 1em!important;
 
 .active {
 		
-color: #333333 !important;
+color: #000000 !important;
 font-weight: bold!important;	
 }
 
