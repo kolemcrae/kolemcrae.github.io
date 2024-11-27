@@ -227,9 +227,9 @@ border-style: none none solid none;
 margin-top: 2em;
 border: 3px;	
 border-color: #333333;
-border-style: solid none solid none;
+border-style: none none solid none;
 margin-bottom: 2em;
-padding-top: 1em;
+padding-top: 0.5em;
 padding-bottom: 1em ;
 
 }
