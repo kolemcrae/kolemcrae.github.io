@@ -30,7 +30,7 @@ font-size: 6rem!important;
 a:hover{
 	
 	text-decoration: none !important;
-		color: #333333 !important;
+		color: #ffffff !important;
 	font-weight: bold!important;	 
 }
 
@@ -51,7 +51,7 @@ content: '> '!important;
 .nav-link {
 
 	text-decoration: none !important;
-		color: #333333 !important;
+		color: #ffffff !important;
 font-size: 1em!important;
 
 
@@ -59,7 +59,7 @@ font-size: 1em!important;
 
 .active {
 		
-color: #000000 !important;
+color: #ffffff !important;
 font-weight: bold!important;	
 }
 
@@ -185,7 +185,7 @@ margin-bottom: 1.5em;
 .gradientBackground {
 
 
-	background-color: #e5e5e5;
+	background-color: #333333;
 	height: 100% !important;
 
 }
