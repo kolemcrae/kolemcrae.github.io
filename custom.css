@@ -506,9 +506,21 @@ width: 100% !important;
 .skinnyText {
 
 max-width: 50em!important;
+  margin: 0.5em auto;
+  padding: 0.5em;
+
+
+}
+
+
+	.headlinecontainer {
+
   margin: 1em auto;
   padding: 1em;
 
+border: 3px;	
+border-color: #333333;
+border-style: none none solid none;
 
 }
 	
