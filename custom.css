@@ -213,9 +213,7 @@ h1{
 
 	padding: 0.25em;
 
-border: 3px;	
-border-color: red;
-border-style: solid;
+
 
 }
 
@@ -251,9 +249,6 @@ max-width: 50em!important;
   margin: 2em auto;
   padding: 2em;
 
-border: 3px;	
-border-color: green;
-border-style: solid;
 }
 
 
@@ -339,9 +334,6 @@ footer {
 
 	
 color: #333333!important;	
-	border: 3px;	
-border-color: red;
-border-style: solid;
 }
 
 
@@ -513,7 +505,8 @@ width: 100% !important;
 
 max-width: 50em !important;
   margin: 0em !important;
-Width: 90%!important
+Width: 100% !important
+	min-width: 100%!important;
 }
 
 
