@@ -516,8 +516,8 @@ max-width: 50em !important;
 
 	.headlinecontainer {
 
-  margin: 1em auto;
-  padding: 1em;
+  margin: 0em auto;
+  padding: 0.5em;
 
 border: 3px;	
 border-color: #333333;
