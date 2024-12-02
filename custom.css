@@ -503,14 +503,19 @@ width: 100% !important;
 
 .skinnyText {
 
-max-width: 50em !important;
-  margin: 0em !important;
-Width: 100% !important
-	min-width: 100%!important;
+
+  margin: 1em !important;
+
+	
 }
 
 
+.mobileBreak {
 
+width: 100% !important;
+
+
+}
 	
 
 	.headlinecontainer {
