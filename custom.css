@@ -513,15 +513,16 @@ width: 100% !important;
 .mobileBreak {
 
 width: 100% !important;
-
+  margin: 0em auto !important;
+  padding: 0.5em !important;
 
 }
 	
 
 	.headlinecontainer {
 
-  margin: 0em auto;
-  padding: 0.5em;
+  margin: 0em auto !important;
+  padding: 0.5em !important;
 
 border: 3px;	
 border-color: #333333;
