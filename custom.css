@@ -504,8 +504,8 @@ width: 100% !important;
 .skinnyText {
 
 
-  margin: 1em !important;
-
+  margin: 0em auto !important;
+  padding: 0.5em !important;
 	
 }
 
@@ -513,8 +513,7 @@ width: 100% !important;
 .mobileBreak {
 
 width: 100% !important;
-  margin: 0em auto !important;
-  padding: 0.5em !important;
+
 
 }
 	
