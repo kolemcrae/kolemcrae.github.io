@@ -28,9 +28,12 @@ body {
     min-height: 100vh;
     display: flex;
     
-    /* Alignment shifted to the top-left */
-    justify-content: flex-start;
-    align-items: flex-start;
+    /* CHANGE THIS: Centers the grid horizontally */
+    justify-content: center; 
+    
+    /* KEEP THIS: Locks the grid to the top vertically */
+    align-items: flex-start; 
+    
     padding: 3rem;
 }
 
