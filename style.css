@@ -1,0 +1,263 @@
+/* ==========================================================================
+   Technical Bento Grid Theme
+   Characteristics: Sharp Edges, High Contrast Accent, Fluid Grid
+   ========================================================================== */
+
+:root {
+    --bg-color: #0d0e12;
+    --card-bg: #161821;
+    --card-border: #24273a;
+    --text-primary: #cdd6f4;
+    --text-secondary: #7f849c;
+    --accent-yellow: #f9e2af; /* Muted technical amber/yellow */
+    --accent-dim: rgba(249, 226, 175, 0.15);
+    --grid-gap: 1.25rem;
+}
+
+/* Base Resets */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, monospace;
+    min-height: 100vh;
+    display: flex;
+    
+    /* Alignment shifted to the top-left */
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 3rem;
+}
+
+/* ==========================================================================
+   Bento Grid Architecture
+   Uses grid-auto-flow: dense to automatically fill structural holes caused 
+   by varied variable-height or custom span blocks.
+   ========================================================================== */
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(150px, auto);
+    gap: var(--grid-gap);
+    grid-auto-flow: row dense;
+    
+    /* Expanded ceiling to fill widescreen viewports better */
+    max-width: 1400px;
+    width: 100%;
+}
+
+/* ==========================================================================
+   Card Mechanics
+   No border-radius (perfectly sharp). Content-agnostic sizing layout.
+   ========================================================================== */
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 0; /* Forced hard structural lines */
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Content Protection: Prevents dynamic code additions from overflowing borders */
+.card > * {
+    min-width: 0;
+    overflow-wrap: break-word;
+}
+
+/* Technical Hover Treatment */
+.card:hover {
+    border-color: var(--accent-yellow);
+    box-shadow: 0 0 12px var(--accent-dim);
+}
+
+/* Typography Standards */
+.card h2 {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-family: monospace;
+}
+
+.card p {
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* ==========================================================================
+   Structural Grid Target Controls (Desktop Layout)
+   ========================================================================== */
+.profile-card {
+    grid-column: span 2;
+    grid-row: span 2;
+    justify-content: center;
+    border-left: 3px solid var(--accent-yellow); /* Technical structural accent line */
+}
+
+.profile-card h1 {
+    font-size: 2.25rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin-bottom: 0.25rem;
+    
+    /* Technical split color gradient effect */
+    background: linear-gradient(90deg, #ffffff 40%, var(--accent-yellow) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.profile-card .subtitle {
+    color: var(--accent-yellow);
+    font-family: monospace;
+    font-size: 0.95rem;
+}
+
+.wide-card {
+    grid-column: span 2;
+}
+
+.tall-card {
+    grid-row: span 2;
+}
+
+/* Component Modules inside Cards */
+.status-indicator {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: monospace;
+    font-size: 0.9rem;
+}
+
+.pulse-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--accent-yellow);
+    display: inline-block;
+}
+
+.links-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.link-item {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-family: monospace;
+    font-size: 0.95rem;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.25rem 0;
+    border-bottom: 1px dashed var(--card-border);
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.link-item:hover {
+    color: var(--accent-yellow);
+    border-bottom-color: var(--accent-yellow);
+}
+
+.project-content h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+}
+
+.tech-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    font-family: monospace;
+    font-size: 0.9rem;
+}
+
+.tech-list li {
+    display: flex;
+    justify-content: space-between;
+}
+
+.tech-list .label {
+    color: var(--text-secondary);
+}
+
+.tech-list .value {
+    color: var(--accent-yellow);
+}
+
+.highlight-text {
+    font-family: monospace;
+    font-weight: bold;
+    color: var(--accent-yellow);
+    font-size: 1.1rem !important;
+}
+
+.muted-text {
+    font-size: 0.85rem !important;
+    color: var(--text-secondary);
+}
+
+.card-footer-text {
+    margin-top: auto;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+/* ==========================================================================
+   Responsive Adaptability Engine
+   Changes layout flow seamlessly depending on viewport dimensions.
+   ========================================================================== */
+
+/* Tablet & Smaller Screens Setup */
+@media (max-width: 900px) {
+    body {
+        padding: 1.5rem;
+    }
+    
+    .bento-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: minmax(140px, auto);
+    }
+    
+    .profile-card {
+        grid-column: span 2;
+    }
+}
+
+/* Mobile Screens Setup - Hard Vertical Fallback */
+@media (max-width: 550px) {
+    body {
+        padding: 1rem;
+        align-items: flex-start;
+    }
+    
+    .bento-grid {
+        grid-template-columns: 1fr;
+        grid-auto-rows: auto;
+        gap: 1rem;
+    }
+    
+    .profile-card, .wide-card, .tall-card {
+        grid-column: span 1 !important;
+        grid-row: span 1 !important;
+    }
+    
+    .profile-card h1 {
+        font-size: 1.75rem;
+    }
+}
