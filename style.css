@@ -21,6 +21,14 @@
     padding: 0;
 }
 
+/* Update your template's standard monospace targets */
+.card h2,
+.status-indicator,
+.tech-list,
+.highlight-text {
+    font-family: ui-monospace, SFMono-Regular, "SF Pro Text", Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+}
+
 body {
     background-color: var(--bg-color);
     color: var(--text-primary);
