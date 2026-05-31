@@ -4,17 +4,17 @@
 :root {
     --bg-main: #0b0f19;         
     --bg-tile: #131a2c;         
-    --bg-tile-hover: #172036;   
+    --bg-tile-hover: #1a233a;   
     
-    --border-color: #222f4b;    
+    --border-color: #2a3b5c;    /* Brightened for clear "box" visibility */
     --border-active: #5c7cbf;   
     
     --text-primary: #e2e8f0;    
-    --text-muted: #7084a8;      
+    --text-muted: #8498ba;      
     --accent-yellow: #fcd34d;   
     --accent-glow: rgba(92, 124, 191, 0.15); 
     
-    --line-node: #2a3b5c;       
+    --line-node: #3b5284;       
     
     --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
@@ -45,28 +45,30 @@ body {
 .bento-grid { 
     display: grid;
     grid-template-columns: repeat(4, 260px);
-    grid-auto-rows: 200px; /* Taller rows for generous content padding */
+    /* minmax allows rows to safely expand down if content ever runs over */
+    grid-auto-rows: minmax(190px, auto); 
     grid-gap: 1.25rem;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* Base Tile */
+/* Base Tile Architecture */
 .tile { 
     background-color: var(--bg-tile);
     border: 1px solid var(--border-color);
-    padding: 2.25rem; /* Generous internal padding to prevent bleeding */
-    border-radius: 2px; 
+    padding: 1.75rem; /* Adjusted for better breathing room vs. overflow */
+    border-radius: 4px; /* Crisp tiling edges */
     transition: all 0.15s ease-in-out;
     position: relative;
     overflow: hidden; 
-    box-shadow: inset 0 0 20px rgba(0,0,0,0.1);
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.15), 0 4px 10px rgba(0,0,0,0.2);
     text-decoration: none;
     color: inherit;
     display: block;
+    height: 100%;
 }
 
-/* Spacing Utilities */
+/* Strict Spanning Utilities */
 .span-2x2 { grid-column: span 2; grid-row: span 2; }
 .span-2x1 { grid-column: span 2; grid-row: span 1; }
 .span-1x2 { grid-column: span 1; grid-row: span 2; }
@@ -80,7 +82,7 @@ body {
     background-color: var(--bg-tile-hover);
     border-color: var(--border-active);
     border-left: 3px solid var(--accent-yellow);
-    box-shadow: 0 4px 20px var(--accent-glow), inset 0 0 20px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 25px var(--accent-glow), inset 0 0 20px rgba(0,0,0,0.2);
     transform: translateY(-2px); 
     z-index: 10;
 }
@@ -98,7 +100,7 @@ body {
 .outliner ul {
     list-style: none;
     padding-left: 1.25rem;
-    margin-left: 4px; /* Centers the vertical line under the parent node */
+    margin-left: 5px; 
     border-left: 1px solid var(--line-node);
     margin-top: 0.25rem;
     margin-bottom: 0.5rem;
@@ -149,10 +151,10 @@ body {
 .outliner .root-node {
     padding-left: 1.25rem;
     font-family: var(--font-main);
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     font-weight: 600;
     color: var(--text-primary);
-    letter-spacing: -0.02em;
+    letter-spacing: -0.01em;
     margin-top: 0;
 }
 
@@ -181,7 +183,7 @@ body {
     display: inline-block;
     width: 8px;
     height: 8px;
-    background-color: #10b981; /* Green status */
+    background-color: #10b981; 
     border-radius: 50%;
     margin-right: 0.5rem;
     box-shadow: 0 0 8px rgba(16, 185, 129, 0.4);
