@@ -1,18 +1,18 @@
 /* ==========================================================================
-   RESET & SYSTEM VARIABLES
+   SYSTEM VARIABLES
    ========================================================================== */
 :root {
     --bg-main: #0b0f19;         
     --bg-tile: #131a2c;         
-    --bg-tile-hover: #172036;   /* Slight elevation on hover */
+    --bg-tile-hover: #172036;   
     
     --border-color: #222f4b;    
-    --border-active: #5c7cbf;   /* Brighter active window border */
+    --border-active: #5c7cbf;   
     
     --text-primary: #e2e8f0;    
     --text-muted: #7084a8;      
     --accent-yellow: #fcd34d;   
-    --accent-glow: rgba(92, 124, 191, 0.15); /* Subtle synth/terminal glow */
+    --accent-glow: rgba(92, 124, 191, 0.15); 
     
     --line-node: #2a3b5c;       
     
@@ -33,202 +33,156 @@ body {
     min-height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     padding: 4rem 2rem;
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
 }
 
 /* ==========================================================================
-   METRO/BENTO GRID LAYOUT
+   BENTO GRID LAYOUT
    ========================================================================== */
-.container, 
-main, 
-#grid-root { 
+.bento-grid { 
     display: grid;
-    grid-template-columns: repeat(4, 280px);
-    grid-auto-rows: 180px; 
+    grid-template-columns: repeat(4, 260px);
+    grid-auto-rows: 200px; /* Taller rows for generous content padding */
     grid-gap: 1.25rem;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* Base Tile Styling - Introducing subtle inset shadows */
-.tile, 
-.card, 
-section { 
+/* Base Tile */
+.tile { 
     background-color: var(--bg-tile);
     border: 1px solid var(--border-color);
-    padding: 1.5rem;
-    border-radius: 2px; /* Sharper edges for Metro/Retro feel */
+    padding: 2.25rem; /* Generous internal padding to prevent bleeding */
+    border-radius: 2px; 
     transition: all 0.15s ease-in-out;
-    display: flex;
-    flex-direction: column;
     position: relative;
-    overflow: hidden;
-    height: 100%;
-    width: 100%;
+    overflow: hidden; 
     box-shadow: inset 0 0 20px rgba(0,0,0,0.1);
+    text-decoration: none;
+    color: inherit;
+    display: block;
 }
 
-/* ==========================================================================
-   BREAKING UNIFORMITY (Visual Anchors & Focus States)
-   ========================================================================== */
-
-/* The Main Hero Block (Assuming it's the first section or has .hero/.profile-tile) */
-/* We remove the background so it floats and anchors the rest of the bento boxes */
-section:first-of-type,
-.profile-tile, 
-.hero,
-.span-2x2 { 
-    grid-column: span 2;
-    grid-row: span 2;
-    background-color: transparent;
-    border: none;
-    box-shadow: none;
-    padding-left: 0; /* Align text flush left with the grid */
-}
-
-/* Wide / Tall utility classes */
+/* Spacing Utilities */
+.span-2x2 { grid-column: span 2; grid-row: span 2; }
 .span-2x1 { grid-column: span 2; grid-row: span 1; }
 .span-1x2 { grid-column: span 1; grid-row: span 2; }
 
-/* Metro-Style Clickable Interactions */
-.tile[href], 
-.tile-clickable {
-    cursor: pointer;
-    text-decoration: none;
-    /* Distinct left edge accent to indicate it's a navigational block */
+/* Interactive Metro Tiles */
+.interactive {
     border-left: 3px solid var(--border-color);
 }
 
-.tile[href]:hover,
-.tile-clickable:hover {
+.interactive:hover {
     background-color: var(--bg-tile-hover);
     border-color: var(--border-active);
     border-left: 3px solid var(--accent-yellow);
     box-shadow: 0 4px 20px var(--accent-glow), inset 0 0 20px rgba(0,0,0,0.2);
-    transform: translateY(-2px); /* Subtle lift */
+    transform: translateY(-2px); 
     z-index: 10;
 }
 
 /* ==========================================================================
-   TYPOGRAPHY & RETRO OUTLINES
+   LOGSEQ-STYLE OUTLINER SYSTEM
    ========================================================================== */
-.tile h2, 
-.card h3,
-section h2 {
-    font-family: var(--font-mono); /* Monospace headers */
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
+.outliner {
+    list-style: none;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
     color: var(--text-muted);
-    margin-bottom: 1.25rem;
+}
+
+.outliner ul {
+    list-style: none;
+    padding-left: 1.25rem;
+    margin-left: 4px; /* Centers the vertical line under the parent node */
+    border-left: 1px solid var(--line-node);
+    margin-top: 0.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.outliner li {
+    position: relative;
+    padding-left: 1rem;
+    margin-top: 0.5rem;
+}
+
+/* Highlights */
+.outliner li strong {
+    color: var(--text-primary);
     font-weight: normal;
 }
 
-section:first-of-type h1,
-.profile-tile h1,
-.hero h1 {
-    font-size: 2.2rem;
-    color: var(--text-primary);
-    font-weight: 700;
-    margin-bottom: 0.75rem;
-    letter-spacing: -0.02em;
-}
-
-/* Subtitles/Muted text given a technical feel */
-.text-muted,
-.tile p {
-    color: var(--text-muted);
-    font-size: 0.9rem;
-}
-
-/* ==========================================================================
-   LOGSEQ-STYLE CONNECTED OUTLINE BULLETS
-   ========================================================================== */
-.outline-container,
-.tile ul,
-section ul {
-    list-style: none;
-    padding-left: 0.5rem;
-    position: relative;
-    font-family: var(--font-mono); /* Use monospace for data lists */
-    font-size: 0.85rem;
-}
-
-.tile ul ul,
-section ul ul {
-    margin-top: 0.5rem;
-    padding-left: 1.25rem; 
-    position: relative;
-}
-
-.tile ul li,
-section ul li {
-    position: relative;
-    padding-left: 1.25rem;
-    margin-bottom: 0.75rem;
-    color: var(--text-primary);
-}
-
-.tile ul li:last-child,
-section ul li:last-child {
-    margin-bottom: 0;
-}
-
-/* Vertical tracing line */
-.tile ul ul::before,
-section ul ul::before {
-    content: "";
+/* Horizontal Branches */
+.outliner li::before { 
+    content: '';
     position: absolute;
-    left: 4px; 
-    top: 0;
-    bottom: 10px; 
-    width: 1px;
-    background-color: var(--line-node);
-}
-
-/* Logseq Dot Node */
-.tile ul li::before,
-section ul li::before {
-    content: "";
-    position: absolute;
+    top: 0.65rem;
     left: 0;
-    top: 7px; 
+    width: 0.6rem;
+    height: 1px;
+    background: var(--line-node);
+}
+
+/* Remove branch from Root Nodes */
+.outliner > li::before {
+    display: none;
+}
+
+/* Standard Node Dots */
+.outliner li::after { 
+    content: '';
+    position: absolute;
+    top: 0.45rem;
+    left: 0.45rem; 
     width: 5px;
     height: 5px;
-    background-color: var(--text-muted); /* Softer default dots */
+    background: var(--text-muted);
     border-radius: 50%;
     transition: all 0.2s ease;
 }
 
-/* Brighten the node on hover to simulate an active path */
-.tile ul li:hover::before,
-section ul li:hover::before {
-    background-color: var(--accent-yellow);
-    box-shadow: 0 0 5px var(--accent-yellow);
+/* Root Node Typography & Styling */
+.outliner .root-node {
+    padding-left: 1.25rem;
+    font-family: var(--font-main);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+    margin-top: 0;
 }
 
-/* Horizontal node branch */
-.tile ul ul li::after,
-section ul ul li::after {
-    content: "";
-    position: absolute;
-    left: -16px;
-    top: 9px;
-    width: 8px;
-    height: 1px;
-    background-color: var(--line-node);
+/* Root Node Dot */
+.outliner > .root-node::after { 
+    left: -1px; 
+    top: 0.35rem;
+    width: 7px;
+    height: 7px;
+    background: var(--accent-yellow);
+    box-shadow: 0 0 6px rgba(252, 211, 77, 0.2);
 }
 
-/* Status Indicator */
+/* Hover Illuminations */
+.outliner li:hover > ::after {
+    background: var(--accent-yellow);
+    box-shadow: 0 0 8px var(--accent-yellow);
+}
+
+.outliner li:hover > strong {
+    color: #ffffff;
+}
+
+/* Online Status Dot */
 .status-indicator {
     display: inline-block;
     width: 8px;
     height: 8px;
-    background-color: var(--accent-yellow);
-    box-shadow: 0 0 8px rgba(252, 211, 77, 0.4); /* Glow effect */
+    background-color: #10b981; /* Green status */
     border-radius: 50%;
     margin-right: 0.5rem;
+    box-shadow: 0 0 8px rgba(16, 185, 129, 0.4);
 }
