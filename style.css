@@ -2,16 +2,22 @@
    RESET & SYSTEM VARIABLES
    ========================================================================== */
 :root {
-    --bg-main: #0b0f19;         /* Deep retro slate blue background */
-    --bg-tile: #131a2c;         /* Slightly lighter tile background */
-    --border-color: #222f4b;    /* Clean, low-contrast tile borders */
-    --border-hover: #3b5284;    /* Subtle interactive focus color */
+    --bg-main: #0b0f19;         
+    --bg-tile: #131a2c;         
+    --bg-tile-hover: #172036;   /* Slight elevation on hover */
     
-    --text-primary: #e2e8f0;    /* Crisp, open typography */
-    --text-muted: #7084a8;      /* Muted secondary labels */
-    --accent-yellow: #fcd34d;   /* Minimal accent for specific highlights */
+    --border-color: #222f4b;    
+    --border-active: #5c7cbf;   /* Brighter active window border */
     
-    --line-node: #2a3b5c;       /* Connecting lines for Logseq-style outlines */
+    --text-primary: #e2e8f0;    
+    --text-muted: #7084a8;      
+    --accent-yellow: #fcd34d;   
+    --accent-glow: rgba(92, 124, 191, 0.15); /* Subtle synth/terminal glow */
+    
+    --line-node: #2a3b5c;       
+    
+    --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
 }
 
 * {
@@ -23,7 +29,7 @@
 body {
     background-color: var(--bg-main);
     color: var(--text-primary);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-family: var(--font-main);
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -34,43 +40,195 @@ body {
 }
 
 /* ==========================================================================
-   METRO/BENTO GRID LAYOUT (Tightly Aligned, Explicit Sizing)
+   METRO/BENTO GRID LAYOUT
    ========================================================================== */
 .container, 
 main, 
 #grid-root { 
     display: grid;
-    /* 4 rigid columns. Grid auto-placement fills empty 1x1 gaps perfectly */
     grid-template-columns: repeat(4, 280px);
-    grid-auto-rows: 180px; /* Base row unit height */
+    grid-auto-rows: 180px; 
     grid-gap: 1.25rem;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* Base Tile Dimensions (1x1) */
+/* Base Tile Styling - Introducing subtle inset shadows */
 .tile, 
 .card, 
 section { 
     background-color: var(--bg-tile);
     border: 1px solid var(--border-color);
     padding: 1.5rem;
-    border-radius: 4px; 
-    transition: border-color 0.2s ease, transform 0.2s ease;
+    border-radius: 2px; /* Sharper edges for Metro/Retro feel */
+    transition: all 0.15s ease-in-out;
     display: flex;
     flex-direction: column;
     position: relative;
     overflow: hidden;
     height: 100%;
     width: 100%;
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.1);
 }
 
 /* ==========================================================================
-   DYNAMIC SPANNING UTILITIES (Apply these classes directly in your HTML)
+   BREAKING UNIFORMITY (Visual Anchors & Focus States)
    ========================================================================== */
 
-/* Main Profile Block - Big Top Left Box (Spans 2 columns wide, 2 rows tall) */
+/* The Main Hero Block (Assuming it's the first section or has .hero/.profile-tile) */
+/* We remove the background so it floats and anchors the rest of the bento boxes */
+section:first-of-type,
 .profile-tile, 
 .hero,
 .span-2x2 { 
     grid-column: span 2;
+    grid-row: span 2;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    padding-left: 0; /* Align text flush left with the grid */
+}
+
+/* Wide / Tall utility classes */
+.span-2x1 { grid-column: span 2; grid-row: span 1; }
+.span-1x2 { grid-column: span 1; grid-row: span 2; }
+
+/* Metro-Style Clickable Interactions */
+.tile[href], 
+.tile-clickable {
+    cursor: pointer;
+    text-decoration: none;
+    /* Distinct left edge accent to indicate it's a navigational block */
+    border-left: 3px solid var(--border-color);
+}
+
+.tile[href]:hover,
+.tile-clickable:hover {
+    background-color: var(--bg-tile-hover);
+    border-color: var(--border-active);
+    border-left: 3px solid var(--accent-yellow);
+    box-shadow: 0 4px 20px var(--accent-glow), inset 0 0 20px rgba(0,0,0,0.2);
+    transform: translateY(-2px); /* Subtle lift */
+    z-index: 10;
+}
+
+/* ==========================================================================
+   TYPOGRAPHY & RETRO OUTLINES
+   ========================================================================== */
+.tile h2, 
+.card h3,
+section h2 {
+    font-family: var(--font-mono); /* Monospace headers */
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--text-muted);
+    margin-bottom: 1.25rem;
+    font-weight: normal;
+}
+
+section:first-of-type h1,
+.profile-tile h1,
+.hero h1 {
+    font-size: 2.2rem;
+    color: var(--text-primary);
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.02em;
+}
+
+/* Subtitles/Muted text given a technical feel */
+.text-muted,
+.tile p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   LOGSEQ-STYLE CONNECTED OUTLINE BULLETS
+   ========================================================================== */
+.outline-container,
+.tile ul,
+section ul {
+    list-style: none;
+    padding-left: 0.5rem;
+    position: relative;
+    font-family: var(--font-mono); /* Use monospace for data lists */
+    font-size: 0.85rem;
+}
+
+.tile ul ul,
+section ul ul {
+    margin-top: 0.5rem;
+    padding-left: 1.25rem; 
+    position: relative;
+}
+
+.tile ul li,
+section ul li {
+    position: relative;
+    padding-left: 1.25rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-primary);
+}
+
+.tile ul li:last-child,
+section ul li:last-child {
+    margin-bottom: 0;
+}
+
+/* Vertical tracing line */
+.tile ul ul::before,
+section ul ul::before {
+    content: "";
+    position: absolute;
+    left: 4px; 
+    top: 0;
+    bottom: 10px; 
+    width: 1px;
+    background-color: var(--line-node);
+}
+
+/* Logseq Dot Node */
+.tile ul li::before,
+section ul li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 7px; 
+    width: 5px;
+    height: 5px;
+    background-color: var(--text-muted); /* Softer default dots */
+    border-radius: 50%;
+    transition: all 0.2s ease;
+}
+
+/* Brighten the node on hover to simulate an active path */
+.tile ul li:hover::before,
+section ul li:hover::before {
+    background-color: var(--accent-yellow);
+    box-shadow: 0 0 5px var(--accent-yellow);
+}
+
+/* Horizontal node branch */
+.tile ul ul li::after,
+section ul ul li::after {
+    content: "";
+    position: absolute;
+    left: -16px;
+    top: 9px;
+    width: 8px;
+    height: 1px;
+    background-color: var(--line-node);
+}
+
+/* Status Indicator */
+.status-indicator {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: var(--accent-yellow);
+    box-shadow: 0 0 8px rgba(252, 211, 77, 0.4); /* Glow effect */
+    border-radius: 50%;
+    margin-right: 0.5rem;
+}
