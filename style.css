@@ -34,47 +34,43 @@ body {
 }
 
 /* ==========================================================================
-   METRO/BENTO GRID LAYOUT (Tightly Aligned)
+   METRO/BENTO GRID LAYOUT (Tightly Aligned, Explicit Sizing)
    ========================================================================== */
 .container, 
 main, 
-#grid-root { /* Adjust class/ID to match your outer wrapper */
+#grid-root { 
     display: grid;
+    /* 4 rigid columns. Grid auto-placement fills empty 1x1 gaps perfectly */
     grid-template-columns: repeat(4, 280px);
+    grid-auto-rows: 180px; /* Base row unit height */
     grid-gap: 1.25rem;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* Individual Metro Tiles */
+/* Base Tile Dimensions (1x1) */
 .tile, 
 .card, 
-section { /* Adjust selector to match your block elements */
+section { 
     background-color: var(--bg-tile);
     border: 1px solid var(--border-color);
     padding: 1.5rem;
-    border-radius: 4px; /* Crisp, retro edge */
+    border-radius: 4px; 
     transition: border-color 0.2s ease, transform 0.2s ease;
     display: flex;
     flex-direction: column;
     position: relative;
     overflow: hidden;
-}
-
-/* Metro-Style Interactive/Clickable Previews */
-.tile[href], 
-.tile-clickable {
-    cursor: pointer;
-    text-decoration: none;
-    color: inherit;
-}
-
-.tile[href]:hover,
-.tile-clickable:hover {
-    border-color: var(--border-hover);
+    height: 100%;
+    width: 100%;
 }
 
 /* ==========================================================================
-   SPECIFIC BLOCK POSITIONING (Top-Left Locked Profile)
+   DYNAMIC SPANNING UTILITIES (Apply these classes directly in your HTML)
    ========================================================================== */
-/* Profile/Hero Box - Locked Top Left
+
+/* Main Profile Block - Big Top Left Box (Spans 2 columns wide, 2 rows tall) */
+.profile-tile, 
+.hero,
+.span-2x2 { 
+    grid-column: span 2;
