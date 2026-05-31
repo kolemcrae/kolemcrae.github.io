@@ -2,19 +2,16 @@
    SYSTEM VARIABLES & RESET
    ========================================================================== */
 :root {
-    --bg-main: #080b12;         
+    --bg-main: #0b0f19;         
     --bg-tile: #111625;         
-    --bg-tile-hover: #161d30;   
-    
     --border-color: #24314c;    
-    --border-active: #3b5284;   
     
     --text-primary: #f8fafc;    
     --text-muted: #94a3b8;      
     
     --accent-yellow: #fcd34d;   
     --accent-green: #10b981;
-    --line-node: #24314c;       
+    --line-node: #3b5284;       
     
     --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
@@ -34,47 +31,142 @@ body {
     justify-content: center;
     align-items: center;
     padding: 3rem 1.5rem;
-    line-height: 1.6;
+    line-height: 1.5;
     -webkit-font-smoothing: antialiased;
 }
 
 /* ==========================================================================
-   ASYMMETRICAL BENTO GRID (Matches Screenshot)
+   GRID TEMPLATE AREAS (Locks the layout perfectly)
    ========================================================================== */
 .bento-grid { 
     display: grid;
-    /* 3 Columns: Left is slightly wider, the other two split the rest */
     grid-template-columns: 340px 1fr 1fr; 
-    grid-auto-rows: min-content;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+        "profile status connect"
+        "profile project project"
+        "profile toolkit toolkit";
     grid-gap: 1.25rem;
     max-width: 950px;
     width: 100%;
     margin: 0 auto;
 }
 
-/* Base Tile */
 .tile { 
     background-color: var(--bg-tile);
     border: 1px solid var(--border-color);
     padding: 1.5rem 1.75rem; 
     border-radius: 4px; 
-    transition: all 0.15s ease-in-out;
     text-decoration: none;
     color: inherit;
-    display: block;
 }
 
-/* Grid Placement */
-.profile-tile { grid-column: 1 / 2; grid-row: 1 / 4; }
-.status-tile  { grid-column: 2 / 3; }
-.connect-tile { grid-column: 3 / 4; }
-.project-tile { grid-column: 2 / 4; }
-.toolkit-tile { grid-column: 2 / 4; }
+/* Mapping tiles to their grid coordinates */
+.profile-tile { grid-area: profile; }
+.status-tile  { grid-area: status; }
+.connect-tile { grid-area: connect; }
+.project-tile { grid-area: project; }
+.toolkit-tile { grid-area: toolkit; }
 
 /* Interactive Hover States */
 .interactive:hover {
-    background-color: var(--bg-tile-hover);
-    border-color: var(--border-active);
+    background-color: #161d30;
+    border-color: #3b5284;
+}
+
+/* ==========================================================================
+   CSS TREE (Logseq-style Outliner)
+   ========================================================================== */
+.tree {
+    list-style: none;
+    padding-left: 1.25rem; 
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.tree-root {
+    padding-left: 0;
+    color: var(--text-primary);
+    font-size: 1.05rem;
+}
+
+.tree li {
+    position: relative;
+    padding-left: 0.75rem; 
+    margin-top: 0.5rem;
+}
+
+.tree-root > li {
+    padding-left: 0;
+    margin-top: 0;
+}
+
+/* Vertical Tracking Lines */
+.tree li::before {
+    content: '';
+    position: absolute;
+    left: -1rem; 
+    top: -0.5rem;   
+    bottom: 0;      
+    border-left: 1px solid var(--line-node);
+}
+
+/* Stop vertical line at the horizontal tick for the last item */
+.tree li:last-child::before {
+    bottom: auto;
+    height: 1.25rem; 
+}
+
+/* Horizontal Branches (Ticks) */
+.tree li::after {
+    content: '';
+    position: absolute;
+    left: -1rem;
+    top: 0.75rem; 
+    width: 1rem; 
+    border-top: 1px solid var(--line-node);
+}
+
+/* Remove tracking lines from the root title */
+.tree-root > li::before,
+.tree-root > li::after {
+    display: none;
+}
+
+.tree li strong {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+/* Colored Dots */
+.dot-yellow, .dot-green, .dot-gray {
+    display: inline-block;
+    border-radius: 50%;
+    vertical-align: middle;
+    position: relative;
+    top: -1px;
+}
+
+.dot-yellow {
+    width: 6px;
+    height: 6px;
+    background-color: var(--accent-yellow);
+    margin-right: 0.4rem;
+}
+
+.dot-green { 
+    width: 6px;
+    height: 6px;
+    background-color: var(--accent-green); 
+    box-shadow: 0 0 6px rgba(16, 185, 129, 0.4);
+    margin-right: 0.4rem;
+}
+
+.dot-gray {
+    width: 4px;
+    height: 4px;
+    background-color: var(--text-muted);
+    margin-right: 0.4rem;
 }
 
 /* ==========================================================================
@@ -82,107 +174,13 @@ body {
    ========================================================================== */
 @media (max-width: 768px) {
     .bento-grid {
-        grid-template-columns: 1fr; /* Stack everything into 1 column */
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "profile"
+            "status"
+            "connect"
+            "project"
+            "toolkit";
         padding-bottom: 2rem;
     }
-    .profile-tile, 
-    .status-tile, 
-    .connect-tile, 
-    .project-tile, 
-    .toolkit-tile {
-        grid-column: 1 / -1; /* Reset all spans */
-        grid-row: auto;
-    }
-}
-
-/* ==========================================================================
-   LOGSEQ-STYLE OUTLINER SYSTEM
-   ========================================================================== */
-.outliner {
-    list-style: none;
-    font-size: 0.9rem;
-    color: var(--text-primary);
-}
-
-.outliner ul {
-    list-style: none;
-    padding-left: 1.75rem; 
-    position: relative;
-    margin-top: 0.2rem;
-}
-
-/* Vertical Tracking Lines */
-.outliner ul::before {
-    content: '';
-    position: absolute;
-    left: 8px; /* Aligns precisely under the parent element */
-    top: 0;
-    bottom: 0.75rem; /* Stops the line cleanly before the last item ends */
-    width: 1px;
-    background: var(--line-node);
-}
-
-.outliner li {
-    position: relative;
-    margin-top: 0.4rem;
-    color: var(--text-muted); /* Nested text defaults to muted */
-}
-
-.outliner li strong {
-    color: var(--text-primary); /* Bold items pop in white */
-    font-weight: 600;
-}
-
-/* Horizontal Branches */
-.outliner ul > li::before { 
-    content: '';
-    position: absolute;
-    top: 0.75rem; /* Centers horizontal branch on text height */
-    left: -1.25rem;
-    width: 0.75rem;
-    height: 1px;
-    background: var(--line-node);
-}
-
-/* The tiny grey dot for second-level nested items (Leaf nodes) */
-.outliner ul ul > li::after {
-    content: '';
-    position: absolute;
-    top: 0.6rem;
-    left: -0.65rem; 
-    width: 4px;
-    height: 4px;
-    background: var(--text-muted);
-    border-radius: 50%;
-}
-
-/* Root Node Typography & Styling */
-.outliner .root-node {
-    font-size: 1.05rem;
-    font-weight: 700;
-    color: var(--text-primary);
-    margin-top: 0;
-}
-
-/* Remove default tracking lines from the root node level */
-.outliner > .root-node::before {
-    display: none;
-}
-
-/* Colored Dots */
-.dot-yellow, .dot-green {
-    display: inline-block;
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    margin-right: 0.6rem;
-    vertical-align: middle;
-    position: relative;
-    top: -1px;
-}
-
-.dot-yellow { background-color: var(--accent-yellow); }
-.dot-green { 
-    background-color: var(--accent-green); 
-    box-shadow: 0 0 6px rgba(16, 185, 129, 0.4);
 }
