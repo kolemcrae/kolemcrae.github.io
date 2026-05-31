@@ -1,23 +1,22 @@
 /* ==========================================================================
-   SYSTEM VARIABLES
+   SYSTEM VARIABLES & RESET
    ========================================================================== */
 :root {
-    --bg-main: #0b0f19;         
-    --bg-tile: #131a2c;         
-    --bg-tile-hover: #1a233a;   
+    --bg-main: #080b12;         
+    --bg-tile: #111625;         
+    --bg-tile-hover: #161d30;   
     
-    --border-color: #2a3b5c;    
-    --border-active: #5c7cbf;   
+    --border-color: #24314c;    
+    --border-active: #3b5284;   
     
-    --text-primary: #e2e8f0;    
-    --text-muted: #8498ba;      
+    --text-primary: #f8fafc;    
+    --text-muted: #94a3b8;      
+    
     --accent-yellow: #fcd34d;   
-    --accent-glow: rgba(92, 124, 191, 0.15); 
-    
-    --line-node: #3b5284;       
+    --accent-green: #10b981;
+    --line-node: #24314c;       
     
     --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
 }
 
 * {
@@ -34,56 +33,66 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 4rem 2rem;
-    line-height: 1.5;
+    padding: 3rem 1.5rem;
+    line-height: 1.6;
     -webkit-font-smoothing: antialiased;
 }
 
 /* ==========================================================================
-   BENTO GRID LAYOUT
+   ASYMMETRICAL BENTO GRID (Matches Screenshot)
    ========================================================================== */
 .bento-grid { 
     display: grid;
-    grid-template-columns: repeat(4, 260px);
-    grid-auto-rows: minmax(190px, auto); 
+    /* 3 Columns: Left is slightly wider, the other two split the rest */
+    grid-template-columns: 340px 1fr 1fr; 
+    grid-auto-rows: min-content;
     grid-gap: 1.25rem;
-    max-width: 1200px;
+    max-width: 950px;
+    width: 100%;
     margin: 0 auto;
 }
 
-/* Base Tile Architecture */
+/* Base Tile */
 .tile { 
     background-color: var(--bg-tile);
     border: 1px solid var(--border-color);
-    padding: 1.75rem; 
+    padding: 1.5rem 1.75rem; 
     border-radius: 4px; 
     transition: all 0.15s ease-in-out;
-    position: relative;
-    overflow: hidden; 
-    box-shadow: inset 0 0 20px rgba(0,0,0,0.15), 0 4px 10px rgba(0,0,0,0.2);
     text-decoration: none;
     color: inherit;
     display: block;
-    height: 100%;
 }
 
-/* Strict Spanning Utilities */
-.span-2x2 { grid-column: span 2; grid-row: span 2; }
-.span-2x1 { grid-column: span 2; grid-row: span 1; }
-.span-1x2 { grid-column: span 1; grid-row: span 2; }
+/* Grid Placement */
+.profile-tile { grid-column: 1 / 2; grid-row: 1 / 4; }
+.status-tile  { grid-column: 2 / 3; }
+.connect-tile { grid-column: 3 / 4; }
+.project-tile { grid-column: 2 / 4; }
+.toolkit-tile { grid-column: 2 / 4; }
 
-/* Interactive Metro Tiles */
-.interactive {
-    border-left: 3px solid var(--border-color);
-}
-
+/* Interactive Hover States */
 .interactive:hover {
     background-color: var(--bg-tile-hover);
     border-color: var(--border-active);
-    border-left: 3px solid var(--accent-yellow);
-    box-shadow: 0 8px 25px var(--accent-glow), inset 0 0 20px rgba(0,0,0,0.2);
-    transform: translateY(-2px); 
-    z-index: 10;
+}
+
+/* ==========================================================================
+   MOBILE RESPONSIVENESS
+   ========================================================================== */
+@media (max-width: 768px) {
+    .bento-grid {
+        grid-template-columns: 1fr; /* Stack everything into 1 column */
+        padding-bottom: 2rem;
+    }
+    .profile-tile, 
+    .status-tile, 
+    .connect-tile, 
+    .project-tile, 
+    .toolkit-tile {
+        grid-column: 1 / -1; /* Reset all spans */
+        grid-row: auto;
+    }
 }
 
 /* ==========================================================================
@@ -91,99 +100,89 @@ body {
    ========================================================================== */
 .outliner {
     list-style: none;
-    font-family: var(--font-mono);
-    font-size: 0.85rem;
-    color: var(--text-muted);
+    font-size: 0.9rem;
+    color: var(--text-primary);
 }
 
 .outliner ul {
     list-style: none;
-    padding-left: 1.25rem;
-    margin-left: 5px; 
-    border-left: 1px solid var(--line-node);
-    margin-top: 0.25rem;
-    margin-bottom: 0.5rem;
+    padding-left: 1.75rem; 
+    position: relative;
+    margin-top: 0.2rem;
+}
+
+/* Vertical Tracking Lines */
+.outliner ul::before {
+    content: '';
+    position: absolute;
+    left: 8px; /* Aligns precisely under the parent element */
+    top: 0;
+    bottom: 0.75rem; /* Stops the line cleanly before the last item ends */
+    width: 1px;
+    background: var(--line-node);
 }
 
 .outliner li {
     position: relative;
-    padding-left: 1rem;
-    margin-top: 0.5rem;
+    margin-top: 0.4rem;
+    color: var(--text-muted); /* Nested text defaults to muted */
 }
 
-/* Highlights */
 .outliner li strong {
-    color: var(--text-primary);
-    font-weight: normal;
+    color: var(--text-primary); /* Bold items pop in white */
+    font-weight: 600;
 }
 
 /* Horizontal Branches */
-.outliner li::before { 
+.outliner ul > li::before { 
     content: '';
     position: absolute;
-    top: 0.65rem;
-    left: 0;
-    width: 0.6rem;
+    top: 0.75rem; /* Centers horizontal branch on text height */
+    left: -1.25rem;
+    width: 0.75rem;
     height: 1px;
     background: var(--line-node);
 }
 
-/* Remove branch from Root Nodes */
-.outliner > li::before {
-    display: none;
-}
-
-/* Standard Node Dots */
-.outliner li::after { 
+/* The tiny grey dot for second-level nested items (Leaf nodes) */
+.outliner ul ul > li::after {
     content: '';
     position: absolute;
-    top: 0.45rem;
-    left: 0.45rem; 
-    width: 5px;
-    height: 5px;
+    top: 0.6rem;
+    left: -0.65rem; 
+    width: 4px;
+    height: 4px;
     background: var(--text-muted);
     border-radius: 50%;
-    transition: all 0.2s ease;
 }
 
 /* Root Node Typography & Styling */
 .outliner .root-node {
-    padding-left: 1.25rem;
-    font-family: var(--font-main);
-    font-size: 1.15rem;
-    font-weight: 600;
+    font-size: 1.05rem;
+    font-weight: 700;
     color: var(--text-primary);
-    letter-spacing: -0.01em;
     margin-top: 0;
 }
 
-/* Root Node Dot */
-.outliner > .root-node::after { 
-    left: -1px; 
-    top: 0.35rem;
-    width: 7px;
-    height: 7px;
-    background: var(--accent-yellow);
-    box-shadow: 0 0 6px rgba(252, 211, 77, 0.2);
+/* Remove default tracking lines from the root node level */
+.outliner > .root-node::before {
+    display: none;
 }
 
-/* Hover Illuminations */
-.outliner li:hover > ::after {
-    background: var(--accent-yellow);
-    box-shadow: 0 0 8px var(--accent-yellow);
-}
-
-.outliner li:hover > strong {
-    color: #ffffff;
-}
-
-/* Online Status Dot */
-.status-indicator {
+/* Colored Dots */
+.dot-yellow, .dot-green {
     display: inline-block;
-    width: 8px;
-    height: 8px;
-    background-color: #10b981; 
+    width: 6px;
+    height: 6px;
     border-radius: 50%;
-    margin-right: 0.5rem;
-    box-shadow: 0 0 8px rgba(16, 185, 129, 0.4);
+    margin-right: 0.6rem;
+    vertical-align: middle;
+    position: relative;
+    top: -1px;
+}
+
+.dot-yellow { background-color: var(--accent-yellow); }
+.dot-green { 
+    background-color: var(--accent-green); 
+    box-shadow: 0 0 6px rgba(16, 185, 129, 0.4);
 }
