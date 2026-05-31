@@ -6,7 +6,7 @@
     --bg-tile: #131a2c;         
     --bg-tile-hover: #1a233a;   
     
-    --border-color: #2a3b5c;    /* Brightened for clear "box" visibility */
+    --border-color: #2a3b5c;    
     --border-active: #5c7cbf;   
     
     --text-primary: #e2e8f0;    
@@ -45,7 +45,6 @@ body {
 .bento-grid { 
     display: grid;
     grid-template-columns: repeat(4, 260px);
-    /* minmax allows rows to safely expand down if content ever runs over */
     grid-auto-rows: minmax(190px, auto); 
     grid-gap: 1.25rem;
     max-width: 1200px;
@@ -56,8 +55,8 @@ body {
 .tile { 
     background-color: var(--bg-tile);
     border: 1px solid var(--border-color);
-    padding: 1.75rem; /* Adjusted for better breathing room vs. overflow */
-    border-radius: 4px; /* Crisp tiling edges */
+    padding: 1.75rem; 
+    border-radius: 4px; 
     transition: all 0.15s ease-in-out;
     position: relative;
     overflow: hidden; 
