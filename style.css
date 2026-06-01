@@ -37,8 +37,13 @@ body {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    height: 100%; /* <--- Add this to make the flex container fill the grid track */
 }
 
+/* Add a rule for your project panel to consume the remaining space */
+.center-column .panel:last-child { 
+    flex-grow: 1; 
+}
 /* Profile column inherits auto-height grid stretching */
 .profile-col {
     height: 100%;
