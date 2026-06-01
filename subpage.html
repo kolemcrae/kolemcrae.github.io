@@ -3,124 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kole McRae - Now</title>
+    <title>Kole McRae - Expanded Architecture</title>
     <link rel="stylesheet" href="style.css">
     
     <!-- ================= FAVICON ================= -->
-    <link rel="icon" type="image/png" sizes="64x64" href="/favicon-64x64.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="/favicon.png">
 </head>
 <body class="subpage-layout">
 
 <div class="page-wrapper">
-    <div class="grid-container">
+    <div class="grid-container" style="display: grid; grid-template-columns: minmax(250px, 1fr) 3fr; gap: 24px; padding: 24px;">
         
-        <!-- ================= LEFT SIDEBAR: NAVIGATION PANEL ================= -->
+        <!-- ================= LEFT SIDEBAR: CONTEXT & NAV ================= -->
         <aside class="nav-sidebar">
             
-            <!-- Bio Link Container -->
-            <div class="panel">
-                <div class="panel-title">Kole McRae</div>
-                <div class="nav-meta-tag" style="color: #94a3b8; font-size: 0.85rem;">[Bio &amp; Systems Overview]</div>
-            </div>
-
-            <!-- Status Container -->
-            <div class="panel">
-                <div class="panel-title">Status</div>
-                <div class="status-online" style="color: #2dd4bf;">Online</div>
-            </div>
-
-            <!-- Toolkit Link Container -->
-            <div class="panel">
-                <div class="panel-title">Toolkit</div>
-                <div class="nav-meta-tag" style="color: #94a3b8; font-size: 0.85rem;">[OS, WM, Data Matrix]</div>
-            </div>
-
-            <!-- Connect Stack -->
-            <div class="panel">
-                <div class="panel-title">Connect</div>
-                <ul class="tree-list links-list" style="margin-top: 8px; list-style: none; padding: 0;">
-                    <li><a href="#" style="color: #2dd4bf; text-decoration: none;">github &rarr;</a></li>
-                    <li><a href="#" style="color: #2dd4bf; text-decoration: none;">LinkedIn &rarr;</a></li>
-                    <li><a href="#" style="color: #2dd4bf; text-decoration: none;">writing &rarr;</a></li>
+            <!-- Identity & Location -->
+            <div class="panel" style="margin-bottom: 16px;">
+                <div class="panel-title" style="color: #eab308; margin-bottom: 8px;">Kole McRae</div>
+                <ul class="tree-list" style="list-style: none; padding-left: 0; margin: 0;">
+                    <li><span style="color: #94a3b8;">Location</span>
+                        <ul style="list-style: none; padding-left: 20px; border-left: 1px solid #334155; margin-top: 4px;">
+                            <li style="color: #94a3b8; font-size: 0.9rem;"><span style="color: #475569;">&boxur;&nbsp;</span>Toronto, ON</li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
 
-            <!-- Now Playing Container -->
-            <div class="panel">
-                <div class="panel-title">Now Playing</div>
-                <div class="audio-track" style="color: #94a3b8; font-size: 0.85rem;">[8-bit_synth_jam.xrns]</div>
+            <!-- Toolkit -->
+            <div class="panel" style="margin-bottom: 16px;">
+                <div class="panel-title" style="color: #eab308; margin-bottom: 8px;">Toolkit</div>
+                <ul class="tree-list" style="list-style: none; padding-left: 0; margin: 0;">
+                    <li style="margin-bottom: 8px;"><span style="color: #94a3b8;">OS</span>
+                        <ul style="list-style: none; padding-left: 20px; border-left: 1px solid #334155; margin-top: 4px;">
+                            <li style="color: #94a3b8; font-size: 0.9rem;"><span style="color: #475569;">&boxur;&nbsp;</span>Linux / Fedora</li>
+                        </ul>
+                    </li>
+                    <li style="margin-bottom: 8px;"><span style="color: #94a3b8;">WM</span>
+                        <ul style="list-style: none; padding-left: 20px; border-left: 1px solid #334155; margin-top: 4px;">
+                            <li style="color: #94a3b8; font-size: 0.9rem;"><span style="color: #475569;">&boxur;&nbsp;</span>Cosmic WM</li>
+                        </ul>
+                    </li>
+                    <li><span style="color: #94a3b8;">Notes</span>
+                        <ul style="list-style: none; padding-left: 20px; border-left: 1px solid #334155; margin-top: 4px;">
+                            <li style="color: #94a3b8; font-size: 0.9rem;"><span style="color: #475569;">&boxur;&nbsp;</span>Logseq DB</li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
 
-            <!-- Specs Container -->
+            <!-- Connect -->
             <div class="panel">
-                <div class="panel-title">Specs</div>
-                <div class="nav-meta-tag" style="color: #94a3b8; font-size: 0.85rem;">[Sennheiser HD 6XX]</div>
+                <div class="panel-title" style="color: #eab308; margin-bottom: 8px;">Connect</div>
+                <ul class="tree-list links-list" style="list-style: none; padding: 0; margin: 0;">
+                    <li style="margin-bottom: 4px;"><a href="#" style="color: #2dd4bf; text-decoration: none; font-size: 0.9rem;">email me &rarr;</a></li>
+                    <li><a href="#" style="color: #2dd4bf; text-decoration: none; font-size: 0.9rem;">LinkedIn &rarr;</a></li>
+                </ul>
             </div>
 
         </aside>
 
-        <!-- ================= RIGHT SIDE: CONTENT OVERVIEW ================= -->
+        <!-- ================= RIGHT SIDE: LONG FORM CONTENT ================= -->
         <main class="content-stream">
             
-            <!-- Primary Now Content Box -->
-            <section class="panel">
-                <h2 class="panel-title">System Architecture &amp; Context</h2>
-                <ul class="tree-list" style="list-style: none; padding-left: 0;">
-                    <li style="margin-bottom: 12px;">
-                        <span class="tree-label" style="color: #94a3b8;">Host Node Infrastructure</span>
-                        <ul style="list-style: none; padding-left: 20px; border-left: 1px solid #334155; margin-top: 4px;">
-                            <li><span style="color: #475569;">&boxur;&nbsp;</span>CPU: AMD Ryzen 7 7700X</li>
-                            <li><span style="color: #475569;">&boxur;&nbsp;</span>GPU: AMD Radeon RX 7800 XT</li>
-                        </ul>
-                    </li>
-                    <li style="margin-bottom: 12px;">
-                        <span class="tree-label" style="color: #94a3b8;">OS Environment</span>
-                        <ul style="list-style: none; padding-left: 20px; border-left: 1px solid #334155; margin-top: 4px;">
-                            <li class="status-online"><span style="color: #475569;">&boxur;&nbsp;</span>Distribution: openSUSE Tumbleweed</li>
-                            <li><span style="color: #475569;">&boxur;&nbsp;</span>Comms Core: Fastmail &amp; Thunderbird</li>
-                        </ul>
-                    </li>
+            <!-- What's Now Panel -->
+            <section class="panel" style="margin-bottom: 24px; padding: 16px; border: 1px solid #334155; border-radius: 4px;">
+                <h2 class="panel-title" style="color: #eab308; margin-bottom: 12px;">What's Now?</h2>
+                <ul class="tree-list" style="list-style: none; padding-left: 0; margin: 0;">
                     <li>
-                        <span class="tree-label" style="color: #94a3b8;">Productivity Protocols</span>
-                        <ul style="list-style: none; padding-left: 20px; border-left: 1px solid #334155; margin-top: 4px;">
-                            <li><span style="color: #475569;">&boxur;&nbsp;</span>Framework: GTD / PARA System Workflows</li>
-                            <li><span style="color: #475569;">&boxur;&nbsp;</span>Knowledge Base: Logseq Native Graph</li>
+                        <span class="tree-label" style="color: #f8fafc; font-weight: bold;">Professional Stuff</span>
+                        <ul style="list-style: none; padding-left: 20px; border-left: 1px solid #334155; margin-top: 8px;">
+                            <li style="margin-bottom: 12px;">
+                                <span style="color: #475569;">&boxur;&nbsp;</span><span style="color: #94a3b8;">I currently work for Rezolve AI as a Product Manager.</span>
+                                <ul style="list-style: none; padding-left: 20px; margin-top: 4px;">
+                                    <li style="color: #94a3b8; font-size: 0.9rem;"><span style="color: #475569;">&boxur;&nbsp;</span>Focusing strictly on Search &amp; Discovery Engines + Analytics Architecture.</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <span style="color: #475569;">&boxur;&nbsp;</span><span style="color: #94a3b8;">I also do consulting for companies.</span>
+                                <ul style="list-style: none; padding-left: 20px; margin-top: 4px;">
+                                    <li style="color: #94a3b8; font-size: 0.9rem;"><span style="color: #475569;">&boxur;&nbsp;</span>Helping them out with digital marketing, strategy, analytics and more.</li>
+                                </ul>
+                            </li>
                         </ul>
                     </li>
                 </ul>
             </section>
 
-            <!-- Secondary Grid -->
-            <div class="inner-content-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; margin-top: 16px;">
-                
-                <!-- Adventure Column 1 -->
-                <article class="panel">
-                    <h3 class="panel-title">Adventures In An</h3>
-                    <div class="tree-label" style="color: #2dd4bf; margin-bottom: 8px;">Adventures in Awesome Co.</div>
-                    <p style="font-size: 0.9rem; color: #94a3b8; line-height: 1.5;">
-                        Satirical tech novel exploring unpermitted corporate workflows. Currently drafting new scenes and expanding character arcs.
-                    </p>
-                    <ul class="links-list" style="margin-top: 12px; list-style: none; padding: 0;">
-                        <li><a href="#" style="color: #2dd4bf; text-decoration: none;">../read_more &rarr;</a></li>
-                    </ul>
-                </article>
+            <!-- Current Things & Interests Panel -->
+            <section class="panel" style="margin-bottom: 24px; padding: 16px; border: 1px solid #334155; border-radius: 4px;">
+                <h2 class="panel-title" style="color: #eab308; margin-bottom: 12px;">Current Things</h2>
+                <ul class="tree-list" style="list-style: none; padding-left: 0; margin: 0;">
+                    
+                    <li style="margin-bottom: 16px;">
+                        <span class="tree-label" style="color: #f8fafc; font-weight: bold;">Interests</span>
+                        <ul style="list-style: none; padding-left: 20px; border-left: 1px solid #334155; margin-top: 8px;">
+                            <li style="color: #94a3b8; font-size: 0.9rem; margin-bottom: 4px;"><span style="color: #475569;">&boxur;&nbsp;</span>Synths and audio gear</li>
+                            <li style="color: #94a3b8; font-size: 0.9rem; margin-bottom: 4px;"><span style="color: #475569;">&boxur;&nbsp;</span>Dungeons and Dragons</li>
+                            <li style="color: #94a3b8; font-size: 0.9rem;"><span style="color: #475569;">&boxur;&nbsp;</span>Tinkering with retro tech</li>
+                        </ul>
+                    </li>
 
-                <!-- Adventure Column 2 -->
-                <article class="panel">
-                    <h3 class="panel-title">Adventures Writing</h3>
-                    <div class="tree-label" style="color: #2dd4bf; margin-bottom: 8px;">Seasons in Corporate.</div>
-                    <p style="font-size: 0.9rem; color: #94a3b8; line-height: 1.5;">
-                        A detailed catalog of creative notes exploring workspace mechanics, layout iterations, and production journals.
-                    </p>
-                    <ul class="links-list" style="margin-top: 12px; list-style: none; padding: 0;">
-                        <li><a href="#" style="color: #2dd4bf; text-decoration: none;">../read_more &rarr;</a></li>
-                    </ul>
-                </article>
+                    <li style="margin-bottom: 16px;">
+                        <span class="tree-label" style="color: #f8fafc; font-weight: bold;">Sports</span>
+                        <ul style="list-style: none; padding-left: 20px; border-left: 1px solid #334155; margin-top: 8px;">
+                            <li style="color: #94a3b8; font-size: 0.9rem;"><span style="color: #475569;">&boxur;&nbsp;</span>Toronto Blue Jays</li>
+                        </ul>
+                    </li>
 
-            </div>
+                    <li>
+                        <span class="tree-label" style="color: #f8fafc; font-weight: bold;">Hobby</span>
+                        <ul style="list-style: none; padding-left: 20px; border-left: 1px solid #334155; margin-top: 8px;">
+                            <li style="color: #94a3b8; font-size: 0.9rem;"><span style="color: #475569;">&boxur;&nbsp;</span>Gardening
+                                <ul style="list-style: none; padding-left: 20px; margin-top: 4px;">
+                                    <li style="color: #94a3b8; font-size: 0.85rem;"><span style="color: #475569;">&boxur;&nbsp;</span>Cultivating Roman, cherry, and grape tomatoes.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </section>
+
+            <!-- Current Project Panel -->
+            <section class="panel" style="padding: 16px; border: 1px solid #334155; border-radius: 4px;">
+                <h2 class="panel-title" style="color: #eab308; margin-bottom: 12px;">Current Project</h2>
+                <ul class="tree-list" style="list-style: none; padding-left: 0; margin: 0;">
+                    <li>
+                        <span class="tree-label" style="color: #f8fafc; font-weight: bold;">A museum like exhibit of this website</span>
+                        <ul style="list-style: none; padding-left: 20px; border-left: 1px solid #334155; margin-top: 8px;">
+                            <li style="margin-bottom: 4px;"><span style="color: #475569;">&boxur;&nbsp;</span><span class="status-online" style="color: #2dd4bf; font-size: 0.9rem;">Status: In Progress</span></li>
+                            <li style="color: #94a3b8; font-size: 0.9rem;"><span style="color: #475569;">&boxur;&nbsp;</span>More to come.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
 
         </main>
     </div>
