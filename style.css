@@ -1,21 +1,4 @@
-/* ==========================================================================
-   SYSTEM VARIABLES & RESET
-   ========================================================================== */
-:root {
-    --bg-main: #0b0f19;         
-    --bg-tile: #111625;         
-    --border-color: #24314c;    
-    
-    --text-primary: #f8fafc;    
-    --text-muted: #94a3b8;      
-    
-    --accent-yellow: #fcd34d;   
-    --accent-green: #10b981;
-    --line-node: #3b5284;       
-    
-    --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-}
-
+/* --- Reset & Base Styles --- */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -23,164 +6,169 @@
 }
 
 body {
-    background-color: var(--bg-main);
-    color: var(--text-primary);
-    font-family: var(--font-main);
+    background-color: #0b0f17; /* Deep terminal dark background */
+    font-family: 'Courier New', Courier, monospace; /* Clean, retro monospace look */
+    color: #e2e8f0;
     min-height: 100vh;
+}
+
+/* Wrapper controls page positioning */
+.page-wrapper {
     display: flex;
     justify-content: center;
-    align-items: center;
-    padding: 3rem 1.5rem;
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
+    align-items: flex-start; /* Aligns to the top instead of centering vertically */
+    padding-top: 6vh;        /* Pushes it nicely down from the top edge */
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 40px;
 }
 
-/* ==========================================================================
-   GRID TEMPLATE AREAS (Locks the layout perfectly)
-   ========================================================================== */
-.bento-grid { 
+/* --- Layout Grid --- */
+.grid-container {
     display: grid;
-    grid-template-columns: 340px 1fr 1fr; 
-    grid-template-rows: auto auto auto;
-    grid-template-areas:
-        "profile status connect"
-        "profile project project"
-        "profile toolkit toolkit";
-    grid-gap: 1.25rem;
-    max-width: 950px;
+    grid-template-columns: 320px 540px;
+    gap: 20px;
+    max-width: 880px;
     width: 100%;
-    margin: 0 auto;
 }
 
-.tile { 
-    background-color: var(--bg-tile);
-    border: 1px solid var(--border-color);
-    padding: 1.5rem 1.75rem; 
-    border-radius: 4px; 
-    text-decoration: none;
-    color: inherit;
+.right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-/* Mapping tiles to their grid coordinates */
-.profile-tile { grid-area: profile; }
-.status-tile  { grid-area: status; }
-.connect-tile { grid-area: connect; }
-.project-tile { grid-area: project; }
-.toolkit-tile { grid-area: toolkit; }
-
-/* Interactive Hover States */
-.interactive:hover {
-    background-color: #161d30;
-    border-color: #3b5284;
+.sub-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
 }
 
-/* ==========================================================================
-   CSS TREE (Logseq-style Outliner)
-   ========================================================================== */
-.tree {
-    list-style: none;
-    padding-left: 1.25rem; 
-    color: var(--text-muted);
+/* --- Panel Aesthetics (Glow Up) --- */
+.panel {
+    background-color: #0f1622;
+    border: 1px solid #1e2d42;
+    border-radius: 6px;
+    padding: 24px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5), 
+                inset 0 0 10px rgba(0, 242, 254, 0.03); /* Subtle internal cyber glow */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Dynamic glowing outline when hovering over a panel */
+.panel:hover {
+    border-color: #00f2fe;
+    box-shadow: 0 0 20px rgba(0, 242, 254, 0.15),
+                inset 0 0 12px rgba(0, 242, 254, 0.05);
+}
+
+/* --- Typography --- */
+.panel-title {
+    color: #ffd54f; /* Soft amber/gold accents */
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 18px;
+    letter-spacing: 0.5px;
+}
+
+/* --- Terminal Tree Structure & Lines --- */
+.tree-list, .tree-list ul {
+    list-style-type: none;
+}
+
+.tree-list li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 12px;
     font-size: 0.9rem;
+    line-height: 1.5;
+    color: #94a3b8; /* Dimmed subtext */
 }
 
-.tree-root {
-    padding-left: 0;
-    color: var(--text-primary);
-    font-size: 1.05rem;
+.tree-list li:last-child {
+    margin-bottom: 0;
 }
 
-.tree li {
-    position: relative;
-    padding-left: 0.75rem; 
-    margin-top: 0.5rem;
-}
-
-.tree-root > li {
-    padding-left: 0;
-    margin-top: 0;
-}
-
-/* Vertical Tracking Lines */
-.tree li::before {
-    content: '';
-    position: absolute;
-    left: -1rem; 
-    top: -0.5rem;   
-    bottom: 0;      
-    border-left: 1px solid var(--line-node);
-}
-
-/* Stop vertical line at the horizontal tick for the last item */
-.tree li:last-child::before {
-    bottom: auto;
-    height: 1.25rem; 
-}
-
-/* Horizontal Branches (Ticks) */
-.tree li::after {
-    content: '';
-    position: absolute;
-    left: -1rem;
-    top: 0.75rem; 
-    width: 1rem; 
-    border-top: 1px solid var(--line-node);
-}
-
-/* Remove tracking lines from the root title */
-.tree-root > li::before,
-.tree-root > li::after {
-    display: none;
-}
-
-.tree li strong {
-    color: var(--text-primary);
-    font-weight: 600;
-}
-
-/* Colored Dots */
-.dot-yellow, .dot-green, .dot-gray {
+.tree-label {
+    color: #e2e8f0;
+    font-weight: bold;
     display: inline-block;
+    margin-bottom: 4px;
+}
+
+/* Visual branch lines (L-shapes) */
+.tree-list ul {
+    margin-top: 4px;
+}
+
+.tree-list ul li::before {
+    content: "";
+    position: absolute;
+    left: 2px;
+    top: -6px;
+    width: 10px;
+    height: 16px;
+    border-left: 1px solid #334155;
+    border-bottom: 1px solid #334155;
+}
+
+/* --- Status Indicator --- */
+.status-online {
+    color: #00f2fe; /* Cyber cyan online state */
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.status-online::before {
+    content: "";
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background-color: #00f2fe;
     border-radius: 50%;
-    vertical-align: middle;
-    position: relative;
-    top: -1px;
+    margin-right: 8px;
+    box-shadow: 0 0 8px #00f2fe;
 }
 
-.dot-yellow {
-    width: 6px;
-    height: 6px;
-    background-color: var(--accent-yellow);
-    margin-right: 0.4rem;
+/* --- Links --- */
+.links-list li {
+    padding-left: 0;
 }
 
-.dot-green { 
-    width: 6px;
-    height: 6px;
-    background-color: var(--accent-green); 
-    box-shadow: 0 0 6px rgba(16, 185, 129, 0.4);
-    margin-right: 0.4rem;
+.links-list a {
+    color: #00f2fe;
+    text-decoration: none;
+    transition: color 0.2s ease;
 }
 
-.dot-gray {
-    width: 4px;
-    height: 4px;
-    background-color: var(--text-muted);
-    margin-right: 0.4rem;
+.links-list a:hover {
+    color: #38bdf8;
+    text-decoration: underline;
 }
 
-/* ==========================================================================
-   MOBILE RESPONSIVENESS
-   ========================================================================== */
-@media (max-width: 768px) {
-    .bento-grid {
+.links-list span {
+    font-size: 0.8rem;
+    display: inline-block;
+    transition: transform 0.2s ease;
+}
+
+.links-list a:hover span {
+    transform: translateX(3px);
+}
+
+/* --- Responsiveness --- */
+@media (max-width: 890px) {
+    .grid-container {
         grid-template-columns: 1fr;
-        grid-template-areas:
-            "profile"
-            "status"
-            "connect"
-            "project"
-            "toolkit";
-        padding-bottom: 2rem;
+    }
+    .page-wrapper {
+        padding-top: 3vh;
+    }
+}
+
+@media (max-width: 500px) {
+    .sub-grid {
+        grid-template-columns: 1fr;
     }
 }
