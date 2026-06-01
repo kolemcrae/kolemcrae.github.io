@@ -256,3 +256,21 @@ body {
         grid-template-columns: 1fr;
     }
 }
+
+/* --- Second Nesting (Sub-nest) Directory Tree Lines --- */
+.tree-list ul ul {
+    margin-top: 4px;
+    padding-left: 12px; /* Shifts the sub-nest inward */
+}
+
+/* Adjusts the connectors for the deeper sub-nested items */
+.tree-list ul ul li::before {
+    content: "";
+    position: absolute;
+    left: -6px; /* Re-aligns the line to meet the parent branch */
+    top: -6px;
+    width: 10px;
+    height: 16px;
+    border-left: 1px solid #334155;
+    border-bottom: 1px solid #334155;
+}
