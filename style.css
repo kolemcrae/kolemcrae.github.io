@@ -30,6 +30,7 @@ body {
     gap: 20px;
     max-width: 1350px; 
     width: 100%;
+    align-items: stretch; /* Forces all primary column tracks to match heights */
 }
 
 /* Vertical window stacks */
@@ -37,13 +38,17 @@ body {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    height: 100%; /* <--- Add this to make the flex container fill the grid track */
 }
 
-/* Add a rule for your project panel to consume the remaining space */
-.center-column .panel:last-child { 
-    flex-grow: 1; 
+/* CRITICAL FIXES FOR IMAGE 2 ALIGNMENT */
+.center-column {
+    height: 100%; /* Spans the full height of the grid track */
 }
+
+.center-column .panel:last-child { 
+    flex-grow: 1; /* Forces the 'Current Project' panel to expand vertically */
+}
+
 /* Profile column inherits auto-height grid stretching */
 .profile-col {
     height: 100%;
