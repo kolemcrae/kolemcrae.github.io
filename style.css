@@ -204,3 +204,55 @@ body {
         padding-top: 4vh;
     }
 }
+
+/* ==========================================================================
+   Subpage / Dashboard Specific Namespace (Does not affect the Home Page)
+   ========================================================================== */
+
+/* 2-Column layout for desktop monitors */
+.subpage-layout .grid-container {
+    display: grid;
+    grid-template-columns: 280px 1fr; /* Rigid navigation column, flexible content column */
+    gap: 20px;
+    max-width: 1200px; /* Constrained to look balanced on normal monitors */
+    width: 100%;
+}
+
+/* Vertical navigation container stack */
+.subpage-layout .nav-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Removes large vertical gaps by forcing content to stack naturally */
+.subpage-layout .content-stream {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: auto; /* Scales down tight to the content size */
+}
+
+/* Tightly knit grid for secondary content blocks */
+.subpage-layout .inner-content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* Metadata utility styling for navigation items */
+.subpage-layout .nav-meta-tag {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-top: -6px;
+}
+
+/* --- Mobile Responsive Rules for Subpage --- */
+@media (max-width: 900px) {
+    .subpage-layout .grid-container {
+        grid-template-columns: 1fr; /* Stacks everything into a single column */
+    }
+    .subpage-layout .inner-content-grid {
+        grid-template-columns: 1fr;
+    }
+}
