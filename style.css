@@ -23,7 +23,7 @@ body {
     padding-bottom: 60px;
 }
 
-/* --- Tiling Master Grid Layout --- */
+/* --- Tiling Master Grid Layout (Home Page) --- */
 .grid-container {
     display: grid;
     grid-template-columns: 1fr 1.3fr 1.1fr; /* Pure multi-column layout proportions */
@@ -40,7 +40,6 @@ body {
     gap: 20px;
 }
 
-/* CRITICAL FIXES FOR IMAGE 2 ALIGNMENT */
 .center-column {
     height: 100%; /* Spans the full height of the grid track */
 }
@@ -67,7 +66,7 @@ body {
 .panel {
     background-color: #0f1622;
     border: 1px solid #1e2d42;
-    border-radius: 4px; /* Slightly sharper tiling WM style corners */
+    border-radius: 4px; /* Sharper tiling WM style corners */
     padding: 24px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
     transition: border-color 0.25s ease, box-shadow 0.25s ease;
@@ -76,6 +75,13 @@ body {
 .panel:hover {
     border-color: #00f2fe;
     box-shadow: 0 0 18px rgba(0, 242, 254, 0.12);
+}
+
+/* Flex-aligned utility panel variant for right-aligned link layout elements */
+.text-panel-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 /* --- Typography --- */
@@ -114,7 +120,7 @@ body {
     margin-bottom: 2px;
 }
 
-/* Terminal Tree Lines */
+/* Terminal Tree Lines: Level 1 -> Level 2 */
 .tree-list ul {
     margin-top: 4px;
 }
@@ -130,28 +136,21 @@ body {
     border-bottom: 1px solid #334155;
 }
 
-/* --- Utility Specific Designators --- */
-.status-online {
-    color: #00f2fe;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
+/* Terminal Tree Lines: Level 2 -> Level 3 (Sub-nest) */
+.tree-list ul ul {
+    margin-top: 4px;
+    padding-left: 12px; /* Shifts sub-nest inward */
 }
 
-.status-online::before {
+.tree-list ul ul li::before {
     content: "";
-    display: inline-block;
-    width: 6px;
-    height: 6px;
-    background-color: #00f2fe;
-    border-radius: 50%;
-    margin-right: 8px;
-    box-shadow: 0 0 8px #00f2fe;
-}
-
-.audio-track {
-    color: #38bdf8;
-    font-weight: bold;
+    position: absolute;
+    left: -6px; /* Re-aligns the connector to meet parent branch */
+    top: -6px;
+    width: 10px;
+    height: 16px;
+    border-left: 1px solid #334155;
+    border-bottom: 1px solid #334155;
 }
 
 /* --- Navigation & Links --- */
@@ -181,7 +180,68 @@ body {
     transform: translateX(4px);
 }
 
-/* --- Fully Responsive Window Management Tiling Layout --- */
+/* Right-aligned bottom link node action item */
+.panel-exit-node {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 16px;
+    padding-top: 8px;
+}
+
+.panel-exit-node a {
+    font-size: 0.88rem;
+    letter-spacing: 0.5px;
+    background-color: rgba(0, 242, 254, 0.03);
+    border: 1px dashed #1e2d42;
+    padding: 4px 10px;
+    border-radius: 2px;
+}
+
+.panel-exit-node a:hover {
+    border-color: #00f2fe;
+    background-color: rgba(0, 242, 254, 0.08);
+}
+
+/* Left-aligned inline system path tree link fallback alternative */
+.tree-branch-link {
+    margin-top: 14px !important;
+}
+
+.tree-branch-link:hover::before {
+    border-left-color: #00f2fe;
+    border-bottom-color: #00f2fe;
+}
+
+.tree-branch-link a {
+    font-size: 0.88rem;
+    letter-spacing: 0.5px;
+}
+
+/* --- Utility Specific Designators --- */
+.status-online {
+    color: #00f2fe;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.status-online::before {
+    content: "";
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background-color: #00f2fe;
+    border-radius: 50%;
+    margin-right: 8px;
+    box-shadow: 0 0 8px #00f2fe;
+}
+
+.audio-track {
+    color: #38bdf8;
+    font-weight: bold;
+}
+
+/* --- Responsive Home Page Media Rules --- */
 @media (max-width: 1100px) {
     .grid-container {
         grid-template-columns: 1fr 1fr;
@@ -209,84 +269,46 @@ body {
    Subpage / Dashboard Specific Namespace (Does not affect the Home Page)
    ========================================================================== */
 
-/* 2-Column layout for desktop monitors */
+/* 2-Column layout setup optimized for normal scale displays */
 .subpage-layout .grid-container {
     display: grid;
-    grid-template-columns: 280px 1fr; /* Rigid navigation column, flexible content column */
+    grid-template-columns: 280px 1fr; 
     gap: 20px;
-    max-width: 1200px; /* Constrained to look balanced on normal monitors */
+    max-width: 1200px; 
     width: 100%;
 }
 
-/* Vertical navigation container stack */
 .subpage-layout .nav-sidebar {
     display: flex;
     flex-direction: column;
     gap: 16px;
 }
 
-/* Removes large vertical gaps by forcing content to stack naturally */
 .subpage-layout .content-stream {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    height: auto; /* Scales down tight to the content size */
+    height: auto; 
 }
 
-/* Tightly knit grid for secondary content blocks */
 .subpage-layout .inner-content-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
 }
 
-/* Metadata utility styling for navigation items */
 .subpage-layout .nav-meta-tag {
     font-size: 0.85rem;
     color: #64748b;
     margin-top: -6px;
 }
 
-/* --- Mobile Responsive Rules for Subpage --- */
+/* --- Subpage Layout Mobile Breakpoints --- */
 @media (max-width: 900px) {
     .subpage-layout .grid-container {
-        grid-template-columns: 1fr; /* Stacks everything into a single column */
+        grid-template-columns: 1fr; 
     }
     .subpage-layout .inner-content-grid {
         grid-template-columns: 1fr;
     }
-}
-
-/* --- Second Nesting (Sub-nest) Directory Tree Lines --- */
-.tree-list ul ul {
-    margin-top: 4px;
-    padding-left: 12px; /* Shifts the sub-nest inward */
-}
-
-/* Adjusts the connectors for the deeper sub-nested items */
-.tree-list ul ul li::before {
-    content: "";
-    position: absolute;
-    left: -6px; /* Re-aligns the line to meet the parent branch */
-    top: -6px;
-    width: 10px;
-    height: 16px;
-    border-left: 1px solid #334155;
-    border-bottom: 1px solid #334155;
-}
-
-/* --- Tree Branch Navigation Links --- */
-.tree-branch-link {
-    margin-top: 14px !important; /* Separates the execution link slightly from the text block above it */
-}
-
-/* Switches the directory branch path color to match your active link color on hover */
-.tree-branch-link:hover::before {
-    border-left-color: #00f2fe;
-    border-bottom-color: #00f2fe;
-}
-
-.tree-branch-link a {
-    font-size: 0.88rem;
-    letter-spacing: 0.5px;
 }
