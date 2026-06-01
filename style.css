@@ -6,72 +6,69 @@
 }
 
 body {
-    background-color: #0b0f17; /* Deep terminal dark background */
-    font-family: 'Courier New', Courier, monospace; /* Clean, retro monospace look */
+    background-color: #0b0f17;
+    font-family: 'Courier New', Courier, monospace;
     color: #e2e8f0;
     min-height: 100vh;
 }
 
-/* Wrapper controls page positioning */
+/* Wrapper balances the screen estate */
 .page-wrapper {
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* Aligns to the top instead of centering vertically */
-    padding-top: 6vh;        /* Pushes it nicely down from the top edge */
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-bottom: 40px;
+    align-items: flex-start; 
+    padding-top: 8vh; /* Keeps it higher up on the screen */
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 60px;
 }
 
-/* --- Layout Grid --- */
+/* --- Expanded 3-Column Grid --- */
 .grid-container {
     display: grid;
-    grid-template-columns: 320px 540px;
-    gap: 20px;
-    max-width: 880px;
+    grid-template-columns: 1fr 1.3fr 1.1fr; /* Proportional, balanced column scaling */
+    gap: 24px;
+    max-width: 1400px; /* Drastically increased width to stop the "squished" effect */
     width: 100%;
 }
 
-.right-column {
+/* Vertical stack adjustments inside columns */
+.center-column, .right-column {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 24px;
 }
 
-.sub-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-}
-
-/* --- Panel Aesthetics (Glow Up) --- */
+/* --- Panel Aesthetics --- */
 .panel {
     background-color: #0f1622;
     border: 1px solid #1e2d42;
     border-radius: 6px;
-    padding: 24px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5), 
-                inset 0 0 10px rgba(0, 242, 254, 0.03); /* Subtle internal cyber glow */
+    padding: 28px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6), 
+                inset 0 0 10px rgba(0, 242, 254, 0.02);
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    height: 100%; /* Allows panels to stretch dynamically and evenly */
 }
 
-/* Dynamic glowing outline when hovering over a panel */
 .panel:hover {
     border-color: #00f2fe;
-    box-shadow: 0 0 20px rgba(0, 242, 254, 0.15),
-                inset 0 0 12px rgba(0, 242, 254, 0.05);
+    box-shadow: 0 0 25px rgba(0, 242, 254, 0.12),
+                inset 0 0 12px rgba(0, 242, 254, 0.04);
 }
 
 /* --- Typography --- */
 .panel-title {
-    color: #ffd54f; /* Soft amber/gold accents */
-    font-size: 1.1rem;
+    color: #ffd54f;
+    font-size: 1.15rem;
     font-weight: bold;
-    margin-bottom: 18px;
+    margin-bottom: 20px;
     letter-spacing: 0.5px;
+    border-bottom: 1px dashed #1e2d42; /* Adds a nice command-line detail separation */
+    padding-bottom: 8px;
 }
 
-/* --- Terminal Tree Structure & Lines --- */
+/* --- Tree Directory Styling --- */
 .tree-list, .tree-list ul {
     list-style-type: none;
 }
@@ -79,10 +76,10 @@ body {
 .tree-list li {
     position: relative;
     padding-left: 20px;
-    margin-bottom: 12px;
-    font-size: 0.9rem;
-    line-height: 1.5;
-    color: #94a3b8; /* Dimmed subtext */
+    margin-bottom: 14px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #94a3b8;
 }
 
 .tree-list li:last-child {
@@ -96,9 +93,9 @@ body {
     margin-bottom: 4px;
 }
 
-/* Visual branch lines (L-shapes) */
+/* Visual directory line styling */
 .tree-list ul {
-    margin-top: 4px;
+    margin-top: 6px;
 }
 
 .tree-list ul li::before {
@@ -107,14 +104,14 @@ body {
     left: 2px;
     top: -6px;
     width: 10px;
-    height: 16px;
+    height: 18px;
     border-left: 1px solid #334155;
     border-bottom: 1px solid #334155;
 }
 
 /* --- Status Indicator --- */
 .status-online {
-    color: #00f2fe; /* Cyber cyan online state */
+    color: #00f2fe;
     font-weight: bold;
     display: flex;
     align-items: center;
@@ -139,36 +136,50 @@ body {
 .links-list a {
     color: #00f2fe;
     text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
     transition: color 0.2s ease;
 }
 
 .links-list a:hover {
     color: #38bdf8;
-    text-decoration: underline;
 }
 
 .links-list span {
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     display: inline-block;
     transition: transform 0.2s ease;
 }
 
 .links-list a:hover span {
-    transform: translateX(3px);
+    transform: translateX(4px);
 }
 
-/* --- Responsiveness --- */
-@media (max-width: 890px) {
+/* --- Responsiveness: Graceful degradation for smaller displays --- */
+@media (max-width: 1200px) {
     .grid-container {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr; /* Drops to 2 columns on medium viewports */
+    }
+    .right-column {
+        grid-column: span 2;
+        flex-direction: row; /* Spreads toolkit and connect wide on medium screens */
+    }
+    .right-column .panel {
+        flex: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr; /* Pure stack layout on mobile devices */
+    }
+    .right-column {
+        grid-column: span 1;
+        flex-direction: column;
     }
     .page-wrapper {
-        padding-top: 3vh;
-    }
-}
-
-@media (max-width: 500px) {
-    .sub-grid {
-        grid-template-columns: 1fr;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 4vh;
     }
 }
