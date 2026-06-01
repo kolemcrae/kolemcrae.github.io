@@ -12,63 +12,74 @@ body {
     min-height: 100vh;
 }
 
-/* Wrapper balances the screen estate */
+/* Wrapper sets the high-vertical alignment */
 .page-wrapper {
     display: flex;
     justify-content: center;
     align-items: flex-start; 
-    padding-top: 8vh; /* Keeps it higher up on the screen */
+    padding-top: 6vh; 
     padding-left: 40px;
     padding-right: 40px;
     padding-bottom: 60px;
 }
 
-/* --- Expanded 3-Column Grid --- */
+/* --- Tiling Master Grid Layout --- */
 .grid-container {
     display: grid;
-    grid-template-columns: 1fr 1.3fr 1.1fr; /* Proportional, balanced column scaling */
-    gap: 24px;
-    max-width: 1400px; /* Drastically increased width to stop the "squished" effect */
+    grid-template-columns: 1fr 1.3fr 1.1fr; /* Pure multi-column layout proportions */
+    gap: 20px;
+    max-width: 1350px; 
     width: 100%;
 }
 
-/* Vertical stack adjustments inside columns */
+/* Vertical window stacks */
 .center-column, .right-column {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 20px;
+}
+
+/* Profile column inherits auto-height grid stretching */
+.profile-col {
+    height: 100%;
+}
+
+/* --- Dynamic Column Tiling Span Modifiers --- */
+.span-two {
+    grid-column: span 2; /* Stretches across columns 1 & 2 */
+}
+
+.span-one {
+    grid-column: span 1; /* Snaps cleanly underneath the right column */
 }
 
 /* --- Panel Aesthetics --- */
 .panel {
     background-color: #0f1622;
     border: 1px solid #1e2d42;
-    border-radius: 6px;
-    padding: 28px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6), 
-                inset 0 0 10px rgba(0, 242, 254, 0.02);
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-    height: 100%; /* Allows panels to stretch dynamically and evenly */
+    border-radius: 4px; /* Slightly sharper tiling WM style corners */
+    padding: 24px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .panel:hover {
     border-color: #00f2fe;
-    box-shadow: 0 0 25px rgba(0, 242, 254, 0.12),
-                inset 0 0 12px rgba(0, 242, 254, 0.04);
+    box-shadow: 0 0 18px rgba(0, 242, 254, 0.12);
 }
 
 /* --- Typography --- */
 .panel-title {
     color: #ffd54f;
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
     letter-spacing: 0.5px;
-    border-bottom: 1px dashed #1e2d42; /* Adds a nice command-line detail separation */
-    padding-bottom: 8px;
+    border-bottom: 1px dashed #1e2d42;
+    padding-bottom: 6px;
 }
 
-/* --- Tree Directory Styling --- */
+/* --- Tree Directory Hierarchy --- */
 .tree-list, .tree-list ul {
     list-style-type: none;
 }
@@ -76,9 +87,9 @@ body {
 .tree-list li {
     position: relative;
     padding-left: 20px;
-    margin-bottom: 14px;
-    font-size: 0.95rem;
-    line-height: 1.6;
+    margin-bottom: 12px;
+    font-size: 0.92rem;
+    line-height: 1.5;
     color: #94a3b8;
 }
 
@@ -90,12 +101,12 @@ body {
     color: #e2e8f0;
     font-weight: bold;
     display: inline-block;
-    margin-bottom: 4px;
+    margin-bottom: 2px;
 }
 
-/* Visual directory line styling */
+/* Terminal Tree Lines */
 .tree-list ul {
-    margin-top: 6px;
+    margin-top: 4px;
 }
 
 .tree-list ul li::before {
@@ -104,12 +115,12 @@ body {
     left: 2px;
     top: -6px;
     width: 10px;
-    height: 18px;
+    height: 16px;
     border-left: 1px solid #334155;
     border-bottom: 1px solid #334155;
 }
 
-/* --- Status Indicator --- */
+/* --- Utility Specific Designators --- */
 .status-online {
     color: #00f2fe;
     font-weight: bold;
@@ -128,7 +139,12 @@ body {
     box-shadow: 0 0 8px #00f2fe;
 }
 
-/* --- Links --- */
+.audio-track {
+    color: #38bdf8;
+    font-weight: bold;
+}
+
+/* --- Navigation & Links --- */
 .links-list li {
     padding-left: 0;
 }
@@ -155,27 +171,22 @@ body {
     transform: translateX(4px);
 }
 
-/* --- Responsiveness: Graceful degradation for smaller displays --- */
-@media (max-width: 1200px) {
+/* --- Fully Responsive Window Management Tiling Layout --- */
+@media (max-width: 1100px) {
     .grid-container {
-        grid-template-columns: 1fr 1fr; /* Drops to 2 columns on medium viewports */
+        grid-template-columns: 1fr 1fr;
     }
-    .right-column {
+    .right-column, .span-two, .span-one {
         grid-column: span 2;
-        flex-direction: row; /* Spreads toolkit and connect wide on medium screens */
-    }
-    .right-column .panel {
-        flex: 1;
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 700px) {
     .grid-container {
-        grid-template-columns: 1fr; /* Pure stack layout on mobile devices */
+        grid-template-columns: 1fr;
     }
-    .right-column {
+    .center-column, .right-column, .span-two, .span-one {
         grid-column: span 1;
-        flex-direction: column;
     }
     .page-wrapper {
         padding-left: 20px;
