@@ -95,6 +95,15 @@ body {
     padding-bottom: 6px;
 }
 
+/* --- High-Contrast Terminal Bold Text --- */
+.tree-list li strong, .panel p strong {
+    color: #ffffff;               /* Crisp, full-white to pop from muted text */
+    font-weight: bold;
+    border-bottom: 1px solid #1e2d42; /* Low-contrast baseline track */
+    padding-bottom: 1px;
+    letter-spacing: 0.5px;
+}
+
 /* Splits header text and timestamps to opposite edges */
 .header-with-timestamp {
     display: flex;
