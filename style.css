@@ -113,10 +113,11 @@ body {
 
 /* Styled inline commit-style comment metadata tag */
 .header-with-timestamp .timestamp {
-    color: #475569; /* Muted slate gray */
+    color: #00f2fe; /* Elevated to Cyan accent for high legibility */
     font-size: 0.82rem;
-    font-weight: normal;
-    letter-spacing: 0px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    opacity: 0.85;
 }
 
 /* --- Tree Directory Hierarchy --- */
@@ -241,8 +242,7 @@ body {
     letter-spacing: 0.5px;
 }
 
-/* 
-   OPTION 1: Inline Paragraph Links (Terminal Brackets)
+/* OPTION 1: Inline Paragraph Links (Terminal Brackets)
    Targets content links within lists and text blocks without altering structural layout menus
 */
 .tree-list li a, .panel p a {
@@ -400,7 +400,7 @@ a.panel-title::before {
 
 /* Hover effects */
 a.panel-title:hover {
-    color: #fff275; /* Slightly brighter yellow or #00f2fe cyan if you prefer */
+    color: #fff275; /* Slightly brighter yellow */
 }
 
 a.panel-title:hover::before {
