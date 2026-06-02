@@ -217,6 +217,44 @@ body {
     letter-spacing: 0.5px;
 }
 
+/* 
+   OPTION 1: Inline Paragraph Links (Terminal Brackets)
+   Targets content links within lists and text blocks without altering structural layout menus
+*/
+.tree-list li a, .panel p a {
+    color: #00f2fe;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.2s ease;
+}
+
+.tree-list li a::before, .panel p a::before {
+    content: "[";
+    color: #475569; /* Muted slate gray brackets */
+    margin-right: 3px;
+    font-weight: normal;
+    transition: color 0.2s ease;
+}
+
+.tree-list li a::after, .panel p a::after {
+    content: "]";
+    color: #475569;
+    margin-left: 3px;
+    font-weight: normal;
+    transition: color 0.2s ease;
+}
+
+/* Hover State: The text shifts to a brighter cyan sky variant, and brackets activate */
+.tree-list li a:hover, .panel p a:hover {
+    color: #38bdf8;
+}
+
+.tree-list li a:hover::before, .tree-list li a:hover::after,
+.panel p a:hover::before, .panel p a:hover::after {
+    color: #00f2fe;
+}
+
+
 /* --- Utility Specific Designators --- */
 .status-online {
     color: #00f2fe;
