@@ -382,3 +382,27 @@ body {
         gap: 6px;
     }
 }
+/* Identity home link styling */
+a.panel-title {
+    display: inline-flex !important; /* Prevents full-width block hover */
+    align-items: center;
+    transition: color 0.2s ease;
+}
+
+/* Prepend a terminal path symbol */
+a.panel-title::before {
+    content: "~/";
+    color: #475569; /* Muted slate gray */
+    margin-right: 6px;
+    font-weight: normal;
+    transition: color 0.2s ease;
+}
+
+/* Hover effects */
+a.panel-title:hover {
+    color: #fff275; /* Slightly brighter yellow or #00f2fe cyan if you prefer */
+}
+
+a.panel-title:hover::before {
+    color: #00f2fe; /* Path lights up cyan on hover */
+}
