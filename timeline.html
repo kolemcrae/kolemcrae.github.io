@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kole McRae - Website Timeline Exhibit</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <style>
+        /* Custom styles for the timeline exhibit */
+        .timeline-exhibit {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+            gap: 20px;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        .exhibit-tile {
+            background-color: #0f1622;
+            border: 1px solid #1e2d42;
+            border-radius: 4px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            overflow: hidden; /* Ensures image content stays within bounds */
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .exhibit-tile:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 242, 254, 0.2);
+        }
+
+        .exhibit-tile img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Tile size variations */
+        .exhibit-tile.square {
+            aspect-ratio: 1 / 1;
+        }
+        .exhibit-tile.rect-tall {
+            aspect-ratio: 3 / 4;
+        }
+        .exhibit-tile.rect-wide {
+            aspect-ratio: 4 / 3;
+        }
+
+        .exhibit-tile .caption {
+            padding: 16px;
+            flex-grow: 1; /* Allows caption to fill remaining space */
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Center content vertically */
+        }
+
+        .exhibit-tile h3 {
+            color: #ffd54f;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .exhibit-tile p {
+            font-size: 0.9rem;
+            color: #94a3b8;
+            line-height: 1.5;
+        }
+
+        /* Responsive adjustments for the exhibit */
+        @media (min-width: 768px) {
+            .timeline-exhibit {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            }
+            .exhibit-tile.rect-wide {
+                grid-column: span 2; /* Wider tiles span two columns on larger screens */
+            }
+            .exhibit-tile.square {
+                grid-row: span 2; /* Square tiles can span two rows */
+            }
+        }
+
+        @media (max-width: 600px) {
+            .exhibit-tile.rect-wide,
+            .exhibit-tile.square {
+                grid-column: span 1; /* Reset spanning on smaller screens */
+                grid-row: span 1;
+                aspect-ratio: 3 / 2; /* Default aspect ratio for smaller screens */
+            }
+        }
+    </style>
+</head>
+<body class="subpage-layout">
+
+<div class="page-wrapper">
+    <div class="grid-container">
+
+        <aside class="nav-sidebar">
+            <div class="panel">
+                <a href="/" class="panel-title" style="text-decoration: none; display: block; margin-bottom: 12px;">Kole McRae</a>
+                <ul class="tree-list">
+                    <li><span class="tree-label">Location</span><ul><li>Toronto, ON</li></ul></li>
+                    <li><span class="tree-label">Career</span><ul><li>Product Manager<ul><li>Search &amp; Discovery Engines + Analytics Architecture</li></ul></li></ul></li>
+                    <li><span class="tree-label">Interests</span><ul><li>Synths and audio gear</li><li>Dungeons and Dragons</li><li>Tinkering with retro tech</li></ul></li>
+                </ul>
+            </div>
+            <div class="panel">
+                <div class="panel-title">Toolkit</div>
+                <ul class="tree-list">
+                    <li><span class="tree-label">OS</span><ul><li>Linux / Fedora</li></ul></li>
+                    <li><span class="tree-label">WM</span><ul><li>Cosmic WM</li></ul></li>
+                    <li><span class="tree-label">Notes</span><ul><li>Logseq DB</li></ul></li>
+                </ul>
+            </div>
+            <div class="panel">
+                <div class="panel-title">Connect</div>
+                <ul class="tree-list links-list">
+                    <li><a href="mailto:kole@kolemcrae.com">email me &rarr;</a></li>
+                    <li><a href="https://www.linkedin.com/in/kole-mcrae/">LinkedIn &rarr;</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <main class="content-stream">
+            <section class="panel">
+                <h2 class="panel-title header-with-timestamp">
+                    <span>Website Timeline Exhibit</span>
+                    <time class="timestamp">// Curated History: [2026-06-29] @ 14:30 UTC</time>
+                </h2>
+                <div class="timeline-exhibit">
+                    <div class="exhibit-tile rect-wide">
+                        <img src="oldscreenshots/2010.png" alt="Screenshot from 2010">
+                        <div class="caption">
+                            <h3>2010</h3>
+                            <p>Placeholder: Early digital scribbles and a very basic layout.</p>
+                        </div>
+                    </div>
+                    <div class="exhibit-tile square">
+                        <img src="oldscreenshots/2011.png" alt="Screenshot from 2011">
+                        <div class="caption">
+                            <h3>2011</h3>
+                            <p>Placeholder: Experimenting with new design trends.</p>
+                        </div>
+                    </div>
+                    <div class="exhibit-tile rect-tall">
+                        <img src="oldscreenshots/2012.png" alt="Screenshot from 2012">
+                        <div class="caption">
+                            <h3>2012</h3>
+                            <p>Placeholder: Embracing more complex structures and content.</p>
+                        </div>
+                    </div>
+                    <div class="exhibit-tile square">
+                        <img src="oldscreenshots/2012 pt 2.png" alt="Screenshot from 2012 pt 2">
+                        <div class="caption">
+                            <h3>2012 (pt. 2)</h3>
+                            <p>Placeholder: A refinement or alternative take.</p>
+                        </div>
+                    </div>
+                    <div class="exhibit-tile rect-wide">
+                        <img src="oldscreenshots/2014.png" alt="Screenshot from 2014">
+                        <div class="caption">
+                            <h3>2014</h3>
+                            <p>Placeholder: Major redesign phase, focusing on user experience.</p>
+                        </div>
+                    </div>
+                    <div class="exhibit-tile square">
+                        <img src="oldscreenshots/2014 pt 2.png" alt="Screenshot from 2014 pt 2">
+                        <div class="caption">
+                            <h3>2014 (pt. 2)</h3>
+                            <p>Placeholder: Iterating on the new design.</p>
+                        </div>
+                    </div>
+                    <div class="exhibit-tile rect-tall">
+                        <img src="oldscreenshots/2017.png" alt="Screenshot from 2017">
+                        <div class="caption">
+                            <h3>2017</h3>
+                            <p>Placeholder: Adapting to newer web standards and aesthetics.</p>
+                        </div>
+                    </div>
+                    <div class="exhibit-tile square">
+                        <img src="oldscreenshots/2019.png" alt="Screenshot from 2019">
+                        <div class="caption">
+                            <h3>2019</h3>
+                            <p>Placeholder: A cleaner, more modern look emerges.</p>
+                        </div>
+                    </div>
+                    <div class="exhibit-tile rect-wide">
+                        <img src="oldscreenshots/2020.png" alt="Screenshot from 2020">
+                        <div class="caption">
+                            <h3>2020</h3>
+                            <p>Placeholder: Introduction of dark mode or a significant UI shift.</p>
+                        </div>
+                    </div>
+                    <div class="exhibit-tile square">
+                        <img src="oldscreenshots/2024.png" alt="Screenshot from 2024">
+                        <div class="caption">
+                            <h3>2024</h3>
+                            <p>Placeholder: Reflecting current trends and technologies.</p>
+                        </div>
+                    </div>
+                    <div class="exhibit-tile rect-tall">
+                        <img src="oldscreenshots/2024 pt 2.png" alt="Screenshot from 2024 pt 2">
+                        <div class="caption">
+                            <h3>2024 (pt. 2)</h3>
+                            <p>Placeholder: Further refinements or feature additions.</p>
+                        </div>
+                    </div>
+                    <div class="exhibit-tile square">
+                        <img src="oldscreenshots/2025.png" alt="Screenshot from 2025">
+                        <div class="caption">
+                            <h3>2025</h3>
+                            <p>Placeholder: Anticipating future web design.</p>
+                        </div>
+                    </div>
+                    <div class="exhibit-tile rect-wide">
+                        <img src="oldscreenshots/2025 pt 2.png" alt="Screenshot from 2025 pt 2">
+                        <div class="caption">
+                            <h3>2025 (pt. 2)</h3>
+                            <p>Placeholder: A glimpse into potential evolutions.</p>
+                        </div>
+                    </div>
+                    <div class="exhibit-tile square">
+                        <img src="oldscreenshots/2026.png" alt="Screenshot from 2026">
+                        <div class="caption">
+                            <h3>2026</h3>
+                            <p>Placeholder: The future, as imagined today.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</div>
+
+</body>
+</html>
