@@ -7,7 +7,7 @@
 
 body {
     background-color: #0b0f17;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: "Courier New", Courier, monospace;
     color: #e2e8f0;
     min-height: 100vh;
 }
@@ -16,8 +16,8 @@ body {
 .page-wrapper {
     display: flex;
     justify-content: center;
-    align-items: flex-start; 
-    padding-top: 6vh; 
+    align-items: flex-start;
+    padding-top: 6vh;
     padding-left: 40px;
     padding-right: 40px;
     padding-bottom: 60px;
@@ -28,13 +28,14 @@ body {
     display: grid;
     grid-template-columns: 1fr 1.3fr 1.1fr; /* Pure multi-column layout proportions */
     gap: 20px;
-    max-width: 1350px; 
+    max-width: 1350px;
     width: 100%;
     align-items: stretch; /* Forces all primary column tracks to match heights */
 }
 
 /* Vertical window stacks */
-.center-column, .right-column {
+.center-column,
+.right-column {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -44,7 +45,7 @@ body {
     height: 100%; /* Spans the full height of the grid track */
 }
 
-.center-column .panel:last-child { 
+.center-column .panel:last-child {
     flex-grow: 1; /* Forces the 'Current Project' panel to expand vertically */
 }
 
@@ -69,7 +70,9 @@ body {
     border-radius: 4px; /* Sharper tiling WM style corners */
     padding: 24px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
 }
 
 .panel:hover {
@@ -96,8 +99,9 @@ body {
 }
 
 /* --- High-Contrast Terminal Bold Text --- */
-.tree-list li strong, .panel p strong {
-    color: #ffffff;               /* Crisp, full-white to pop from muted text */
+.tree-list li strong,
+.panel p strong {
+    color: #ffffff; /* Crisp, full-white to pop from muted text */
     font-weight: bold;
     border-bottom: 1px solid #1e2d42; /* Low-contrast baseline track */
     padding-bottom: 1px;
@@ -121,7 +125,8 @@ body {
 }
 
 /* --- Tree Directory Hierarchy --- */
-.tree-list, .tree-list ul {
+.tree-list,
+.tree-list ul {
     list-style-type: none;
 }
 
@@ -245,14 +250,16 @@ body {
 /* OPTION 1: Inline Paragraph Links (Terminal Brackets)
    Targets content links within lists and text blocks without altering structural layout menus
 */
-.tree-list li a, .panel p a {
+.tree-list li a,
+.panel p a {
     color: #00f2fe;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.2s ease;
 }
 
-.tree-list li a::before, .panel p a::before {
+.tree-list li a::before,
+.panel p a::before {
     content: "[";
     color: #475569; /* Muted slate gray brackets */
     margin-right: 3px;
@@ -260,7 +267,8 @@ body {
     transition: color 0.2s ease;
 }
 
-.tree-list li a::after, .panel p a::after {
+.tree-list li a::after,
+.panel p a::after {
     content: "]";
     color: #475569;
     margin-left: 3px;
@@ -269,15 +277,17 @@ body {
 }
 
 /* Hover State: The text shifts to a brighter cyan sky variant, and brackets activate */
-.tree-list li a:hover, .panel p a:hover {
+.tree-list li a:hover,
+.panel p a:hover {
     color: #38bdf8;
 }
 
-.tree-list li a:hover::before, .tree-list li a:hover::after,
-.panel p a:hover::before, .panel p a:hover::after {
+.tree-list li a:hover::before,
+.tree-list li a:hover::after,
+.panel p a:hover::before,
+.panel p a:hover::after {
     color: #00f2fe;
 }
-
 
 /* --- Utility Specific Designators --- */
 .status-online {
@@ -308,7 +318,9 @@ body {
     .grid-container {
         grid-template-columns: 1fr 1fr;
     }
-    .right-column, .span-two, .span-one {
+    .right-column,
+    .span-two,
+    .span-one {
         grid-column: span 2;
     }
 }
@@ -317,7 +329,10 @@ body {
     .grid-container {
         grid-template-columns: 1fr;
     }
-    .center-column, .right-column, .span-two, .span-one {
+    .center-column,
+    .right-column,
+    .span-two,
+    .span-one {
         grid-column: span 1;
     }
     .page-wrapper {
@@ -334,9 +349,9 @@ body {
 /* 2-Column layout setup optimized for normal scale displays */
 .subpage-layout .grid-container {
     display: grid;
-    grid-template-columns: 280px 1fr; 
+    grid-template-columns: 280px 1fr;
     gap: 20px;
-    max-width: 1200px; 
+    max-width: 1200px;
     width: 100%;
 }
 
@@ -350,7 +365,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    height: auto; 
+    height: auto;
 }
 
 .subpage-layout .inner-content-grid {
@@ -368,7 +383,7 @@ body {
 /* --- Subpage Layout Mobile Breakpoints --- */
 @media (max-width: 900px) {
     .subpage-layout .grid-container {
-        grid-template-columns: 1fr; 
+        grid-template-columns: 1fr;
     }
     .subpage-layout .inner-content-grid {
         grid-template-columns: 1fr;
