@@ -399,7 +399,9 @@ body {
 }
 /* Identity home link styling */
 a.panel-title {
-    display: inline-flex !important; /* Prevents full-width block hover */
+    text-decoration: none;
+    display: block;
+    margin-bottom: 12px;
     align-items: center;
     transition: color 0.2s ease;
 }
@@ -420,4 +422,111 @@ a.panel-title:hover {
 
 a.panel-title:hover::before {
     color: #00f2fe; /* Path lights up cyan on hover */
+}
+
+/* --- Timeline Exhibit Specific Styles --- */
+
+.timeline-exhibit {
+    display: grid;
+    /* This will create a dynamic grid. Adjust minmax for desired tile size on different screen widths */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    max-width: 100%;
+    margin: 0 auto; /* Center the exhibit */
+}
+
+.exhibit-tile {
+    background-color: #0f1622;
+    border: 1px solid #1e2d42;
+    border-radius: 4px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.exhibit-tile:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 242, 254, 0.2);
+    border-color: #00f2fe;
+}
+
+.image-tile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    /* For image tiles, we might want to ensure they fill their space appropriately */
+}
+
+.image-tile img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover; /* Ensures image covers the tile without distortion */
+}
+
+.text-tile {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.text-tile h3 {
+    color: #ffd54f;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+}
+
+.text-tile p {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    line-height: 1.5;
+}
+
+/* --- Tile Size Variations (Apply to .exhibit-tile for overall shape) --- */
+
+.exhibit-tile.square {
+    aspect-ratio: 1 / 1;
+}
+.exhibit-tile.rect-tall {
+    aspect-ratio: 3 / 4;
+}
+.exhibit-tile.rect-wide {
+    aspect-ratio: 4 / 3;
+}
+
+/* Responsive adjustments for the exhibit grid */
+@media (min-width: 768px) {
+    .timeline-exhibit {
+        grid-template-columns: repeat(
+            3,
+            1fr
+        ); /* Example: 3 columns on larger screens */
+    }
+
+    /* For a more staggered or varied layout */
+    .exhibit-tile.rect-wide {
+        grid-column: span 2;
+    }
+    .exhibit-tile.rect-tall {
+        grid-row: span 2;
+    }
+}
+
+@media (max-width: 600px) {
+    .timeline-exhibit {
+        grid-template-columns: 1fr; /* Single column on small screens */
+    }
+    .exhibit-tile.rect-wide,
+    .exhibit-tile.rect-tall,
+    .exhibit-tile.square {
+        grid-column: span 1; /* Reset spanning */
+        grid-row: span 1; /* Reset spanning */
+        aspect-ratio: 3 / 2; /* Default aspect ratio for smaller screens */
+    }
 }
