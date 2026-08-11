@@ -6,8 +6,8 @@
 }
 
 body {
-    background-color: #0b0f17;
-    font-family: "Courier New", Courier, monospace;
+    background-color: #1a2230; /* Deep blue slate background inspired by the mockup */
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     color: #e2e8f0;
     min-height: 100vh;
 }
@@ -67,7 +67,7 @@ body {
 .panel {
     background-color: #0f1622;
     border: 1px solid #1e2d42;
-    border-radius: 4px; /* Sharper tiling WM style corners */
+    border-radius: 8px; /* Slightly softer corners to match mockup aesthetics */
     padding: 24px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
     transition:
@@ -435,9 +435,9 @@ a.panel-title:hover::before {
 }
 
 .exhibit-tile {
-    background-color: #0f1622;
-    border: 1px solid #1e2d42;
-    border-radius: 8px; /* Sleek, smooth premium corners */
+    background-color: #242f41; /* Slightly lighter than deep slate-blue to pop nicely */
+    border: 1px solid #334155;
+    border-radius: 12px; /* Smooth corners to match the mockup styling */
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.45);
     overflow: hidden;
     transition:
@@ -451,8 +451,28 @@ a.panel-title:hover::before {
 
 .exhibit-tile:hover {
     transform: translateY(-8px); /* Elegant elevation on hover */
-    box-shadow: 0 16px 40px rgba(0, 242, 254, 0.18); /* Cyan neon glow shadow */
-    border-color: #00f2fe;
+}
+
+/* Alternating themed hover states that match our new color palette! */
+.exhibit-tile:nth-child(5n+1):hover {
+    border-color: #00f2fe !important;
+    box-shadow: 0 16px 40px rgba(0, 242, 254, 0.22) !important;
+}
+.exhibit-tile:nth-child(5n+2):hover {
+    border-color: #4ade80 !important;
+    box-shadow: 0 16px 40px rgba(74, 222, 128, 0.22) !important;
+}
+.exhibit-tile:nth-child(5n+3):hover {
+    border-color: #f472b6 !important;
+    box-shadow: 0 16px 40px rgba(244, 114, 182, 0.22) !important;
+}
+.exhibit-tile:nth-child(5n+4):hover {
+    border-color: #fb923c !important;
+    box-shadow: 0 16px 40px rgba(251, 146, 60, 0.22) !important;
+}
+.exhibit-tile:nth-child(5n+5):hover {
+    border-color: #f87171 !important;
+    box-shadow: 0 16px 40px rgba(248, 113, 113, 0.22) !important;
 }
 
 .exhibit-tile .tile-image {
@@ -462,7 +482,7 @@ a.panel-title:hover::before {
     position: relative;
     flex-shrink: 0;
     padding: 24px; /* Frame images with luxurious recessed borders */
-    background-color: #06090e; /* Deep pitch-dark background well to prevent glare and border bleeding */
+    background-color: #18202c; /* Deep slate background well instead of pitch black */
 }
 
 .exhibit-tile .tile-image img {
@@ -470,9 +490,9 @@ a.panel-title:hover::before {
     height: 100%;
     object-fit: contain; /* CRITICAL: Displays full screenshot uncropped, preserving history! */
     display: block;
-    border: 1px solid #1e2d42; /* Frame the screenshot itself sharply */
-    border-radius: 4px;
-    background-color: #06090e;
+    border: 1px solid #334155; /* Frame the screenshot itself sharply */
+    border-radius: 6px;
+    background-color: #18202c;
     opacity: 0.92; /* Soften bright white screenshots to match the overall dark aesthetic */
     transition: opacity 0.25s ease;
 }
@@ -486,7 +506,7 @@ a.panel-title:hover::before {
     display: flex;
     flex-direction: column;
     justify-content: center; /* Center text vertically in horizontal layouts */
-    background-color: #0f1622;
+    background-color: #242f41; /* Matches card background */
     flex-grow: 1;
 }
 
@@ -499,7 +519,7 @@ a.panel-title:hover::before {
 
 .exhibit-tile .tile-text p {
     font-size: 0.92rem;
-    color: #94a3b8;
+    color: #e2e8f0; /* Crisp white-gray for higher contrast and legibility! */
     line-height: 1.65; /* Highly readable relaxed text line-height */
 }
 
@@ -626,4 +646,287 @@ a.panel-title:hover::before {
 
 #lightbox-caption-desc a:hover {
     color: #38bdf8;
+}
+
+/* ==========================================================================
+   Mockup-Inspired Color Themes for Panels
+   ========================================================================== */
+
+/* Teal Theme (e.g., Kole McRae Intro Panel) */
+.panel-teal {
+    background-color: #0c5874 !important;
+    border-color: #0f769c !important;
+}
+.panel-teal .panel-title {
+    color: #ffffff !important;
+    border-bottom-color: rgba(255, 255, 255, 0.2) !important;
+}
+.panel-teal, 
+.panel-teal .tree-list li, 
+.panel-teal .tree-label {
+    color: #e2e8f0 !important;
+}
+.panel-teal a {
+    color: #00f2fe !important;
+}
+.panel-teal a:hover {
+    color: #38bdf8 !important;
+}
+.panel-teal:hover {
+    border-color: #00f2fe !important;
+    box-shadow: 0 0 18px rgba(0, 242, 254, 0.25) !important;
+}
+
+/* Green Theme (e.g., What's Up Now Panel) */
+.panel-green {
+    background-color: #1c684c !important;
+    border-color: #258562 !important;
+}
+.panel-green .panel-title {
+    color: #ffffff !important;
+    border-bottom-color: rgba(255, 255, 255, 0.2) !important;
+}
+.panel-green, 
+.panel-green .tree-list li, 
+.panel-green .tree-label {
+    color: #e2e8f0 !important;
+}
+.panel-green a {
+    color: #4ade80 !important;
+}
+.panel-green a:hover {
+    color: #86efac !important;
+}
+.panel-green:hover {
+    border-color: #4ade80 !important;
+    box-shadow: 0 0 18px rgba(74, 222, 128, 0.25) !important;
+}
+
+/* Plum Theme (e.g., Thoughts/Current Things Panel) */
+.panel-plum {
+    background-color: #4c1640 !important;
+    border-color: #631f54 !important;
+}
+.panel-plum .panel-title {
+    color: #ffffff !important;
+    border-bottom-color: rgba(255, 255, 255, 0.2) !important;
+}
+.panel-plum, 
+.panel-plum .tree-list li, 
+.panel-plum .tree-label {
+    color: #e2e8f0 !important;
+}
+.panel-plum a {
+    color: #f472b6 !important;
+}
+.panel-plum a:hover {
+    color: #fbcfe8 !important;
+}
+.panel-plum:hover {
+    border-color: #f472b6 !important;
+    box-shadow: 0 0 18px rgba(244, 114, 182, 0.25) !important;
+}
+
+/* Terracotta Theme (e.g., Toolkit Panel) */
+.panel-terracotta {
+    background-color: #944b1c !important;
+    border-color: #bc5f24 !important;
+}
+.panel-terracotta .panel-title {
+    color: #ffffff !important;
+    border-bottom-color: rgba(255, 255, 255, 0.2) !important;
+}
+.panel-terracotta, 
+.panel-terracotta .tree-list li, 
+.panel-terracotta .tree-label {
+    color: #e2e8f0 !important;
+}
+.panel-terracotta a {
+    color: #fdba74 !important;
+}
+.panel-terracotta a:hover {
+    color: #fed7aa !important;
+}
+.panel-terracotta:hover {
+    border-color: #fdba74 !important;
+    box-shadow: 0 0 18px rgba(253, 186, 116, 0.25) !important;
+}
+
+/* Rust Theme (e.g., Current Project Panel) */
+.panel-rust {
+    background-color: #a42c14 !important;
+    border-color: #cc3719 !important;
+}
+.panel-rust .panel-title {
+    color: #ffffff !important;
+    border-bottom-color: rgba(255, 255, 255, 0.2) !important;
+}
+.panel-rust, 
+.panel-rust .tree-list li, 
+.panel-rust .tree-label {
+    color: #e2e8f0 !important;
+}
+.panel-rust a {
+    color: #f87171 !important;
+}
+.panel-rust a:hover {
+    color: #fca5a5 !important;
+}
+.panel-rust:hover {
+    border-color: #f87171 !important;
+    box-shadow: 0 0 18px rgba(248, 113, 113, 0.25) !important;
+}
+
+/* Sand/Taupe Theme (e.g., Credits Panel) */
+.panel-sand {
+    background-color: #7c6044 !important;
+    border-color: #9c7955 !important;
+}
+.panel-sand .panel-title {
+    color: #ffffff !important;
+    border-bottom-color: rgba(255, 255, 255, 0.2) !important;
+}
+.panel-sand, 
+.panel-sand .tree-list li, 
+.panel-sand .tree-label {
+    color: #e2e8f0 !important;
+}
+.panel-sand a {
+    color: #fde047 !important;
+}
+.panel-sand a:hover {
+    color: #fef08a !important;
+}
+.panel-sand:hover {
+    border-color: #fde047 !important;
+    box-shadow: 0 0 18px rgba(253, 224, 71, 0.25) !important;
+}
+
+/* Gray Theme (e.g., Connect Panel) */
+.panel-gray {
+    background-color: #3c4454 !important;
+    border-color: #4c566a !important;
+}
+.panel-gray .panel-title {
+    color: #ffffff !important;
+    border-bottom-color: rgba(255, 255, 255, 0.2) !important;
+}
+.panel-gray, 
+.panel-gray .tree-list li, 
+.panel-gray .tree-label {
+    color: #cbd5e1 !important;
+}
+.panel-gray a {
+    color: #38bdf8 !important;
+}
+.panel-gray a:hover {
+    color: #7dd3fc !important;
+}
+.panel-gray:hover {
+    border-color: #cbd5e1 !important;
+    box-shadow: 0 0 18px rgba(203, 213, 225, 0.15) !important;
+}
+
+/* ==========================================================================
+   Polished High-Contrast Links, Brackets, and Exit-Node Hover Highlights
+   ========================================================================== */
+
+/* Link and Bracket Contrast Polishing for Colored Panels */
+.panel-teal a, .panel-teal a:visited { color: #22d3ee !important; text-decoration: underline !important; }
+.panel-teal a::before, .panel-teal a::after { color: #a5f3fc !important; }
+.panel-teal a:hover { color: #ffffff !important; }
+
+.panel-green a, .panel-green a:visited { color: #4ade80 !important; text-decoration: underline !important; }
+.panel-green a::before, .panel-green a::after { color: #a7f3d0 !important; }
+.panel-green a:hover { color: #ffffff !important; }
+
+.panel-plum a, .panel-plum a:visited { color: #f472b6 !important; text-decoration: underline !important; }
+.panel-plum a::before, .panel-plum a::after { color: #fbcfe8 !important; }
+.panel-plum a:hover { color: #ffffff !important; }
+
+.panel-terracotta a, .panel-terracotta a:visited { color: #fb923c !important; text-decoration: underline !important; }
+.panel-terracotta a::before, .panel-terracotta a::after { color: #fed7aa !important; }
+.panel-terracotta a:hover { color: #ffffff !important; }
+
+.panel-rust a, .panel-rust a:visited { color: #f87171 !important; text-decoration: underline !important; }
+.panel-rust a::before, .panel-rust a::after { color: #fca5a5 !important; }
+.panel-rust a:hover { color: #ffffff !important; }
+
+.panel-sand a, .panel-sand a:visited { color: #fbbf24 !important; text-decoration: underline !important; }
+.panel-sand a::before, .panel-sand a::after { color: #fef08a !important; }
+.panel-sand a:hover { color: #ffffff !important; }
+
+.panel-gray a, .panel-gray a:visited { color: #38bdf8 !important; text-decoration: underline !important; }
+.panel-gray a::before, .panel-gray a::after { color: #cbd5e1 !important; }
+.panel-gray a:hover { color: #ffffff !important; }
+
+/* Custom Exit Node Buttons Polished to Match Panel Themes */
+.panel-teal .panel-exit-node a {
+    background-color: rgba(34, 211, 238, 0.08) !important;
+    border: 1px dashed rgba(34, 211, 238, 0.4) !important;
+    color: #ffffff !important;
+}
+.panel-teal .panel-exit-node a:hover {
+    border-color: #00f2fe !important;
+    background-color: rgba(34, 211, 238, 0.2) !important;
+}
+
+.panel-green .panel-exit-node a {
+    background-color: rgba(74, 222, 128, 0.08) !important;
+    border: 1px dashed rgba(74, 222, 128, 0.4) !important;
+    color: #ffffff !important;
+}
+.panel-green .panel-exit-node a:hover {
+    border-color: #4ade80 !important;
+    background-color: rgba(74, 222, 128, 0.2) !important;
+}
+
+.panel-plum .panel-exit-node a {
+    background-color: rgba(244, 114, 182, 0.08) !important;
+    border: 1px dashed rgba(244, 114, 182, 0.4) !important;
+    color: #ffffff !important;
+}
+.panel-plum .panel-exit-node a:hover {
+    border-color: #f472b6 !important;
+    background-color: rgba(244, 114, 182, 0.2) !important;
+}
+
+.panel-terracotta .panel-exit-node a {
+    background-color: rgba(251, 146, 60, 0.08) !important;
+    border: 1px dashed rgba(251, 146, 60, 0.4) !important;
+    color: #ffffff !important;
+}
+.panel-terracotta .panel-exit-node a:hover {
+    border-color: #fb923c !important;
+    background-color: rgba(251, 146, 60, 0.2) !important;
+}
+
+.panel-rust .panel-exit-node a {
+    background-color: rgba(248, 113, 113, 0.08) !important;
+    border: 1px dashed rgba(248, 113, 113, 0.4) !important;
+    color: #ffffff !important;
+}
+.panel-rust .panel-exit-node a:hover {
+    border-color: #f87171 !important;
+    background-color: rgba(248, 113, 113, 0.2) !important;
+}
+
+.panel-sand .panel-exit-node a {
+    background-color: rgba(251, 191, 36, 0.08) !important;
+    border: 1px dashed rgba(251, 191, 36, 0.4) !important;
+    color: #ffffff !important;
+}
+.panel-sand .panel-exit-node a:hover {
+    border-color: #fbbf24 !important;
+    background-color: rgba(251, 191, 36, 0.2) !important;
+}
+
+.panel-gray .panel-exit-node a {
+    background-color: rgba(203, 213, 225, 0.08) !important;
+    border: 1px dashed rgba(203, 213, 225, 0.4) !important;
+    color: #ffffff !important;
+}
+.panel-gray .panel-exit-node a:hover {
+    border-color: #cbd5e1 !important;
+    background-color: rgba(203, 213, 225, 0.2) !important;
 }
