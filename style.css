@@ -65,7 +65,7 @@ body {
 
 /* --- Panel Aesthetics --- */
 .panel {
-    background-color: #0f1622;
+    background: linear-gradient(180deg, #1a2436 0%, #0f1622 100%);
     border: 1px solid #1e2d42;
     border-radius: 8px; /* Slightly softer corners to match mockup aesthetics */
     padding: 24px;
@@ -654,7 +654,7 @@ a.panel-title:hover::before {
 
 /* Teal Theme (e.g., Kole McRae Intro Panel) */
 .panel-teal {
-    background-color: #0c5874 !important;
+    background: linear-gradient(180deg, #127194 0%, #0c5874 100%) !important;
     border-color: #0f769c !important;
 }
 .panel-teal .panel-title {
@@ -679,7 +679,7 @@ a.panel-title:hover::before {
 
 /* Green Theme (e.g., What's Up Now Panel) */
 .panel-green {
-    background-color: #1c684c !important;
+    background: linear-gradient(180deg, #278563 0%, #1c684c 100%) !important;
     border-color: #258562 !important;
 }
 .panel-green .panel-title {
@@ -704,7 +704,7 @@ a.panel-title:hover::before {
 
 /* Plum Theme (e.g., Thoughts/Current Things Panel) */
 .panel-plum {
-    background-color: #4c1640 !important;
+    background: linear-gradient(180deg, #6a225a 0%, #4c1640 100%) !important;
     border-color: #631f54 !important;
 }
 .panel-plum .panel-title {
@@ -729,7 +729,7 @@ a.panel-title:hover::before {
 
 /* Terracotta Theme (e.g., Toolkit Panel) */
 .panel-terracotta {
-    background-color: #944b1c !important;
+    background: linear-gradient(180deg, #b6612b 0%, #944b1c 100%) !important;
     border-color: #bc5f24 !important;
 }
 .panel-terracotta .panel-title {
@@ -754,7 +754,7 @@ a.panel-title:hover::before {
 
 /* Rust Theme (e.g., Current Project Panel) */
 .panel-rust {
-    background-color: #a42c14 !important;
+    background: linear-gradient(180deg, #c43d22 0%, #a42c14 100%) !important;
     border-color: #cc3719 !important;
 }
 .panel-rust .panel-title {
@@ -779,7 +779,7 @@ a.panel-title:hover::before {
 
 /* Sand/Taupe Theme (e.g., Credits Panel) */
 .panel-sand {
-    background-color: #7c6044 !important;
+    background: linear-gradient(180deg, #977757 0%, #7c6044 100%) !important;
     border-color: #9c7955 !important;
 }
 .panel-sand .panel-title {
@@ -804,7 +804,7 @@ a.panel-title:hover::before {
 
 /* Gray Theme (e.g., Connect Panel) */
 .panel-gray {
-    background-color: #3c4454 !important;
+    background: linear-gradient(180deg, #4e586c 0%, #3c4454 100%) !important;
     border-color: #4c566a !important;
 }
 .panel-gray .panel-title {
