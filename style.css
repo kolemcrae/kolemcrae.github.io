@@ -313,6 +313,20 @@ body {
     font-weight: bold;
 }
 
+/* --- Panel Icon Micro-Interactions --- */
+.panel-icon {
+    display: inline-block;
+    margin-right: 6px;
+    filter: grayscale(100%) brightness(1.2); /* Desaturated and muted to blend with slate/retro theme */
+    opacity: 0.5; /* Muted idle state */
+    transition: filter 0.25s ease, opacity 0.25s ease;
+}
+
+.panel:hover .panel-icon {
+    filter: none; /* Smoothly fade into rich, full color on hover */
+    opacity: 0.95;
+}
+
 /* --- Homepage Desktop Dashboard Viewport Filling --- */
 @media (min-width: 1101px) and (min-height: 700px) {
     body:not(.subpage-layout) {
