@@ -386,35 +386,35 @@ body {
        Subpage Layout Desktop Scaling & Scrollability
        ========================================================================== */
     body.subpage-layout {
-        overflow: hidden; /* Lock the viewport so ONLY the content stream scrolls */
+        overflow: auto; /* Allow standard full-page scrolling */
     }
     body.subpage-layout .page-wrapper {
-        height: 100vh;
+        height: auto;
+        min-height: 100vh;
         box-sizing: border-box;
-        padding: 3vh 40px;
+        padding: 40px;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: stretch;
+        justify-content: flex-start;
+        align-items: center;
     }
     body.subpage-layout .grid-container {
-        height: 100%;
-        max-width: 100%;
+        height: auto;
+        max-width: 1350px; /* Match roomy feel of homepage */
         grid-template-columns: 320px 1fr; /* Strong, clear sidebar and roomy content area */
-        grid-template-rows: 100%;
-        align-items: stretch;
+        grid-template-rows: auto;
+        align-items: start; /* Align sidebar to top so it doesn't stretch awkwardly */
         gap: 24px;
     }
     body.subpage-layout .nav-sidebar {
-        height: 100%;
+        height: auto;
         display: flex;
         flex-direction: column;
         gap: 20px;
     }
     body.subpage-layout .content-stream {
-        height: 100%;
-        overflow-y: auto; /* Enable perfect native scrolling inside the content column */
-        padding-right: 16px; /* Space for scrollbar so content doesn't jitter */
+        height: auto;
+        overflow-y: visible; /* Let the content scroll together with the whole page */
         display: flex;
         flex-direction: column;
         gap: 24px;
