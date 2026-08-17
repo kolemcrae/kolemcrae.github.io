@@ -67,7 +67,7 @@ body {
 .panel {
     background: linear-gradient(180deg, #1a2436 0%, #0f1622 100%);
     border: 1px solid #1e2d42;
-    border-radius: 8px; /* Slightly softer corners to match mockup aesthetics */
+    border-radius: 0; /* Sharp, square corners as preferred */
     padding: 24px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
     transition:
@@ -224,7 +224,7 @@ body {
     background-color: rgba(0, 242, 254, 0.03);
     border: 1px dashed #1e2d42;
     padding: 4px 10px;
-    border-radius: 2px;
+    border-radius: 0; /* Square corners */
 }
 
 .panel-exit-node a:hover {
@@ -303,7 +303,7 @@ body {
     width: 6px;
     height: 6px;
     background-color: #00f2fe;
-    border-radius: 50%;
+    border-radius: 0; /* Square status-online dot for sharp terminal aesthetic */
     margin-right: 8px;
     box-shadow: 0 0 8px #00f2fe;
 }
@@ -311,6 +311,145 @@ body {
 .audio-track {
     color: #38bdf8;
     font-weight: bold;
+}
+
+/* --- Homepage Desktop Dashboard Viewport Filling --- */
+@media (min-width: 1101px) and (min-height: 700px) {
+    body:not(.subpage-layout) {
+        overflow: hidden; /* Lock viewport and prevent body scrolling on large monitors */
+    }
+    body:not(.subpage-layout) .page-wrapper {
+        height: 100vh;
+        box-sizing: border-box;
+        padding: 3vh 40px; /* Scaled responsive padding */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    body:not(.subpage-layout) .grid-container {
+        height: 100%;
+        max-width: 100%; /* Spans full available screen width */
+        grid-template-rows: 1.6fr 1fr; /* Spacings for bento-grid top and bottom rows */
+        align-items: stretch;
+    }
+    body:not(.subpage-layout) .right-column {
+        grid-row: span 2; /* Stretch the right column down the entire height of both rows */
+    }
+    body:not(.subpage-layout) .center-column,
+    body:not(.subpage-layout) .right-column {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    body:not(.subpage-layout) .center-column .panel,
+    body:not(.subpage-layout) .right-column .panel {
+        flex: 1; /* Stretch panels to evenly split the vertical space of the column */
+        min-height: 0; /* Let flex panels shrink/grow correctly in a fixed height container */
+        display: flex;
+        flex-direction: column;
+    }
+    body:not(.subpage-layout) .center-column .panel > div:first-child,
+    body:not(.subpage-layout) .right-column .panel > div:first-child {
+        flex-grow: 1; /* Make inner container push footer nodes to the bottom */
+    }
+
+    /* --- Scaled Typography & Padding to Perfectly Fit Larger Desktop Grid Boxes --- */
+    body:not(.subpage-layout) .panel {
+        padding: 30px; /* Luxurious padding */
+    }
+    body:not(.subpage-layout) .panel-title {
+        font-size: 1.35rem; /* Larger, bolder headings */
+        margin-bottom: 24px;
+        padding-bottom: 10px;
+    }
+    body:not(.subpage-layout) .tree-list li {
+        font-size: 1.05rem; /* Highly readable, spacious body font size */
+        margin-bottom: 14px; /* Balanced vertical rhythm */
+        line-height: 1.6;
+    }
+    body:not(.subpage-layout) .tree-list li ul {
+        margin-top: 8px;
+    }
+    body:not(.subpage-layout) .tree-list li ul li {
+        font-size: 0.98rem; /* Nested elements size */
+        margin-bottom: 8px;
+    }
+    body:not(.subpage-layout) .panel p,
+    body:not(.subpage-layout) .audio-track {
+        font-size: 1.05rem;
+        line-height: 1.6;
+    }
+
+    /* ==========================================================================
+       Subpage Layout Desktop Scaling & Scrollability
+       ========================================================================== */
+    body.subpage-layout {
+        overflow: hidden; /* Lock the viewport so ONLY the content stream scrolls */
+    }
+    body.subpage-layout .page-wrapper {
+        height: 100vh;
+        box-sizing: border-box;
+        padding: 3vh 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: stretch;
+    }
+    body.subpage-layout .grid-container {
+        height: 100%;
+        max-width: 100%;
+        grid-template-columns: 320px 1fr; /* Strong, clear sidebar and roomy content area */
+        grid-template-rows: 100%;
+        align-items: stretch;
+        gap: 24px;
+    }
+    body.subpage-layout .nav-sidebar {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    body.subpage-layout .content-stream {
+        height: 100%;
+        overflow-y: auto; /* Enable perfect native scrolling inside the content column */
+        padding-right: 16px; /* Space for scrollbar so content doesn't jitter */
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+    /* Let subpage text scale beautifully on desktop as well */
+    body.subpage-layout .panel {
+        padding: 30px;
+    }
+    body.subpage-layout .panel-title {
+        font-size: 1.35rem;
+        margin-bottom: 24px;
+        padding-bottom: 10px;
+    }
+    body.subpage-layout .tree-list li {
+        font-size: 1.05rem;
+        margin-bottom: 14px;
+        line-height: 1.6;
+    }
+    body.subpage-layout .tree-list li ul li {
+        font-size: 0.98rem;
+    }
+    body.subpage-layout .exhibit-tile {
+        padding: 0; /* Keep tile body tight */
+    }
+    body.subpage-layout .exhibit-tile .tile-text {
+        padding: 30px; /* Spacious metadata container */
+    }
+    body.subpage-layout .exhibit-tile .tile-text h3 {
+        font-size: 1.4rem;
+        margin-bottom: 12px;
+    }
+    body.subpage-layout .exhibit-tile .tile-text p {
+        font-size: 1.05rem;
+        line-height: 1.6;
+    }
 }
 
 /* --- Responsive Home Page Media Rules --- */
@@ -437,7 +576,7 @@ a.panel-title:hover::before {
 .exhibit-tile {
     background-color: #242f41; /* Slightly lighter than deep slate-blue to pop nicely */
     border: 1px solid #334155;
-    border-radius: 12px; /* Smooth corners to match the mockup styling */
+    border-radius: 0; /* Sharp, square corners */
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.45);
     overflow: hidden;
     transition:
@@ -491,7 +630,7 @@ a.panel-title:hover::before {
     object-fit: contain; /* CRITICAL: Displays full screenshot uncropped, preserving history! */
     display: block;
     border: 1px solid #334155; /* Frame the screenshot itself sharply */
-    border-radius: 6px;
+    border-radius: 0; /* Square corners */
     background-color: #18202c;
     opacity: 0.92; /* Soften bright white screenshots to match the overall dark aesthetic */
     transition: opacity 0.25s ease;
@@ -588,7 +727,7 @@ a.panel-title:hover::before {
     max-height: 82vh;
     object-fit: contain; /* Full screenshot scale preservation */
     border: 1px solid #1e2d42;
-    border-radius: 6px;
+    border-radius: 0; /* Square corners */
     box-shadow: 0 16px 50px rgba(0, 0, 0, 0.85);
     transform: scale(0.95);
     transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
