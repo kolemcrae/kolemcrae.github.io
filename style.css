@@ -97,6 +97,12 @@ body {
     border-bottom: 1px dashed #1e2d42;
     padding-bottom: 6px;
 }
+.panel .panel-title a,
+.panel .panel-title a:visited,
+.panel .panel-title a:hover {
+    color: inherit !important;
+    text-decoration: none !important;
+}
 
 /* --- High-Contrast Terminal Bold Text --- */
 .tree-list li strong,
