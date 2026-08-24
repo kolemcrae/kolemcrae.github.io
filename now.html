@@ -18,6 +18,14 @@
 </head>
 <body class="subpage-layout">
 
+    <!-- Mobile Menu Toggle (Only visible on screens <= 900px) -->
+    <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    <div class="mobile-menu-overlay"></div>
+
 <div class="page-wrapper">
     <div class="grid-container">
         
@@ -192,6 +200,23 @@
         </main>
     </div>
 </div>
+
+    <!-- Mobile Menu Toggle Logic -->
+    <script>
+        const toggleBtn = document.querySelector('.mobile-menu-toggle');
+        const sidebar = document.querySelector('.nav-sidebar');
+        const overlay = document.querySelector('.mobile-menu-overlay');
+
+        if (toggleBtn && sidebar && overlay) {
+            const toggleMenu = () => {
+                toggleBtn.classList.toggle('active');
+                sidebar.classList.toggle('active');
+                overlay.classList.toggle('active');
+            };
+            toggleBtn.addEventListener('click', toggleMenu);
+            overlay.addEventListener('click', toggleMenu);
+        }
+    </script>
 
 </body>
 </html>

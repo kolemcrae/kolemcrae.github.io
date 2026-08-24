@@ -539,6 +539,14 @@ body {
     margin-top: -6px;
 }
 
+/* --- Mobile Menu Toggle & Overlay Default Styles (Hidden on Desktop) --- */
+.mobile-menu-toggle {
+    display: none;
+}
+.mobile-menu-overlay {
+    display: none;
+}
+
 /* --- Subpage Layout Mobile Breakpoints --- */
 @media (max-width: 900px) {
     .subpage-layout .grid-container {
@@ -546,6 +554,89 @@ body {
     }
     .subpage-layout .inner-content-grid {
         grid-template-columns: 1fr;
+    }
+
+    /* --- Mobile Menu Toggle Button (Floating Top-Left) --- */
+    .mobile-menu-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 24px;
+        height: 18px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        position: fixed;
+        top: 24px;
+        left: 24px;
+        z-index: 10002; /* Float above everything including the drawer */
+        padding: 0;
+    }
+    .mobile-menu-toggle span {
+        display: block;
+        width: 100%;
+        height: 3px;
+        background-color: #ffd54f; /* Matches your gold accents */
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    /* Form smooth close 'X' button on active state */
+    .mobile-menu-toggle.active span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+    .mobile-menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+    .mobile-menu-toggle.active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /* --- Menu Dimmer Backdrop Overlay --- */
+    .mobile-menu-overlay {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(6, 9, 14, 0.85); /* Deep dark overlay */
+        backdrop-filter: blur(4px); /* Sleek backdrop blur */
+        z-index: 10000;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+    .mobile-menu-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* --- Sidebar Transitioning Into Drawer --- */
+    .subpage-layout .nav-sidebar {
+        position: fixed;
+        top: 0;
+        left: -340px; /* Completely hidden off-screen to start */
+        width: 320px;
+        height: 100vh;
+        background: linear-gradient(180deg, #131d2b 0%, #0c121c 100%) !important; /* Premium matching gradient background */
+        border-right: 1px solid #1e2d42;
+        box-shadow: 10px 0 30px rgba(0, 0, 0, 0.7);
+        z-index: 10001;
+        padding: 70px 24px 30px 24px; /* Clearance for the fixed menu toggle */
+        overflow-y: auto; /* Scrollable inside sidebar if content overflows */
+        transition: left 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .subpage-layout .nav-sidebar.active {
+        left: 0; /* Slide in drawer from left */
+    }
+
+    /* Adjust page margins to clear the floating button */
+    .subpage-layout .page-wrapper {
+        padding-top: 70px !important;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
     }
 }
 
