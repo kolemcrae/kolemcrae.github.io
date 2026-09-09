@@ -29,6 +29,16 @@
 <div class="page-wrapper">
     <div class="grid-container">
         
+        <!-- Terminal System Status Bar (Spans across all columns) -->
+        <div class="terminal-header-bar">
+            <div class="terminal-header-left">
+                <span class="prompt-user">kole@mcrae-os</span>:<span class="prompt-dir">~/now</span>$ systemctl status now_page.service --active
+            </div>
+            <div class="terminal-header-right">
+                <span class="status-indicator-active">● SYS_ACTIVE (PORT_8000)</span>
+            </div>
+        </div>
+        
         <aside class="nav-sidebar">
             
             <div class="panel panel-teal">
@@ -113,11 +123,11 @@
             <header class="panel panel-green" style="margin-bottom: 20px;">
                 <h2 class="panel-title header-with-timestamp" style="margin-bottom: 0; border-bottom: none; padding-bottom: 0;">
                     <span>What's Happening Now?</span>
-                    <time class="timestamp">// Last Updated: [2026-08-17]</time>
+                    <time class="timestamp">// Last Updated: [2026-09-09]</time>
                 </h2>
             </header>
 
-            <section class="panel">
+            <section class="panel panel-green">
                 <h2 class="panel-title">Current Focus</h2>
                 <ul class="tree-list">
                     <li>
@@ -144,12 +154,15 @@
                         <span class="tree-label">Personal Stuff</span>
                         <ul>
                             <li>I live in <strong>Toronto, Ontario.</strong> Don't plan to move anytime soon.</li>
+                            <li>Gardening season is coming to a close, wrapping up and harvesting the final crop for the year.</li>
+                            <li>I Dungeon Master (DM) weekly for my Dungeons & Dragons group, and it's absolutely awesome.</li>
+                            <li>Current favourite games include <strong>The Finals</strong> and <strong>Rocket League</strong>, but I am playing through <strong>Doom: The Dark Ages</strong> and giving <strong>Subnautica 2</strong> and <strong>Grounded 2</strong> a try in early access.</li>
                         </ul>
                     </li> 
                 </ul>
             </section>
 
-            <section class="panel">
+            <section class="panel panel-plum">
                 <h2 class="panel-title">Thoughts on Thinking</h2>
                 <ul class="tree-list">
                     <li>
@@ -170,9 +183,19 @@
                         </ul>
                     </li>
                 </ul>
+
+                <!-- Nested bullet brain-db visualization (Thematic for Logseq notes) -->
+                <div class="logseq-tree">
+                    <span class="tree-label">LOGSEQ_BRAIN_GRAPH</span>
+                    <pre class="ascii-art-plum">
+● brain_graph_db
+├── ○ gtd_inbox
+│   └── [✔] organize_life
+└── ○ modular_thoughts</pre>
+                </div>
             </section>
 
-            <section class="panel">
+            <section class="panel panel-rust">
                 <h2 class="panel-title">Current Project</h2>
                 <ul class="tree-list">
                     <li>
@@ -183,9 +206,17 @@
                         </ul>
                     </li>
                 </ul>
+
+                <!-- Horizontal track timeline (Thematic for 20-year history exhibit) -->
+                <div class="timeline-bar">
+                    <span class="tree-label">EXHIBIT_TRACK_NAV</span>
+                    <div class="horizontal-timeline">
+                        <a href="timeline.html#year-2010" class="year-link">2010</a>───<a href="timeline.html#year-2014" class="year-link">2014</a>───<a href="timeline.html#year-2020" class="year-link">2020</a>───[<a href="timeline.html#year-2026" class="year-link active-year">2026</a>]
+                    </div>
+                </div>
             </section>
 
-            <section class="panel">
+            <section class="panel panel-sand">
                 <h2 class="panel-title">Credits</h2>
                 <ul class="tree-list">
                     <li>

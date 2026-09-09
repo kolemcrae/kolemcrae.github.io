@@ -5,8 +5,18 @@
     padding: 0;
 }
 
+html {
+    scroll-behavior: smooth; /* Glides beautifully down to year cards when clicked */
+}
+
 body {
-    background-color: #1a2230; /* Deep blue slate background inspired by the mockup */
+    background-color: #060913; /* Even deeper, premium space-black canvas */
+    background-image: 
+        radial-gradient(circle at 20% 30%, rgba(0, 242, 254, 0.14) 0%, transparent 55%), /* Swept glowing Teal console light */
+        radial-gradient(circle at 80% 70%, rgba(244, 114, 182, 0.14) 0%, transparent 55%), /* Swept glowing Plum console light */
+        radial-gradient(rgba(30, 45, 66, 0.35) 1.5px, transparent 1.5px); /* Premium high-density dot matrix blueprint */
+    background-size: 100% 100%, 100% 100%, 28px 28px; /* Clean, compact 28px dot grid spacing */
+    background-attachment: fixed; /* Keep background locked to screen for premium subpage scrolling parallax */
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     color: #e2e8f0;
     min-height: 100vh;
@@ -65,19 +75,25 @@ body {
 
 /* --- Panel Aesthetics --- */
 .panel {
-    background: linear-gradient(180deg, #1a2436 0%, #0f1622 100%);
-    border: 1px solid #1e2d42;
+    background: linear-gradient(180deg, rgba(20, 28, 43, 0.45) 0%, rgba(10, 15, 24, 0.55) 100%);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px); /* Safari support */
+    border: 1px solid rgba(30, 45, 66, 0.7);
     border-radius: 0; /* Sharp, square corners as preferred */
     padding: 24px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column; /* Enable flex-column to support margin-top: auto layouts */
     transition:
         border-color 0.25s ease,
-        box-shadow 0.25s ease;
+        box-shadow 0.25s ease,
+        background 0.25s ease;
 }
 
 .panel:hover {
     border-color: #00f2fe;
-    box-shadow: 0 0 18px rgba(0, 242, 254, 0.12);
+    box-shadow: 0 0 20px rgba(0, 242, 254, 0.25);
+    background: linear-gradient(180deg, rgba(20, 28, 43, 0.55) 0%, rgba(10, 15, 24, 0.65) 100%);
 }
 
 /* Flex-aligned utility panel variant for right-aligned link layout elements */
@@ -227,15 +243,20 @@ body {
 .panel-exit-node a {
     font-size: 0.88rem;
     letter-spacing: 0.5px;
-    background-color: rgba(0, 242, 254, 0.03);
-    border: 1px dashed #1e2d42;
-    padding: 4px 10px;
+    background-color: rgba(0, 242, 254, 0.05);
+    border: 1px solid rgba(0, 242, 254, 0.35); /* Solid border for button feel */
+    padding: 6px 14px; /* More clickable button padding */
     border-radius: 0; /* Square corners */
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.2s ease;
 }
 
 .panel-exit-node a:hover {
     border-color: #00f2fe;
-    background-color: rgba(0, 242, 254, 0.08);
+    background-color: rgba(0, 242, 254, 0.18);
+    box-shadow: 0 0 12px rgba(0, 242, 254, 0.4); /* Glowing button hover effect */
+    transform: translateY(-1px);
 }
 
 /* Left-aligned inline system path tree link fallback alternative */
@@ -312,6 +333,235 @@ body {
     border-radius: 0; /* Square status-online dot for sharp terminal aesthetic */
     margin-right: 8px;
     box-shadow: 0 0 8px #00f2fe;
+    animation: pulse-cyan 2s infinite alternate; /* Precise pulsing neon status glow */
+}
+
+/* Pulsing Console status Keyframes */
+@keyframes pulse-cyan {
+    0% { box-shadow: 0 0 3px #00f2fe, 0 0 6px #00f2fe; opacity: 0.85; }
+    100% { box-shadow: 0 0 10px #00f2fe, 0 0 16px #00f2fe; opacity: 1; }
+}
+
+@keyframes pulse-green {
+    0% { box-shadow: 0 0 3px #4ade80, 0 0 6px #4ade80; opacity: 0.85; }
+    100% { box-shadow: 0 0 10px #4ade80, 0 0 16px #4ade80; opacity: 1; }
+}
+
+/* --- Interactive Waveform Visualizer --- */
+.waveform-container {
+    margin-top: auto; /* Push to the absolute bottom of the bento card */
+    padding-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-top: 1px dashed rgba(255, 255, 255, 0.08);
+}
+
+.waveform {
+    display: flex;
+    align-items: flex-end;
+    gap: 5px;
+    height: 32px;
+    padding-bottom: 2px;
+}
+
+.waveform .bar {
+    width: 4px;
+    border-radius: 0;
+    background-color: #22d3ee; /* Glowing teal to match panel */
+    box-shadow: 0 0 8px rgba(34, 211, 238, 0.4);
+    animation: bounce 1s ease-in-out infinite alternate;
+}
+
+.waveform .bar:nth-child(1) { animation-delay: 0.1s; height: 35%; }
+.waveform .bar:nth-child(2) { animation-delay: 0.4s; height: 85%; }
+.waveform .bar:nth-child(3) { animation-delay: 0.2s; height: 55%; }
+.waveform .bar:nth-child(4) { animation-delay: 0.6s; height: 95%; }
+.waveform .bar:nth-child(5) { animation-delay: 0.3s; height: 45%; }
+.waveform .bar:nth-child(6) { animation-delay: 0.5s; height: 75%; }
+
+@keyframes bounce {
+    0% { transform: scaleY(0.25); transform-origin: bottom; }
+    100% { transform: scaleY(1); transform-origin: bottom; }
+}
+
+/* --- Toolkit Resource meter widget --- */
+.metrics-container {
+    margin-top: auto; /* Push to the absolute bottom of the bento card */
+    padding-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 0.78rem;
+    border-top: 1px dashed rgba(255, 255, 255, 0.08);
+}
+
+.metric-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.metric-name {
+    color: #94a3b8;
+}
+
+.metric-bar {
+    color: #fb923c; /* Match terracotta theme */
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* --- Connect Panel Retro Terminal Box --- */
+.terminal-card {
+    margin-top: auto; /* Push to the absolute bottom of the bento card */
+    padding-top: 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+.terminal-card pre {
+    margin: 0;
+    background: rgba(10, 15, 24, 0.4);
+    border: 1px solid rgba(203, 213, 225, 0.15);
+    padding: 10px 14px;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 0.7rem;
+    color: #cbd5e1;
+    line-height: 1.4;
+    letter-spacing: 0.5px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.6);
+}
+
+/* --- Logseq ASCII tree container --- */
+.logseq-tree {
+    margin-top: auto; /* Push to the absolute bottom of the bento card */
+    padding-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-top: 1px dashed rgba(255, 255, 255, 0.08);
+}
+
+.ascii-art-plum {
+    margin: 0;
+    background: rgba(10, 15, 24, 0.4);
+    border: 1px solid rgba(244, 114, 182, 0.15); /* Plum border */
+    padding: 10px 14px;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 0.72rem;
+    color: #cbd5e1;
+    line-height: 1.4;
+    letter-spacing: 0.5px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.6);
+}
+
+/* --- Timeline horizontal bar widget --- */
+.timeline-bar {
+    margin-top: auto; /* Push to the absolute bottom of the bento card */
+    padding-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-top: 1px dashed rgba(255, 255, 255, 0.08);
+}
+
+.horizontal-timeline {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 0.8rem;
+    color: rgba(248, 113, 113, 0.4); /* Muted rust lines */
+    letter-spacing: 0.5px;
+    background: rgba(10, 15, 24, 0.4);
+    border: 1px solid rgba(248, 113, 113, 0.15); /* Rust border */
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.6);
+}
+
+.horizontal-timeline .year-link {
+    color: #94a3b8;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.15s ease, text-shadow 0.15s ease;
+}
+
+.horizontal-timeline .year-link:hover {
+    color: #00f2fe; /* Light up cyan on hover */
+    text-shadow: 0 0 8px rgba(0, 242, 254, 0.5);
+}
+
+.horizontal-timeline .year-link.active-year {
+    color: #f87171; /* Highlight current year in rust color */
+    font-weight: bold;
+    animation: pulse-rust 1.5s infinite alternate;
+}
+
+.horizontal-timeline .year-link.active-year:hover {
+    color: #ff9191;
+    text-shadow: 0 0 12px rgba(248, 113, 113, 0.7);
+}
+
+@keyframes pulse-rust {
+    0% { text-shadow: 0 0 2px #f87171, 0 0 4px #f87171; }
+    100% { text-shadow: 0 0 8px #f87171, 0 0 12px #f87171; }
+}
+
+/* --- High-End Terminal Header Utility Bar --- */
+.terminal-header-bar {
+    grid-column: 1 / -1; /* Spans all columns automatically in any CSS grid container */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(8, 12, 20, 0.25); /* Ultra-translucent background */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(30, 45, 66, 0.4); /* Lower contrast border */
+    padding: 6px 16px; /* Super thin, sleek tmux-style status line */
+    font-family: "Courier New", Courier, monospace;
+    font-size: 0.74rem; /* Tiny, elegant, and non-distracting text size */
+    color: #94a3b8; /* Muted text color */
+    letter-spacing: 0.5px;
+    margin-bottom: 4px; /* Balanced space before bento grid blocks start */
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.terminal-header-left {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.prompt-user {
+    color: #00f2fe; /* Glowing cyan */
+    font-weight: bold;
+}
+
+.prompt-dir {
+    color: #ffd54f; /* Glowing gold */
+}
+
+.status-indicator-active {
+    color: #4ade80; /* Bright, vibrant console green */
+    opacity: 0.85;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.status-indicator-active::before {
+    content: "";
+    display: inline-block;
+    width: 5px; /* Shrunk status light */
+    height: 5px;
+    background-color: #4ade80;
+    border-radius: 0;
+    box-shadow: 0 0 6px #4ade80;
+    animation: pulse-green 3s infinite alternate; /* Slower, gentler pulse */
 }
 
 .audio-track {
@@ -350,7 +600,7 @@ body {
     body:not(.subpage-layout) .grid-container {
         height: 100%;
         max-width: 100%; /* Spans full available screen width */
-        grid-template-rows: 1.6fr 1fr; /* Spacings for bento-grid top and bottom rows */
+        grid-template-rows: auto 1.6fr 1fr; /* Precise auto-height row for the header bar + spacings for bento grid */
         align-items: stretch;
     }
     body:not(.subpage-layout) .right-column {
@@ -386,11 +636,17 @@ body {
     }
     body:not(.subpage-layout) .tree-list li {
         font-size: 1.05rem; /* Highly readable, spacious body font size */
-        margin-bottom: 14px; /* Balanced vertical rhythm */
+        margin-bottom: 12px; /* Sub-item margins */
         line-height: 1.6;
     }
+    body:not(.subpage-layout) .tree-list > li {
+        margin-bottom: 24px; /* Balanced, luxurious spacing between main categories to fill empty spaces beautifully */
+    }
+    body:not(.subpage-layout) .tree-list > li:last-child {
+        margin-bottom: 0;
+    }
     body:not(.subpage-layout) .tree-list li ul {
-        margin-top: 8px;
+        margin-top: 10px; /* Space out the folder labels from sub-items */
     }
     body:not(.subpage-layout) .tree-list li ul li {
         font-size: 0.98rem; /* Nested elements size */
@@ -904,8 +1160,8 @@ a.panel-title:hover::before {
 
 /* Teal Theme (e.g., Kole McRae Intro Panel) */
 .panel-teal {
-    background: linear-gradient(180deg, #127194 0%, #0c5874 100%) !important;
-    border-color: #0f769c !important;
+    background: linear-gradient(180deg, rgba(18, 113, 148, 0.06) 0%, rgba(12, 88, 116, 0.12) 100%) !important;
+    border-color: rgba(34, 211, 238, 0.75) !important;
 }
 .panel-teal .panel-title {
     color: #ffffff !important;
@@ -929,8 +1185,8 @@ a.panel-title:hover::before {
 
 /* Green Theme (e.g., What's Up Now Panel) */
 .panel-green {
-    background: linear-gradient(180deg, #278563 0%, #1c684c 100%) !important;
-    border-color: #258562 !important;
+    background: linear-gradient(180deg, rgba(39, 133, 99, 0.06) 0%, rgba(28, 104, 76, 0.12) 100%) !important;
+    border-color: rgba(74, 222, 128, 0.75) !important;
 }
 .panel-green .panel-title {
     color: #ffffff !important;
@@ -954,8 +1210,8 @@ a.panel-title:hover::before {
 
 /* Plum Theme (e.g., Thoughts/Current Things Panel) */
 .panel-plum {
-    background: linear-gradient(180deg, #6a225a 0%, #4c1640 100%) !important;
-    border-color: #631f54 !important;
+    background: linear-gradient(180deg, rgba(106, 34, 90, 0.06) 0%, rgba(76, 22, 64, 0.12) 100%) !important;
+    border-color: rgba(244, 114, 182, 0.75) !important;
 }
 .panel-plum .panel-title {
     color: #ffffff !important;
@@ -979,8 +1235,8 @@ a.panel-title:hover::before {
 
 /* Terracotta Theme (e.g., Toolkit Panel) */
 .panel-terracotta {
-    background: linear-gradient(180deg, #b6612b 0%, #944b1c 100%) !important;
-    border-color: #bc5f24 !important;
+    background: linear-gradient(180deg, rgba(182, 97, 43, 0.06) 0%, rgba(148, 75, 28, 0.12) 100%) !important;
+    border-color: rgba(251, 146, 60, 0.75) !important;
 }
 .panel-terracotta .panel-title {
     color: #ffffff !important;
@@ -1004,8 +1260,8 @@ a.panel-title:hover::before {
 
 /* Rust Theme (e.g., Current Project Panel) */
 .panel-rust {
-    background: linear-gradient(180deg, #c43d22 0%, #a42c14 100%) !important;
-    border-color: #cc3719 !important;
+    background: linear-gradient(180deg, rgba(196, 61, 34, 0.06) 0%, rgba(164, 44, 20, 0.12) 100%) !important;
+    border-color: rgba(248, 113, 113, 0.75) !important;
 }
 .panel-rust .panel-title {
     color: #ffffff !important;
@@ -1029,8 +1285,8 @@ a.panel-title:hover::before {
 
 /* Sand/Taupe Theme (e.g., Credits Panel) */
 .panel-sand {
-    background: linear-gradient(180deg, #977757 0%, #7c6044 100%) !important;
-    border-color: #9c7955 !important;
+    background: linear-gradient(180deg, rgba(151, 119, 87, 0.06) 0%, rgba(124, 96, 68, 0.12) 100%) !important;
+    border-color: rgba(251, 191, 36, 0.75) !important;
 }
 .panel-sand .panel-title {
     color: #ffffff !important;
@@ -1054,8 +1310,8 @@ a.panel-title:hover::before {
 
 /* Gray Theme (e.g., Connect Panel) */
 .panel-gray {
-    background: linear-gradient(180deg, #4e586c 0%, #3c4454 100%) !important;
-    border-color: #4c566a !important;
+    background: linear-gradient(180deg, rgba(78, 88, 108, 0.06) 0%, rgba(60, 68, 84, 0.12) 100%) !important;
+    border-color: rgba(203, 213, 225, 0.75) !important;
 }
 .panel-gray .panel-title {
     color: #ffffff !important;
@@ -1112,71 +1368,99 @@ a.panel-title:hover::before {
 
 /* Custom Exit Node Buttons Polished to Match Panel Themes */
 .panel-teal .panel-exit-node a {
-    background-color: rgba(34, 211, 238, 0.08) !important;
-    border: 1px dashed rgba(34, 211, 238, 0.4) !important;
+    background-color: rgba(34, 211, 238, 0.12) !important;
+    border: 1px solid rgba(34, 211, 238, 0.55) !important;
     color: #ffffff !important;
+    padding: 8px 18px !important;
+    box-shadow: inset 0 0 6px rgba(34, 211, 238, 0.25), 0 4px 12px rgba(0, 0, 0, 0.45) !important;
 }
 .panel-teal .panel-exit-node a:hover {
     border-color: #00f2fe !important;
-    background-color: rgba(34, 211, 238, 0.2) !important;
+    background-color: rgba(34, 211, 238, 0.26) !important;
+    box-shadow: inset 0 0 8px rgba(34, 211, 238, 0.35), 0 0 16px rgba(34, 211, 238, 0.55), 0 4px 12px rgba(0, 0, 0, 0.45) !important;
+    transform: translateY(1px) !important;
 }
 
 .panel-green .panel-exit-node a {
-    background-color: rgba(74, 222, 128, 0.08) !important;
-    border: 1px dashed rgba(74, 222, 128, 0.4) !important;
+    background-color: rgba(74, 222, 128, 0.12) !important;
+    border: 1px solid rgba(74, 222, 128, 0.55) !important;
     color: #ffffff !important;
+    padding: 8px 18px !important;
+    box-shadow: inset 0 0 6px rgba(74, 222, 128, 0.25), 0 4px 12px rgba(0, 0, 0, 0.45) !important;
 }
 .panel-green .panel-exit-node a:hover {
     border-color: #4ade80 !important;
-    background-color: rgba(74, 222, 128, 0.2) !important;
+    background-color: rgba(74, 222, 128, 0.26) !important;
+    box-shadow: inset 0 0 8px rgba(74, 222, 128, 0.35), 0 0 16px rgba(74, 222, 128, 0.55), 0 4px 12px rgba(0, 0, 0, 0.45) !important;
+    transform: translateY(1px) !important;
 }
 
 .panel-plum .panel-exit-node a {
-    background-color: rgba(244, 114, 182, 0.08) !important;
-    border: 1px dashed rgba(244, 114, 182, 0.4) !important;
+    background-color: rgba(244, 114, 182, 0.12) !important;
+    border: 1px solid rgba(244, 114, 182, 0.55) !important;
     color: #ffffff !important;
+    padding: 8px 18px !important;
+    box-shadow: inset 0 0 6px rgba(244, 114, 182, 0.25), 0 4px 12px rgba(0, 0, 0, 0.45) !important;
 }
 .panel-plum .panel-exit-node a:hover {
     border-color: #f472b6 !important;
-    background-color: rgba(244, 114, 182, 0.2) !important;
+    background-color: rgba(244, 114, 182, 0.26) !important;
+    box-shadow: inset 0 0 8px rgba(244, 114, 182, 0.35), 0 0 16px rgba(244, 114, 182, 0.55), 0 4px 12px rgba(0, 0, 0, 0.45) !important;
+    transform: translateY(1px) !important;
 }
 
 .panel-terracotta .panel-exit-node a {
-    background-color: rgba(251, 146, 60, 0.08) !important;
-    border: 1px dashed rgba(251, 146, 60, 0.4) !important;
+    background-color: rgba(251, 146, 60, 0.12) !important;
+    border: 1px solid rgba(251, 146, 60, 0.55) !important;
     color: #ffffff !important;
+    padding: 8px 18px !important;
+    box-shadow: inset 0 0 6px rgba(251, 146, 60, 0.25), 0 4px 12px rgba(0, 0, 0, 0.45) !important;
 }
 .panel-terracotta .panel-exit-node a:hover {
     border-color: #fb923c !important;
-    background-color: rgba(251, 146, 60, 0.2) !important;
+    background-color: rgba(251, 146, 60, 0.26) !important;
+    box-shadow: inset 0 0 8px rgba(251, 146, 60, 0.35), 0 0 16px rgba(251, 146, 60, 0.55), 0 4px 12px rgba(0, 0, 0, 0.45) !important;
+    transform: translateY(1px) !important;
 }
 
 .panel-rust .panel-exit-node a {
-    background-color: rgba(248, 113, 113, 0.08) !important;
-    border: 1px dashed rgba(248, 113, 113, 0.4) !important;
+    background-color: rgba(248, 113, 113, 0.12) !important;
+    border: 1px solid rgba(248, 113, 113, 0.55) !important;
     color: #ffffff !important;
+    padding: 8px 18px !important;
+    box-shadow: inset 0 0 6px rgba(248, 113, 113, 0.25), 0 4px 12px rgba(0, 0, 0, 0.45) !important;
 }
 .panel-rust .panel-exit-node a:hover {
     border-color: #f87171 !important;
-    background-color: rgba(248, 113, 113, 0.2) !important;
+    background-color: rgba(248, 113, 113, 0.26) !important;
+    box-shadow: inset 0 0 8px rgba(248, 113, 113, 0.35), 0 0 16px rgba(248, 113, 113, 0.55), 0 4px 12px rgba(0, 0, 0, 0.45) !important;
+    transform: translateY(1px) !important;
 }
 
 .panel-sand .panel-exit-node a {
-    background-color: rgba(251, 191, 36, 0.08) !important;
-    border: 1px dashed rgba(251, 191, 36, 0.4) !important;
+    background-color: rgba(251, 191, 36, 0.12) !important;
+    border: 1px solid rgba(251, 191, 36, 0.55) !important;
     color: #ffffff !important;
+    padding: 8px 18px !important;
+    box-shadow: inset 0 0 6px rgba(251, 191, 36, 0.25), 0 4px 12px rgba(0, 0, 0, 0.45) !important;
 }
 .panel-sand .panel-exit-node a:hover {
     border-color: #fbbf24 !important;
-    background-color: rgba(251, 191, 36, 0.2) !important;
+    background-color: rgba(251, 191, 36, 0.26) !important;
+    box-shadow: inset 0 0 8px rgba(251, 191, 36, 0.35), 0 0 16px rgba(251, 191, 36, 0.55), 0 4px 12px rgba(0, 0, 0, 0.45) !important;
+    transform: translateY(1px) !important;
 }
 
 .panel-gray .panel-exit-node a {
-    background-color: rgba(203, 213, 225, 0.08) !important;
-    border: 1px dashed rgba(203, 213, 225, 0.4) !important;
+    background-color: rgba(203, 213, 225, 0.12) !important;
+    border: 1px solid rgba(203, 213, 225, 0.55) !important;
     color: #ffffff !important;
+    padding: 8px 18px !important;
+    box-shadow: inset 0 0 6px rgba(203, 213, 225, 0.25), 0 4px 12px rgba(0, 0, 0, 0.45) !important;
 }
 .panel-gray .panel-exit-node a:hover {
     border-color: #cbd5e1 !important;
-    background-color: rgba(203, 213, 225, 0.2) !important;
+    background-color: rgba(203, 213, 225, 0.26) !important;
+    box-shadow: inset 0 0 8px rgba(203, 213, 225, 0.35), 0 0 16px rgba(203, 213, 225, 0.55), 0 4px 12px rgba(0, 0, 0, 0.45) !important;
+    transform: translateY(1px) !important;
 }

@@ -22,7 +22,16 @@
     <main class="page-wrapper">
         <div class="grid-container">
             
-        
+            <!-- Terminal System Status Bar (Spans across all columns) -->
+            <div class="terminal-header-bar">
+                <div class="terminal-header-left">
+                    <span class="prompt-user">kole@mcrae-os</span>:<span class="prompt-dir">~</span>$ systemctl status portfolio.service --active
+                </div>
+                <div class="terminal-header-right">
+                    <span class="status-indicator-active">● SYS_ACTIVE (PORT_8000)</span>
+                </div>
+            </div>
+            
             <section class="panel profile-col panel-teal">
                 <h1 class="panel-title">Kole McRae</h1>
                 <ul class="tree-list">
@@ -51,6 +60,19 @@
                         </ul>
                     </li>
                 </ul>
+
+                <!-- Animated Audio wave visualizer (Thematic easter egg for audio gear interest) -->
+                <div class="waveform-container">
+                    <span class="tree-label">BARDIC_INSPIRATION_OSCILLATOR</span>
+                    <div class="waveform">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
+                </div>
             </section>
 
         
@@ -118,6 +140,23 @@
                             </ul>
                         </li>
                     </ul>
+
+                    <!-- Resource meter bars (Thematic metric for Toolkit) -->
+                    <div class="metrics-container">
+                        <span class="tree-label">SYS_RESOURCES</span>
+                        <div class="metric-row">
+                            <span class="metric-name">ANALYTICS_FLOW</span>
+                            <span class="metric-bar">[███████████████] 100%</span>
+                        </div>
+                        <div class="metric-row">
+                            <span class="metric-name">TOMATO_YIELD</span>
+                            <span class="metric-bar">[████████████░░░] 82%</span>
+                        </div>
+                        <div class="metric-row">
+                            <span class="metric-name">JAYS_OPTIMISM</span>
+                            <span class="metric-bar">[████████░░░░░░░] 55%</span>
+                        </div>
+                    </div>
                 </section>
 
                 <section class="panel panel-gray">
@@ -126,6 +165,15 @@
                         <li><a href="mailto:kole@kolemcrae.com" target="_blank"><span class="panel-icon">✉️</span>email me <span>&rarr;</span></a></li>
                         <li><a href="https://www.linkedin.com/in/kole-mcrae/" target="_blank"><span class="panel-icon">🔗</span>LinkedIn <span>&rarr;</span></a></li>
                     </ul>
+
+                    <!-- Retro-terminal frame (Thematic visual for Connect) -->
+                    <div class="terminal-card">
+                        <pre class="ascii-art">
+┌────────────────────────────────┐
+│ SECURE CONNECTIVITY ONLINE     │
+│ PORT: SSH_22 // KOLEMCRAE.COM  │
+└────────────────────────────────┘</pre>
+                    </div>
                 </section>
             </div>
 
@@ -143,6 +191,14 @@
                                 </ul>
                             </li>
                         </ul>
+                    </div>
+
+                    <!-- Horizontal track timeline (Thematic for 20-year history exhibit) -->
+                    <div class="timeline-bar">
+                        <span class="tree-label">EXHIBIT_TRACK_NAV</span>
+                        <div class="horizontal-timeline">
+                            <a href="timeline.html#year-2010" class="year-link">2010</a>───<a href="timeline.html#year-2014" class="year-link">2014</a>───<a href="timeline.html#year-2020" class="year-link">2020</a>───[<a href="timeline.html#year-2026" class="year-link active-year">2026</a>]
+                        </div>
                     </div>
                 </div>
                 <div class="panel-exit-node links-list">

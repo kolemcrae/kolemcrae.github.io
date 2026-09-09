@@ -32,6 +32,16 @@
 <div class="page-wrapper">
     <div class="grid-container">
         
+        <!-- Terminal System Status Bar (Spans across all columns) -->
+        <div class="terminal-header-bar">
+            <div class="terminal-header-left">
+                <span class="prompt-user">kole@mcrae-os</span>:<span class="prompt-dir">~/subpage</span>$ systemctl status system_node.service --active
+            </div>
+            <div class="terminal-header-right">
+                <span class="status-indicator-active">● SYS_ACTIVE (PORT_8000)</span>
+            </div>
+        </div>
+        
         <!-- ================= LEFT SIDEBAR: CONTEXT & NAV ================= -->
         <aside class="nav-sidebar">
             
@@ -128,7 +138,7 @@
             </header>
 
             <!-- What's Now Panel -->
-            <section class="panel">
+            <section class="panel panel-green">
                 <h2 class="panel-title">Current Focus</h2>
                 <ul class="tree-list">
                     <li>
@@ -150,7 +160,7 @@
             </section>
 
             <!-- Current Things Panel -->
-            <section class="panel">
+            <section class="panel panel-plum">
                 <h2 class="panel-title">Current Things</h2>
                 <ul class="tree-list">
                     <li>
@@ -173,7 +183,7 @@
             </section>
 
             <!-- Current Project Panel -->
-            <section class="panel">
+            <section class="panel panel-rust">
                 <h2 class="panel-title">Current Project</h2>
                 <ul class="tree-list">
                     <li>
@@ -184,6 +194,14 @@
                         </ul>
                     </li>
                 </ul>
+
+                <!-- Horizontal track timeline (Thematic for 20-year history exhibit) -->
+                <div class="timeline-bar">
+                    <span class="tree-label">EXHIBIT_TRACK_NAV</span>
+                    <div class="horizontal-timeline">
+                        <a href="timeline.html#year-2010" class="year-link">2010</a>───<a href="timeline.html#year-2014" class="year-link">2014</a>───<a href="timeline.html#year-2020" class="year-link">2020</a>───[<a href="timeline.html#year-2026" class="year-link active-year">2026</a>]
+                    </div>
+                </div>
             </section>
 
         </main>

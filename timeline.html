@@ -19,6 +19,17 @@
 
         <div class="page-wrapper">
             <div class="grid-container">
+                
+                <!-- Terminal System Status Bar (Spans across all columns) -->
+                <div class="terminal-header-bar">
+                    <div class="terminal-header-left">
+                        <span class="prompt-user">kole@mcrae-os</span>:<span class="prompt-dir">~/timeline</span>$ systemctl status timeline_exhibit.service --active
+                    </div>
+                    <div class="terminal-header-right">
+                        <span class="status-indicator-active">● SYS_ACTIVE (PORT_8000)</span>
+                    </div>
+                </div>
+                
                 <aside class="nav-sidebar">
                     <div class="panel panel-teal">
                         <h1 class="panel-title">
@@ -108,13 +119,21 @@
 
                 <main class="content-stream">
                     <header class="panel panel-rust" style="margin-bottom: 20px;">
-                        <h2 class="panel-title header-with-timestamp" style="margin-bottom: 0; border-bottom: none; padding-bottom: 0;">
+                        <h2 class="panel-title header-with-timestamp" style="margin-bottom: 16px; border-bottom: 1px dashed rgba(255, 255, 255, 0.2); padding-bottom: 10px;">
                             <span>Website Timeline Exhibit</span>
                             <time class="timestamp"
                                 >// Curated History: [2026-06-29] @ 14:30
                                 UTC</time
                             >
                         </h2>
+                        
+                        <!-- Horizontal track timeline Navigation (Smooth scroll jump links) -->
+                        <div class="timeline-bar" style="border-top: none; padding-top: 0; margin-top: 0;">
+                            <span class="tree-label">EXHIBIT_TRACK_NAV</span>
+                            <div class="horizontal-timeline" style="background: rgba(10, 15, 24, 0.25);">
+                                <a href="#year-2010" class="year-link">2010</a>───<a href="#year-2014" class="year-link">2014</a>───<a href="#year-2020" class="year-link">2020</a>───[<a href="#year-2026" class="year-link active-year">2026</a>]
+                            </div>
+                        </div>
                     </header>
 
                     <div class="timeline-intro" style="margin-bottom: 40px; border-bottom: 1px dashed #1e2d42; padding-bottom: 24px;">
@@ -125,7 +144,7 @@
 
                     <div class="timeline-exhibit">
                             <!-- 2010 -->
-                            <div class="exhibit-tile rect-wide">
+                            <div class="exhibit-tile rect-wide" id="year-2010">
                                 <div class="tile-image">
                                     <img src="oldscreenshots/2010.png" alt="Screenshot from 2010" />
                                 </div>
@@ -169,7 +188,7 @@
                             </div>
 
                             <!-- 2014 -->
-                            <div class="exhibit-tile rect-wide">
+                            <div class="exhibit-tile rect-wide" id="year-2014">
                                 <div class="tile-image">
                                     <img src="oldscreenshots/2014.png" alt="Screenshot from 2014" />
                                 </div>
@@ -213,7 +232,7 @@
                             </div>
 
                             <!-- 2020 -->
-                            <div class="exhibit-tile rect-wide">
+                            <div class="exhibit-tile rect-wide" id="year-2020">
                                 <div class="tile-image">
                                     <img src="oldscreenshots/2020.png" alt="Screenshot from 2020" />
                                 </div>
@@ -268,7 +287,7 @@
                             </div>
 
                             <!-- 2026 -->
-                            <div class="exhibit-tile square">
+                            <div class="exhibit-tile square" id="year-2026">
                                 <div class="tile-image">
                                     <img src="oldscreenshots/2026.png" alt="Screenshot from 2026" />
                                 </div>
