@@ -324,17 +324,20 @@ body.signal-home {
     margin-bottom: 0;
 }
 
-.tree-list ul li::before {
+.tree-list ul li::before,
+.tree-list ul ul li::before {
     content: "";
     position: absolute;
     left: -18px;
     top: 0.72em;
     width: 12px;
     height: 1px;
+    border: none;
     background: rgba(56, 189, 248, 0.35);
 }
 
-.panel-signal .tree-list ul li::before {
+.panel-signal .tree-list ul li::before,
+.panel-signal .tree-list ul ul li::before {
     background: rgba(249, 115, 22, 0.38);
 }
 
