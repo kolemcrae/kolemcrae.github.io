@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Kole McRae - Website Timeline Exhibit</title>
         <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="signal.css" />
         <link rel="icon" type="image/png" href="/favicon.png" />
     </head>
     <body class="subpage-layout">
@@ -20,18 +21,30 @@
         <div class="page-wrapper">
             <div class="grid-container">
                 
-                <!-- Terminal System Status Bar (Spans across all columns) -->
-                <div class="terminal-header-bar">
-                    <div class="terminal-header-left">
-                        <span class="prompt-user">kole@mcrae-os</span>:<span class="prompt-dir">~/timeline</span>$ systemctl status timeline_exhibit.service --active
+                <!-- Signal Navigation Bar -->
+                <div class="signal-subpage-bar">
+                    <div class="signal-subpage-brand">
+                        <svg width="150" height="24" viewBox="0 0 150 24" fill="none" aria-hidden="true">
+                            <path d="M2,12 C10,4 16,20 24,10 C30,4 35,18 44,12" stroke="#3b82f6" stroke-width="1.2" opacity="0.75" />
+                            <path d="M2,16 C12,22 18,3 28,15 C34,20 39,8 44,12" stroke="#fb923c" stroke-width="1.1" opacity="0.65" />
+                            <g transform="translate(44, 4) rotate(-8 12 8)">
+                                <path d="M2,8 L-4,6 L-2,10 Z" fill="#f97316" />
+                                <path d="M4,5 C10,3 16,4 21,8 C16,12 10,13 4,11 Z" fill="#e2e8f0" />
+                                <path d="M16,5.5 C18.5,6.5 20,7.2 21,8 C20,8.8 18.5,9.5 16,10.5 Z" fill="#f97316" />
+                                <circle cx="11.5" cy="8" r="1.8" fill="#0f172a" stroke="#38bdf8" stroke-width="0.8" />
+                            </g>
+                            <path d="M70,12 C78,12 81,4 89,4 C97,4 100,20 108,20 C116,20 119,4 127,4 C135,4 138,12 146,12" stroke="#f97316" stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                        <span><a href="/">KOLE MCRAE</a> // NOISE &rarr; THE SIGNAL // TIMELINE</span>
                     </div>
-                    <div class="terminal-header-right">
-                        <span class="status-indicator-active">● SYS_ACTIVE (PORT_8000)</span>
+                    <div class="signal-subpage-lock">
+                        <span class="signal-lock-dot"></span>
+                        <span>Signal Lock</span>
                     </div>
                 </div>
                 
                 <aside class="nav-sidebar">
-                    <div class="panel panel-teal">
+                    <div class="panel panel-signal">
                         <h1 class="panel-title">
                             <a href="/" style="color: inherit; text-decoration: none;">Kole McRae</a>
                         </h1>
@@ -67,7 +80,7 @@
                     </div>
 
                     <!-- Navigation Box -->
-                    <div class="panel panel-plum">
+                    <div class="panel">
                         <div class="panel-title">Navigation</div>
                         <ul class="tree-list links-list">
                             <li><a href="/">Home <span>&rarr;</span></a></li>
@@ -76,7 +89,7 @@
                         </ul>
                     </div>
 
-                    <div class="panel panel-terracotta">
+                    <div class="panel">
                         <div class="panel-title">Toolkit</div>
                         <ul class="tree-list">
                             <li>
@@ -99,7 +112,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="panel panel-gray">
+                    <div class="panel">
                         <div class="panel-title">Connect</div>
                         <ul class="tree-list links-list">
                             <li>
@@ -118,7 +131,7 @@
                 </aside>
 
                 <main class="content-stream">
-                    <header class="panel panel-rust" style="margin-bottom: 20px;">
+                    <header class="panel panel-signal" style="margin-bottom: 20px;">
                         <h2 class="panel-title header-with-timestamp" style="margin-bottom: 16px; border-bottom: 1px dashed rgba(255, 255, 255, 0.2); padding-bottom: 10px;">
                             <span>Website Timeline Exhibit</span>
                             <time class="timestamp"

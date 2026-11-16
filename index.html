@@ -4,36 +4,178 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kole McRae | Home</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="signal.css">
     <link rel="icon" type="image/png" href="/favicon.png">
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-JSCBDM89D4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JSCBDM89D4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-  gtag('config', 'G-JSCBDM89D4');
-</script>
-
+      gtag('config', 'G-JSCBDM89D4');
+    </script>
 </head>
-<body>
+<body class="signal-home">
 
     <main class="page-wrapper">
-        <div class="grid-container">
-            
-            <!-- Terminal System Status Bar (Spans across all columns) -->
-            <div class="terminal-header-bar">
-                <div class="terminal-header-left">
-                    <span class="prompt-user">kole@mcrae-os</span>:<span class="prompt-dir">~</span>$ systemctl status portfolio.service --active
+
+        <!-- Whimsical Noise -> The Signal Space Navigation Hero -->
+        <header class="signal-hero" aria-label="Noise to Signal space navigation illustration">
+            <svg class="signal-hero-svg" viewBox="0 0 1280 155" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="waveGrad" x1="520" y1="78" x2="1120" y2="78" gradientUnits="userSpaceOnUse">
+                        <stop offset="0%" stop-color="#38bdf8" />
+                        <stop offset="25%" stop-color="#f97316" />
+                        <stop offset="70%" stop-color="#fb923c" />
+                        <stop offset="100%" stop-color="#fbbf24" />
+                    </linearGradient>
+                    <radialGradient id="planetGlow" cx="50%" cy="50%" r="50%">
+                        <stop offset="0%" stop-color="#f97316" stop-opacity="0.22" />
+                        <stop offset="100%" stop-color="#f97316" stop-opacity="0" />
+                    </radialGradient>
+                </defs>
+
+                <!-- Subtle Starfield -->
+                <circle cx="48" cy="24" r="1.4" fill="#e2e8f0" opacity="0.6" />
+                <circle cx="115" cy="128" r="1.1" fill="#38bdf8" opacity="0.5" />
+                <circle cx="210" cy="30" r="1.5" fill="#fbbf24" opacity="0.55" />
+                <circle cx="330" cy="135" r="1.2" fill="#e2e8f0" opacity="0.45" />
+                <circle cx="465" cy="22" r="1.3" fill="#38bdf8" opacity="0.5" />
+                <circle cx="620" cy="28" r="1.1" fill="#e2e8f0" opacity="0.4" />
+                <circle cx="790" cy="134" r="1.4" fill="#fb923c" opacity="0.5" />
+                <circle cx="940" cy="22" r="1.5" fill="#e2e8f0" opacity="0.6" />
+                <circle cx="1075" cy="128" r="1.2" fill="#38bdf8" opacity="0.55" />
+
+                <!-- Oscilloscope Grid & Axis Ticks (Right Half) -->
+                <g opacity="0.24" stroke="#38bdf8" stroke-width="1">
+                    <line x1="560" y1="28" x2="1080" y2="28" stroke-dasharray="3 5" />
+                    <line x1="560" y1="78" x2="1080" y2="78" />
+                    <line x1="560" y1="128" x2="1080" y2="128" stroke-dasharray="3 5" />
+                    <line x1="650" y1="14" x2="650" y2="142" stroke-dasharray="3 5" />
+                    <line x1="810" y1="14" x2="810" y2="142" stroke-dasharray="3 5" />
+                    <line x1="970" y1="14" x2="970" y2="142" stroke-dasharray="3 5" />
+                </g>
+                <g fill="#64748b" font-family="monospace" font-size="8.5">
+                    <text x="564" y="25">20.00</text>
+                    <text x="564" y="75">00.00</text>
+                    <text x="564" y="125">-20.00</text>
+                </g>
+
+                <!-- Tangled NOISE Filaments (Left) -->
+                <g stroke-linecap="round" opacity="0.72">
+                    <path d="M-10,60 C60,12 110,140 190,54 C255,-6 290,145 375,74 C430,32 475,102 535,78" stroke="#3b82f6" stroke-width="1.5" />
+                    <path d="M-10,96 C80,146 135,10 215,98 C285,148 330,20 410,88 C460,120 490,62 535,78" stroke="#60a5fa" stroke-width="1.3" />
+                    <path d="M-10,38 C95,118 140,22 235,112 C305,42 360,132 435,62 C475,35 505,88 535,78" stroke="#f97316" stroke-width="1.5" opacity="0.85" />
+                    <path d="M-10,122 C75,42 160,138 250,38 C320,115 375,28 450,96 C485,115 510,75 535,78" stroke="#fb923c" stroke-width="1.2" opacity="0.7" />
+                    <path d="M20,78 C105,20 175,134 270,72 C340,16 395,122 470,68 C495,55 515,82 535,78" stroke="#38bdf8" stroke-width="1.1" opacity="0.6" />
+                </g>
+
+                <!-- Whimsical Rocket Ship Cruising Above the Noise -->
+                <g transform="translate(68, 12) rotate(-14 32 22)">
+                    <g class="float-slow">
+                        <!-- Exhaust Flame -->
+                        <path d="M4,24 C-10,20 -14,25 -18,24 C-13,27 -9,31 4,28 Z" fill="#f97316" opacity="0.9" />
+                        <path d="M5,25 C-4,23 -7,26 -10,26 C-6,28 -3,29 5,27 Z" fill="#fbbf24" />
+                        <!-- Top & Bottom Fins -->
+                        <path d="M12,18 L4,10 L18,16 Z" fill="#f97316" />
+                        <path d="M12,32 L4,40 L18,34 Z" fill="#f97316" />
+                        <!-- Rocket Body -->
+                        <path d="M10,18 C22,13 38,14 52,25 C38,36 22,37 10,32 Z" fill="#e2e8f0" stroke="#94a3b8" stroke-width="1" />
+                        <!-- Nose Cone Accent -->
+                        <path d="M39,17 C45,19 49,22 52,25 C49,28 45,31 39,33 C41,28 41,22 39,17 Z" fill="#f97316" />
+                        <!-- Porthole Window -->
+                        <circle cx="27" cy="25" r="4.8" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5" />
+                        <circle cx="28.5" cy="23.5" r="1.4" fill="#bae6fd" opacity="0.85" />
+                    </g>
+                </g>
+
+                <!-- NOISE Badge -->
+                <g transform="translate(175, 64)">
+                    <rect x="0" y="0" width="76" height="26" rx="6" fill="#070d20" stroke="#3b82f6" stroke-width="1.2" />
+                    <text x="38" y="17" text-anchor="middle" fill="#cbd5e1" font-family="monospace" font-size="11.5" font-weight="700" letter-spacing="1.5">NOISE</text>
+                </g>
+
+                <!-- Astronaut Navigator Channeling Noise into Signal via a Glowing Star-Prism -->
+                <g transform="translate(466, 26)">
+                    <g class="float-slow">
+                        <!-- Backpack -->
+                        <rect x="8" y="30" width="12" height="22" rx="4" fill="#94a3b8" />
+                        <!-- Body -->
+                        <rect x="16" y="28" width="18" height="24" rx="7" fill="#f1f5f9" />
+                        <!-- Helmet -->
+                        <circle cx="25" cy="18" r="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2" />
+                        <!-- Visor -->
+                        <rect x="20" y="13" width="13" height="9" rx="4" fill="#0f172a" stroke="#38bdf8" stroke-width="1" />
+                        <circle cx="29" cy="16" r="1.5" fill="#38bdf8" />
+                        <!-- Raised Arm holding Glowing Navigation Prism/Beacon -->
+                        <path d="M33,33 L49,21" stroke="#f1f5f9" stroke-width="4" stroke-linecap="round" />
+                        <polygon points="56,10 61,18 69,20 61,23 56,31 52,23 44,20 52,18" fill="#fbbf24" opacity="0.95" />
+                        <circle cx="56" cy="20" r="11" stroke="#fb923c" stroke-width="1.2" stroke-dasharray="2 3" fill="none" />
+                        <!-- Legs -->
+                        <path d="M20,52 L17,65 M29,52 L33,64" stroke="#e2e8f0" stroke-width="4" stroke-linecap="round" />
+                    </g>
+                </g>
+
+                <!-- Clean Calibrated SINE WAVE (THE SIGNAL) -->
+                <path class="wave-glow" d="M535,78 C585,78 605,28 655,28 C705,28 725,128 775,128 C825,128 845,28 895,28 C945,28 965,128 1015,128 C1065,128 1085,78 1135,78" stroke="url(#waveGrad)" stroke-width="3" stroke-linecap="round" />
+
+                <!-- THE SIGNAL Badge -->
+                <g transform="translate(762, 65)">
+                    <rect x="0" y="0" width="118" height="26" rx="6" fill="#070d20" stroke="#f97316" stroke-width="1.4" />
+                    <text x="59" y="17" text-anchor="middle" fill="#fed7aa" font-family="monospace" font-size="11.5" font-weight="700" letter-spacing="1.2">THE SIGNAL</text>
+                </g>
+
+                <!-- Communications Tower & Parabolic Dish (LinkedIn-style Truss Tower) -->
+                <g transform="translate(1132, 34)">
+                    <circle cx="62" cy="58" r="52" fill="url(#planetGlow)" />
+                    <!-- Radar Ping Ring -->
+                    <circle class="dish-ping" cx="44" cy="40" r="20" stroke="#38bdf8" stroke-width="1.2" fill="none" />
+                    <!-- Truss / Lattice Gantry Base -->
+                    <g stroke="#94a3b8" stroke-width="1.6" stroke-linecap="round">
+                        <line x1="48" y1="118" x2="58" y2="74" />
+                        <line x1="88" y1="118" x2="76" y2="74" />
+                        <line x1="51" y1="106" x2="85" y2="106" />
+                        <line x1="54" y1="92" x2="80" y2="92" />
+                        <line x1="51" y1="106" x2="78" y2="92" stroke-width="1.1" />
+                        <line x1="85" y1="106" x2="56" y2="92" stroke-width="1.1" />
+                        <line x1="54" y1="92" x2="76" y2="74" stroke-width="1.1" />
+                        <line x1="80" y1="92" x2="58" y2="74" stroke-width="1.1" />
+                    </g>
+                    <rect x="40" y="116" width="56" height="5" rx="2" fill="#475569" />
+                    <!-- Swivel Mount -->
+                    <rect x="57" y="68" width="20" height="8" rx="2" fill="#64748b" />
+                    <!-- Parabolic Dish (Smooth 3D Elliptical Dish) -->
+                    <ellipse cx="68" cy="54" rx="17" ry="30" transform="rotate(24 68 54)" fill="#94a3b8" stroke="#64748b" stroke-width="1.4" />
+                    <ellipse cx="62" cy="51" rx="16" ry="29" transform="rotate(24 62 51)" fill="#1e293b" stroke="#cbd5e1" stroke-width="1.8" />
+                    <!-- Inner Dish Ribs -->
+                    <ellipse cx="62" cy="51" rx="9" ry="17" transform="rotate(24 62 51)" fill="none" stroke="#475569" stroke-width="1" />
+                    <!-- Tripod Feed Horn -->
+                    <line x1="54" y1="30" x2="36" y2="34" stroke="#94a3b8" stroke-width="1.3" />
+                    <line x1="71" y1="73" x2="36" y2="34" stroke="#94a3b8" stroke-width="1.3" />
+                    <line x1="62" y1="51" x2="36" y2="34" stroke="#cbd5e1" stroke-width="1.8" />
+                    <circle cx="35" cy="33" r="3" fill="#fb923c" />
+                </g>
+
+                <!-- Signal Lock Mini HUD -->
+                <g transform="translate(1112, 12)">
+                    <rect x="0" y="0" width="150" height="38" rx="6" fill="#060c1e" stroke="#22c55e" stroke-opacity="0.5" stroke-width="1" />
+                    <circle cx="15" cy="14" r="3.5" fill="#22c55e" />
+                    <text x="24" y="17" fill="#4ade80" font-family="monospace" font-size="10.5" font-weight="700">Signal Lock</text>
+                    <text x="12" y="30" fill="#94a3b8" font-family="monospace" font-size="8.5">NAV // KOLEMCRAE.COM</text>
+                </g>
+            </svg>
+        </header>
+
+        <!-- Constellation Bento Grid (All Original Content Preserved) -->
+        <div class="constellation-grid">
+
+            <!-- Left Column: Profile -->
+            <section class="panel profile-col panel-signal">
+                <div class="panel-header">
+                    <h1 class="panel-title"><a href="/" style="color: inherit; text-decoration: none;">Kole McRae</a></h1>
+                    <span class="nav-tag">NAVIGATOR</span>
                 </div>
-                <div class="terminal-header-right">
-                    <span class="status-indicator-active">● SYS_ACTIVE (PORT_8000)</span>
-                </div>
-            </div>
-            
-            <section class="panel profile-col panel-teal">
-                <h1 class="panel-title">Kole McRae</h1>
                 <ul class="tree-list">
                     <li>
                         <span class="tree-label">Location</span>
@@ -61,7 +203,7 @@
                     </li>
                 </ul>
 
-                <!-- Animated Audio wave visualizer (Thematic easter egg for audio gear interest) -->
+                <!-- Animated Audio wave visualizer -->
                 <div class="waveform-container">
                     <span class="tree-label">BARDIC_INSPIRATION_OSCILLATOR</span>
                     <div class="waveform">
@@ -75,10 +217,13 @@
                 </div>
             </section>
 
-        
-            <div class="center-column">
-                <section class="panel panel-plum">
-                    <h2 class="panel-title">Current Things</h2>
+            <!-- Center Column -->
+            <div class="stack-col">
+                <section class="panel">
+                    <div class="panel-header">
+                        <h2 class="panel-title">Current Things</h2>
+                        <span class="nav-tag">ORBIT</span>
+                    </div>
                     <ul class="tree-list">
                         <li>
                             <span class="tree-label">Sports</span>
@@ -90,15 +235,18 @@
                             <span class="tree-label">Hobby</span>
                             <ul>
                                 <li><span class="panel-icon">🌱</span>Gardening</li>
+                                <li><span class="panel-icon">🎲</span>Dungeons and Dragons</li>
                             </ul>
                         </li>
                     </ul>
                 </section>
 
-    
-                <section class="panel text-panel-container panel-green">
+                <section class="panel text-panel-container panel-signal">
                     <div>
-                        <h2 class="panel-title">What's Up Now?</h2>
+                        <div class="panel-header">
+                            <h2 class="panel-title">What's Up Now?</h2>
+                            <span class="nav-tag">SIGNAL</span>
+                        </div>
                         <ul class="tree-list">
                             <li>
                                 <span class="tree-label">Professional Stuff</span>
@@ -114,12 +262,15 @@
                         <a href="/now.html">./now.html <span>&rarr;</span></a>
                     </div>
                 </section>
-            </div> 
+            </div>
 
- 
-            <div class="right-column">
-                <section class="panel panel-terracotta">
-                    <h2 class="panel-title">Toolkit</h2>
+            <!-- Right Column -->
+            <div class="stack-col">
+                <section class="panel">
+                    <div class="panel-header">
+                        <h2 class="panel-title">Toolkit</h2>
+                        <span class="nav-tag">TELEMETRY</span>
+                    </div>
                     <ul class="tree-list">
                         <li>
                             <span class="tree-label">OS</span>
@@ -141,7 +292,7 @@
                         </li>
                     </ul>
 
-                    <!-- Resource meter bars (Thematic metric for Toolkit) -->
+                    <!-- Resource meter bars -->
                     <div class="metrics-container">
                         <span class="tree-label">SYS_RESOURCES</span>
                         <div class="metric-row">
@@ -159,17 +310,19 @@
                     </div>
                 </section>
 
-                <section class="panel panel-gray">
-                    <h2 class="panel-title">Connect</h2>
+                <section class="panel">
+                    <div class="panel-header">
+                        <h2 class="panel-title">Connect</h2>
+                        <span class="nav-tag">COMMS</span>
+                    </div>
                     <ul class="tree-list links-list">
                         <li><a href="mailto:kole@kolemcrae.com" target="_blank"><span class="panel-icon">✉️</span>email me <span>&rarr;</span></a></li>
                         <li><a href="https://www.linkedin.com/in/kole-mcrae/" target="_blank"><span class="panel-icon">🔗</span>LinkedIn <span>&rarr;</span></a></li>
                     </ul>
 
-                    <!-- Retro-terminal frame (Thematic visual for Connect) -->
+                    <!-- Retro-terminal frame -->
                     <div class="terminal-card">
-                        <pre class="ascii-art">
-┌────────────────────────────────┐
+                        <pre class="ascii-art">┌────────────────────────────────┐
 │ SECURE CONNECTIVITY ONLINE     │
 │ PORT: SSH_22 // KOLEMCRAE.COM  │
 └────────────────────────────────┘</pre>
@@ -177,10 +330,13 @@
                 </section>
             </div>
 
-  
-            <section class="panel span-two text-panel-container panel-rust">
+            <!-- Bottom Wide Panel: Current Project -->
+            <section class="panel span-two text-panel-container panel-signal">
                 <div>
-                    <h2 class="panel-title">Current Project</h2>
+                    <div class="panel-header">
+                        <h2 class="panel-title">Current Project</h2>
+                        <span class="nav-tag">STAR CHART // ARCHIVE</span>
+                    </div>
                     <div class="audio-widget">
                         <span class="tree-label">Website Timeline Exhibit</span>
                         <ul class="tree-list">
@@ -193,7 +349,7 @@
                         </ul>
                     </div>
 
-                    <!-- Horizontal track timeline (Thematic for 20-year history exhibit) -->
+                    <!-- Horizontal track timeline -->
                     <div class="timeline-bar">
                         <span class="tree-label">EXHIBIT_TRACK_NAV</span>
                         <div class="horizontal-timeline">
